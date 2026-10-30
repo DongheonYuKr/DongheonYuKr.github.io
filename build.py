@@ -7,9 +7,7 @@ import html, json, os, re
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_URL = "https://heonlog.com"  # 주소가 정해지면 여기만 바꾼다 (끝에 / 없이)
 SITE = "HEONLOG 가이드"
-CTA = ('<aside class="cta" aria-label="무료 자료"><p><strong>광고 소재 체크리스트 무료 PDF</strong>. '
-       '한 달 소재 개수, 모델컷·릴스 점검표, 화장품 광고 표현 주의점을 9쪽에 담았습니다. '
-       '인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>로 DM 주시면 보내 드립니다.</p></aside>')
+CTA = ''  # 대표님 10-30: 「~보내 주시면 드립니다」 같은 주는 약속 문구 넣지 않음
 
 
 def read_articles():
