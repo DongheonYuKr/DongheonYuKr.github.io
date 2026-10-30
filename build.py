@@ -34,6 +34,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
     return f"""<!doctype html>
 <html lang="ko">
 <head>
+<meta name="google-site-verification" content="vj1r-xyzpSqau7A590A6hj5wXop7oyVEvwiRU8IKaeU">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title>
