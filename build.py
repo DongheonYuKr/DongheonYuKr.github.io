@@ -9,7 +9,7 @@ BASE_URL = "https://heonlog.com"  # 주소가 정해지면 여기만 바꾼다 (
 SITE = "HEONLOG 가이드"
 CTA = ('<aside class="cta" aria-label="무료 자료"><p><strong>광고 소재 체크리스트 무료 PDF</strong>. '
        '한 달 소재 개수, 모델컷·릴스 점검표, 화장품 광고 표현 주의점을 9쪽에 담았습니다. '
-       '메일 <a href="mailto:contact@heonlog.com">contact@heonlog.com</a>이나 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> DM으로 「체크리스트」라고 보내 주시면 드립니다.</p></aside>')
+       '인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>로 DM 주시면 보내 드립니다.</p></aside>')
 
 
 def read_articles():
@@ -67,7 +67,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-<p>HEONLOG · AI로 일하는 1인 회사 · 문의 <a href="mailto:contact@heonlog.com">contact@heonlog.com</a> · 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a></p>
+<p>HEONLOG · AI로 일하는 1인 회사 · 문의 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a></p>
 <p>글 속 법·제도 내용은 정리일 뿐 법률 자문이 아닙니다. 게시 전 공식 출처의 최신 내용을 확인하세요. · <a href="{up}about/index.html#privacy">개인정보·이용 안내</a></p>
 </div></footer>
 </body>
@@ -78,7 +78,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 def main():
     arts = read_articles()
     org = {"@type": "Organization", "name": "HEONLOG", "url": BASE_URL + "/",
-           "email": "contact@heonlog.com", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}
+           "sameAs": ["https://www.instagram.com/heonlog.studio/"]}
     urls = [("", "2026-10-30"), ("about/", "2026-10-30")]
     for a in arts:
         path = f"guide/{a['slug']}/"
