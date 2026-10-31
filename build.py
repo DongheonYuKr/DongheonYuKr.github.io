@@ -40,6 +40,23 @@ WORK_PAGES = [
      "쓰는 AI 구독에 체크하면 한 달·1년 합계가 나옵니다. 요금은 공식 요금 페이지에서 확인한 것만, 확인 날짜와 함께 넣었습니다. 저장·쿠키 없음.", ""),
 ]
 
+# 영어 페이지 (주소, 본문 파일, 제목, 설명, 메뉴 칸, 짝 한국어 주소 또는 None, schema 종류) · 11-01
+EN_PAGES = [
+    ("en/", "_en_home.part", "Free GitHub tools, installed and rated by a non-developer",
+     "I have AI install free GitHub tools instead of paid ones, then rate install difficulty (click only to gave up), what broke, and the catch.",
+     "home", "", "WebPage"),
+    ("en/guide/archify/", "_en_guide_archify.part", "GitHub Teardown #01 · archify: turn a hard-to-explain workflow into one picture",
+     "I had AI install the free GitHub tool archify. What it does, why the install difficulty is ⭐⭐⭐, where I got stuck, and the catch before you use it.",
+     "", "guide/github-archify/", "Article"),
+    ("en/free/", "_en_free.part", "20 free GitHub alternatives to monthly-subscription tools",
+     "20 monthly-subscription tools next to free GitHub alternatives, with license, install difficulty and what to watch out for. Difficulty is rated only for tools I installed.",
+     "free", "free/", "WebPage"),
+    ("en/work/english-product-copy/", "_en_work_product_copy.part", "Korean beauty & lifestyle product copy, written for US shoppers",
+     "English product listing copy for sellers of Korean beauty and lifestyle products: title, bullets, description, how to use. Three fictional samples and a pilot price in USD.",
+     "work", None, "WebPage"),
+]
+EN_ALT = {ko: en for en, _, _, _, _, ko, _ in EN_PAGES if ko and ko not in ("", "free/")}
+
 
 def read_articles():
     out = []
@@ -56,13 +73,46 @@ def read_articles():
     return out
 
 
-def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website", jsonld=None, current=""):
+def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website", jsonld=None, current="",
+         lang="ko", alt=None):
+    """lang="en" = 영어 페이지(메뉴·아래줄 영어) · alt = 짝 언어 페이지 주소(hreflang·「한국어」/「EN」 링크) · 11-01"""
     up = "../" * depth
     canon = f"{BASE_URL}/{path}"
+    hl = ""
+    if alt is not None:
+        ko_p, en_p = (path, alt) if lang == "ko" else (alt, path)
+        hl = (f'<link rel="alternate" hreflang="ko" href="{BASE_URL}/{ko_p}">\n'
+              f'<link rel="alternate" hreflang="en" href="{BASE_URL}/{en_p}">\n'
+              f'<link rel="alternate" hreflang="x-default" href="{BASE_URL}/{ko_p}">\n')
+    other = up + (alt if alt is not None else ("en/" if lang == "ko" else "")) + "index.html"
+    nav = lambda href, label, key, extra="": f'<a href="{up}{href}"{" aria-current=\"page\"" if current == key else ""}{extra}>{label}</a>'
+    if lang == "en":
+        top = (f'<a class="skip" href="#main">Skip to content</a>\n<header class="site"><div class="wrap">\n'
+               f'<a class="logo" href="{up}en/index.html" aria-label="HEONLOG home (English)"><img src="{up}img/logo.svg" alt="HEONLOG" width="104" height="26"></a>\n'
+               f'<nav class="top" aria-label="Main menu">{nav("en/index.html", "Guides", "home")}{nav("en/free/index.html", "Free list", "free")}'
+               f'{nav("en/work/english-product-copy/index.html", "Hire", "work")}'
+               f'<a class="lang" href="{other}" lang="ko" hreflang="ko">한국어</a></nav>\n</div></header>')
+        foot = (f'<footer class="site"><div class="wrap">\n<p>HEONLOG · GitHub tools, installed by a non-developer · Instagram '
+                f'<a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> (in Korean) · Business inquiries: the '
+                f'&ldquo;Business proposal&rdquo; button on my <a href="https://link.inpock.co.kr/heonlog" rel="noopener">link page</a></p>\n'
+                f'<p>Nothing here is legal advice. Check the official sources before you rely on it. · '
+                f'<a href="{up}about/index.html#privacy" lang="ko" hreflang="ko">Privacy &amp; terms (Korean)</a> · '
+                f'<a href="{other}" lang="ko" hreflang="ko">한국어</a></p>\n</div></footer>')
+    else:
+        top = (f'<a class="skip" href="#main">본문 바로가기</a>\n<header class="site"><div class="wrap">\n'
+               f'<a class="logo" href="{up}index.html" aria-label="HEONLOG 가이드 첫 화면"><img src="{up}img/logo.svg" alt="HEONLOG" width="104" height="26"></a>\n'
+               f'<nav class="top" aria-label="주 메뉴">{nav("index.html", "가이드", "home")}{nav("free/index.html", "무료 대체표", "free")}'
+               f'{nav("work/index.html", "맡기기", "work")}{nav("about/index.html", "소개", "about")}'
+               f'<a class="lang" href="{other}" lang="en" hreflang="en" aria-label="English">EN</a></nav>\n</div></header>')
+        foot = (f'<footer class="site"><div class="wrap">\n<p>HEONLOG · 개발 몰라도 깃허브 털기 · 인스타그램 '
+                f'<a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> · 문의·협찬 제안은 '
+                f'<a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>의 「비즈니스 제안」 · '
+                f'<a href="{other}" lang="en" hreflang="en">English</a></p>\n'
+                f'<p>글 속 법·제도 내용은 정리일 뿐 법률 자문이 아닙니다. 게시 전 공식 출처의 최신 내용을 확인하세요. · '
+                f'<a href="{up}about/index.html#privacy">개인정보·이용 안내</a></p>\n</div></footer>')
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
-    nav = lambda href, label, key: f'<a href="{up}{href}"{" aria-current=\"page\"" if current == key else ""}>{label}</a>'
     return f"""<!doctype html>
-<html lang="ko">
+<html lang="{lang}">
 <head>
 <meta name="naver-site-verification" content="532f68a567a7bab22e3a75b82164f1a44f273f91">
 <meta name="naver-site-verification" content="8a65c8d4b155d54f1e5790ab92ae384083104cec">
@@ -72,9 +122,9 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{canon}">
-<meta property="og:type" content="{og_type}">
-<meta property="og:site_name" content="{SITE}">
-<meta property="og:locale" content="ko_KR">
+{hl}<meta property="og:type" content="{og_type}">
+<meta property="og:site_name" content="{"HEONLOG" if lang == "en" else SITE}">
+<meta property="og:locale" content="{"en_US" if lang == "en" else "ko_KR"}">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:url" content="{canon}">
@@ -89,18 +139,11 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 <!-- Cloudflare Web Analytics (쿠키 없는 방문 수 · 11-01) --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "9f4bf7e4514c4afc99a713798af12a04"}}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
-<a class="skip" href="#main">본문 바로가기</a>
-<header class="site"><div class="wrap">
-<a class="logo" href="{up}index.html" aria-label="HEONLOG 가이드 첫 화면"><img src="{up}img/logo.svg" alt="HEONLOG" width="104" height="26"></a>
-<nav class="top" aria-label="주 메뉴">{nav("index.html", "가이드", "home")}{nav("free/index.html", "무료 대체표", "free")}{nav("work/index.html", "맡기기", "work")}{nav("about/index.html", "소개", "about")}</nav>
-</div></header>
+{top}
 <main id="main"><div class="wrap">
 {body}
 </div></main>
-<footer class="site"><div class="wrap">
-<p>HEONLOG · 개발 몰라도 깃허브 털기 · 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> · 문의·협찬 제안은 <a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>의 「비즈니스 제안」</p>
-<p>글 속 법·제도 내용은 정리일 뿐 법률 자문이 아닙니다. 게시 전 공식 출처의 최신 내용을 확인하세요. · <a href="{up}about/index.html#privacy">개인정보·이용 안내</a></p>
-</div></footer>
+{foot}
 </body>
 </html>
 """
@@ -125,7 +168,7 @@ def main():
         os.makedirs(os.path.join(ROOT, path), exist_ok=True)
         open(os.path.join(ROOT, path, "index.html"), "w", encoding="utf-8").write(
             page(f'{a["title"]} | {SITE}', a["description"], path, body, 2,
-                 og_image=a.get("image", "img/og.jpg"), og_type="article", jsonld=ld))
+                 og_image=a.get("image", "img/og.jpg"), og_type="article", jsonld=ld, alt=EN_ALT.get(path)))
         urls.append((path, a["date"]))
 
     li = lambda a: f'<li><a href="guide/{a["slug"]}/index.html">{html.escape(a["title"])}</a><p>{html.escape(a["description"])}</p></li>'
@@ -150,7 +193,7 @@ def main():
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(
         page(f"{SITE} · 개발 몰라도 깃허브 털기",
              "유료 대신 쓸 수 있는 깃허브 무료 도구를 개발 모르는 사람이 직접 깔아 보고 설치 난이도·막힌 곳·함정까지 정리합니다. 직접 깔아 본 것만 씁니다.",
-             "", home, 0, jsonld=site_ld, current="home"))
+             "", home, 0, jsonld=site_ld, current="home", alt="en/"))
 
     about = open(os.path.join(ROOT, "content", "_about.part"), encoding="utf-8").read()
     os.makedirs(os.path.join(ROOT, "about"), exist_ok=True)
@@ -168,7 +211,7 @@ def main():
         page(f"유료 대신 무료: 월 구독 도구의 깃허브 무료 대안 20개 | {SITE}",
              "월 구독 도구 20개와 깃허브 무료 대안을 라이선스·설치 난이도·주의할 점으로 나란히 정리했습니다. 설치 난이도는 직접 깔아 본 것만 매깁니다.",
              "free/", free + NEXT, 1, jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": "유료 대신 무료 대체표",
-                                              "inLanguage": "ko", "publisher": org}, current="free"))
+                                              "inLanguage": "ko", "publisher": org}, current="free", alt="en/free/"))
 
     # 맡기기(/work/) 소개 페이지 + 무료 계산기(/tools/cost/) · 11-01. 본문은 content/_work*.part · _tools_cost.part
     for path, part, title, desc, key in WORK_PAGES:
@@ -178,6 +221,21 @@ def main():
             page(f"{title} | {SITE}", desc, path, body, path.count("/"),
                  jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": title,
                          "inLanguage": "ko", "publisher": org}, current=key))
+        urls.append((path, "2026-11-01"))
+
+    # 영어 페이지(/en/) · 11-01 달러 시험 ①: 본문은 content/_en_*.part, 짝 한국어 페이지는 hreflang으로 연결
+    for path, part, title, desc, key, ko, kind in EN_PAGES:
+        body = open(os.path.join(ROOT, "content", part), encoding="utf-8").read()
+        ld = {"@context": "https://schema.org", "@type": kind, "inLanguage": "en", "publisher": org}
+        if kind == "Article":
+            ld.update({"headline": title, "description": desc, "datePublished": "2026-10-31", "dateModified": "2026-11-01",
+                       "author": org, "mainEntityOfPage": f"{BASE_URL}/{path}", "image": [f"{BASE_URL}/img/og.jpg"]})
+        else:
+            ld["name"] = title
+        os.makedirs(os.path.join(ROOT, path), exist_ok=True)
+        open(os.path.join(ROOT, path, "index.html"), "w", encoding="utf-8").write(
+            page(f"{title} | HEONLOG", desc, path, body, path.count("/"), og_type="article" if kind == "Article" else "website",
+                 jsonld=ld, current=key, lang="en", alt=ko))
         urls.append((path, "2026-11-01"))
 
     nf = '<h1>페이지를 찾을 수 없습니다</h1><p>주소가 바뀌었거나 없는 글입니다. <a href="/">가이드 첫 화면</a>으로 가 주세요.</p>'

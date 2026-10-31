@@ -157,3 +157,8 @@ table.srct a{overflow-wrap:anywhere}
 .oldposts{margin:40px 0 0;border-top:1px solid var(--line);padding-top:14px}
 .oldposts summary{cursor:pointer;color:var(--muted);font-size:15px;font-weight:600}
 .oldposts .list{margin-top:10px}
+/* 언어 바꾸기 링크(EN / 한국어) · 11-01 */
+nav.top a.lang{border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;font-weight:600}
+@media (max-width:480px){nav.top a.lang{margin-left:10px;padding:0 5px;font-size:12.5px}}
+nav.top{white-space:nowrap}
+@media (max-width:420px){nav.top a{margin-left:9px;font-size:13.5px} nav.top a.lang{margin-left:8px;font-size:12px;padding:0 4px} header.site .wrap{gap:8px}}
