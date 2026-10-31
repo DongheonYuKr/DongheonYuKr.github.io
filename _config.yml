@@ -1,0 +1,7 @@
+# GitHub Pages(Jekyll): 만든 결과 HTML만 공개하고 원본·도구 파일은 빼기 (11-01 · build.py·content/가 그대로 열리던 것)
+exclude:
+  - content
+  - build.py
+  - README.md
+  - "*.md"
+  - _preview
