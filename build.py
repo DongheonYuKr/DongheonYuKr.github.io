@@ -17,7 +17,8 @@ NEXT = ('<aside class="cta" aria-label="다음 회"><p><strong>다음 깃허브 
 def read_articles():
     out = []
     for name in sorted(os.listdir(os.path.join(ROOT, "content"))):
-        if not name.endswith(".html"):
+        # 「_」로 시작하는 파일(_draft_… 미리 써 둔 글, _about.part 등)은 글 목록·주소에서 뺀다 (11-01)
+        if not name.endswith(".html") or name.startswith("_"):
             continue
         raw = open(os.path.join(ROOT, "content", name), encoding="utf-8").read()
         m = re.match(r"---\n(.*?)\n---\n(.*)", raw, re.S)
@@ -63,7 +64,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 <a class="skip" href="#main">본문 바로가기</a>
 <header class="site"><div class="wrap">
 <a class="logo" href="{up}index.html" aria-label="HEONLOG 가이드 첫 화면"><img src="{up}img/logo.svg" alt="HEONLOG" width="104" height="26"></a>
-<nav class="top" aria-label="주 메뉴">{nav("index.html", "가이드", "home")}{nav("about/index.html", "소개", "about")}</nav>
+<nav class="top" aria-label="주 메뉴">{nav("index.html", "가이드", "home")}{nav("free/index.html", "무료 대체표", "free")}{nav("about/index.html", "소개", "about")}</nav>
 </div></header>
 <main id="main"><div class="wrap">
 {body}
@@ -81,7 +82,7 @@ def main():
     arts = read_articles()
     org = {"@type": "Organization", "name": "HEONLOG", "url": BASE_URL + "/",
            "sameAs": ["https://www.instagram.com/heonlog.studio/"]}
-    urls = [("", "2026-10-30"), ("about/", "2026-10-30")]
+    urls = [("", "2026-10-30"), ("about/", "2026-10-30"), ("free/", "2026-11-01")]
     for a in arts:
         path = f"guide/{a['slug']}/"
         ld = {"@context": "https://schema.org", "@type": "Article", "headline": a["title"],
@@ -104,6 +105,7 @@ def main():
     home = f"""<p class="meta"><span class="kicker">개발 몰라도 깃허브 털기</span></p>
 <h1>유료 대신 무료 도구, <span class="mark">직접 깔아 보고</span> 알려 드려요</h1>
 <p class="lead">깃허브에 있는 무료 도구를 개발 모르는 사람이 AI한테 시켜 직접 깔아 보고, 설치 난이도(⭐ 클릭만 · ⭐⭐ 따라 하면 됨 · ⭐⭐⭐ 터미널 필요 · 💀 포기)와 막힌 곳까지 그대로 적습니다. 깔아 보지 않은 것은 쓰지 않습니다.</p>
+<p class="golink"><a href="free/index.html">월 구독 도구 대신 쓸 수 있는 깃허브 무료 대안 20개 표 보기 →</a></p>
 <h2>깃허브 털기</h2>
 <ul class="list">
 {chr(10).join(li(a) for a in gh)}
@@ -127,6 +129,16 @@ def main():
              "HEONLOG는 개발을 모르는 사람이 깃허브 무료 도구를 AI로 직접 깔아 보고 기록하는 곳입니다. 직접 해 본 것과 공식 출처로 확인한 것만 씁니다.",
              "about/", about + CTA, 1, jsonld={"@context": "https://schema.org", "@type": "AboutPage", "name": "HEONLOG 소개", "publisher": org},
              current="about"))
+
+    free = open(os.path.join(ROOT, "content", "_free.part"), encoding="utf-8").read().replace(
+        "{{guides}}", "\n".join(f'<li><a href="../guide/{a["slug"]}/index.html">{html.escape(a["title"])}</a></li>'
+                                 for a in sorted(gh, key=lambda a: (a.get("date", ""), a["slug"]))))
+    os.makedirs(os.path.join(ROOT, "free"), exist_ok=True)
+    open(os.path.join(ROOT, "free", "index.html"), "w", encoding="utf-8").write(
+        page(f"유료 대신 무료: 월 구독 도구의 깃허브 무료 대안 20개 | {SITE}",
+             "월 구독 도구 20개와 깃허브 무료 대안을 라이선스·설치 난이도·주의할 점으로 나란히 정리했습니다. 설치 난이도는 직접 깔아 본 것만 매깁니다.",
+             "free/", free + NEXT, 1, jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": "유료 대신 무료 대체표",
+                                              "inLanguage": "ko", "publisher": org}, current="free"))
 
     nf = '<h1>페이지를 찾을 수 없습니다</h1><p>주소가 바뀌었거나 없는 글입니다. <a href="/">가이드 첫 화면</a>으로 가 주세요.</p>'
     open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8").write(
