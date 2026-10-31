@@ -20,7 +20,7 @@ GUIDE_NEXT = ('<aside class="cta tiers" aria-label="더 해 보고 싶다면"><p
               '</ul>\n<p>다음 회차는 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>에 먼저 올라옵니다.</p></aside>')
 # 예전 뷰티 글: 지우거나 숨기지 않고(주소·사이트맵 그대로) 글 맨 위에 「예전 글」 표시만 · 11-01
 OLD_NOTE = ('<p class="notice oldnote"><strong>예전 글</strong> · 2026년 10월, 작은 뷰티 브랜드 광고 소재를 만들 때 정리한 글입니다. '
-            '법·제도 내용은 쓴 날짜 기준이니 최신 원문으로 다시 확인하세요. 지금 HEONLOG는 <a href="../../index.html">「깃허브 털기」</a>를 연재합니다.</p>\n')
+            '법·제도 내용은 쓴 날짜 기준이니 최신 원문으로 다시 확인하세요. 지금 HEONLOG는 <a href="../../index.html">「깃허브 털기」</a>를 연재합니다. 이 주제(제품 화보·모델컷·상세페이지·광고 문구 점검)로 작업을 맡기고 싶다면 <a href="../../work/">맡기기</a>를 봐 주세요.</p>\n')
 
 
 # 맡기기 문의 = 인포크 「비즈니스 제안」 하나로 (이메일 주소는 페이지에 쓰지 않음 · 11-01)
