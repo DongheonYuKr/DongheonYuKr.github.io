@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="naver-site-verification" content="532f68a567a7bab22e3a75b82164f1a44f273f91">
+<meta name="naver-site-verification" content="8a65c8d4b155d54f1e5790ab92ae384083104cec">
+<meta name="google-site-verification" content="vj1r-xyzpSqau7A590A6hj5wXop7oyVEvwiRU8IKaeU">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>깃허브 털기 #01 · archify, 설명하기 어려운 일을 그림 한 장으로 | HEONLOG 가이드</title>
+<meta name="description" content="깃허브 무료 도구 archify를 AI에게 시켜 직접 깔아 본 기록입니다. 무엇을 하는 도구인지, 설치 난이도 ⭐⭐⭐인 이유, 깔면서 막힌 곳, 쓰기 전에 알아야 할 함정까지 정리했습니다.">
+<link rel="canonical" href="https://heonlog.com/guide/github-archify/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HEONLOG 가이드">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="깃허브 털기 #01 · archify, 설명하기 어려운 일을 그림 한 장으로 | HEONLOG 가이드">
+<meta property="og:description" content="깃허브 무료 도구 archify를 AI에게 시켜 직접 깔아 본 기록입니다. 무엇을 하는 도구인지, 설치 난이도 ⭐⭐⭐인 이유, 깔면서 막힌 곳, 쓰기 전에 알아야 할 함정까지 정리했습니다.">
+<meta property="og:url" content="https://heonlog.com/guide/github-archify/">
+<meta property="og:image" content="https://heonlog.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../img/favicon.png">
+<link rel="apple-touch-icon" href="../../img/icon-180.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "깃허브 털기 #01 · archify, 설명하기 어려운 일을 그림 한 장으로", "description": "깃허브 무료 도구 archify를 AI에게 시켜 직접 깔아 본 기록입니다. 무엇을 하는 도구인지, 설치 난이도 ⭐⭐⭐인 이유, 깔면서 막힌 곳, 쓰기 전에 알아야 할 함정까지 정리했습니다.", "datePublished": "2026-10-31", "dateModified": "2026-10-31", "inLanguage": "ko", "image": ["https://heonlog.com/img/og.jpg"], "author": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "publisher": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "mainEntityOfPage": "https://heonlog.com/guide/github-archify/", "keywords": "archify 사용법"}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="site"><div class="wrap">
+<a class="logo" href="../../index.html" aria-label="HEONLOG 가이드 첫 화면"><img src="../../img/logo.svg" alt="HEONLOG" width="104" height="26"></a>
+<nav class="top" aria-label="주 메뉴"><a href="../../index.html">가이드</a><a href="../../about/index.html">소개</a></nav>
+</div></header>
+<main id="main"><div class="wrap">
+<article><p class="meta"><span class="kicker">깃허브 털기 #01</span> · 2026.10.31 · HEONLOG</p>
+<h1>깃허브 털기 #01 · archify, 설명하기 어려운 일을 그림 한 장으로</h1>
+<p class="lead">일 흐름을 아직 글로 길게 설명하고 있다면, 이 도구부터 보세요. archify는 아이디어·계획·업무 흐름을 말로 시키면 눌러 볼 수 있는 그림 한 장(웹페이지)으로 만들어 주는 깃허브 무료 도구입니다. 개발은 모르지만 AI한테 시켜서 직접 깔아 보고 쓴 그대로 적었습니다.</p>
+
+<p class="notice">깃허브: <a href="https://github.com/tt-a1i/archify" rel="noopener">tt-a1i/archify</a> · 라이선스 Apache-2.0(상업적으로 써도 됨) · 별 약 9.2만 개(2026-10-31 기준) · 깐 날 2026-10-30</p>
+
+<h2>무엇을 하는 도구인가</h2>
+<p>「이 흐름을 그림으로 그려 줘」처럼 말하면 단계·갈래·순서를 그림으로 바꾼 웹페이지를 만들어 줍니다. 밝은 화면·어두운 화면 둘 다 되고, 그림 파일로도 내보낼 수 있습니다. 혼자 켜지는 앱이 아니라 클로드 코드·코덱스 같은 AI 비서가 읽어서 쓰는 「스킬」 묶음입니다.</p>
+
+<h2>설치 난이도 ⭐⭐⭐ (터미널 필요)</h2>
+<ul>
+<li>받은 폴더를 AI 비서의 스킬 폴더(숨김 폴더)에 넣어야 해서 터미널(검은 명령 창)을 씁니다.</li>
+<li>클로드 코드 같은 AI 비서와 Node 18 이상이 먼저 있어야 합니다.</li>
+<li>쉬운 점: 따로 가입·결제·API 키가 필요 없습니다.</li>
+<li>저는 AI한테 「이 깃허브 도구 깔아 줘, 깔기 전에 안에 뭐가 있는지 먼저 확인해 줘」라고 시켜서 깔았습니다. 사람이 혼자 터미널로 깔면 더 어려울 수 있습니다.</li>
+</ul>
+
+<h2>깔면서 막힌 곳</h2>
+<ul>
+<li>하루 한 번 깃허브에 새 버전이 있는지 확인하는 기능이 켜져 있었습니다. 밖으로 나가는 연결은 이것 하나라서 껐습니다.</li>
+<li>「한 장짜리 설명 페이지」 모드를 켜자는 안내가 나오는데, 컴퓨터 전체 AI 설정 파일에 한 줄을 써 넣는 기능이라 켜지 않았습니다.</li>
+<li>첫 그림은 휴대폰에서 옆으로 밀어서 봐야 했습니다. 컴퓨터 화면에서는 겹치거나 잘린 곳이 없었습니다.</li>
+</ul>
+
+<h2>써 본 결과</h2>
+<ul>
+<li>SNS 글을 만드는 흐름 8단계(자료 모으기부터 사람 확인까지)를 그림 한 장으로 만들었습니다.</li>
+<li>그 뒤로 사업 구상, 일주일 계획처럼 말로 설명하면 길어지는 일을 그릴 때 계속 쓰고 있습니다.</li>
+</ul>
+
+<h2>근데 함정이 있어요</h2>
+<p>혼자 켜지는 프로그램이 아닙니다. AI 비서(클로드 코드·코덱스 등) 안에서 불러 써야 움직입니다. AI 비서를 아직 안 쓰고 있다면, 그것부터 갖춰야 이 도구를 쓸 수 있습니다.</p>
+
+<h2>이런 분께</h2>
+<ul>
+<li>업무 흐름·계획을 팀에 글로 길게 설명하고 있는 분</li>
+<li>이미 클로드 코드나 코덱스를 쓰고 있는 분</li>
+</ul>
+
+</article>
+</div></main>
+<footer class="site"><div class="wrap">
+<p>HEONLOG · AI로 일하는 1인 회사 · 문의 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a></p>
+<p>글 속 법·제도 내용은 정리일 뿐 법률 자문이 아닙니다. 게시 전 공식 출처의 최신 내용을 확인하세요. · <a href="../../about/index.html#privacy">개인정보·이용 안내</a></p>
+</div></footer>
+</body>
+</html>
