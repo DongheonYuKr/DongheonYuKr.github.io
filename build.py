@@ -8,6 +8,10 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_URL = "https://heonlog.com"  # 주소가 정해지면 여기만 바꾼다 (끝에 / 없이)
 SITE = "HEONLOG 가이드"
 CTA = ''  # 대표님 10-30: 「~보내 주시면 드립니다」 같은 주는 약속 문구 넣지 않음
+# 10-31: 주는 약속 없이 「다음 회 받아 보기」 길 안내만 (인포크 소식받기·링크 페이지)
+NEXT = ('<aside class="cta" aria-label="다음 회"><p><strong>다음 깃허브 털기도 보고 싶다면</strong> · '
+        '<a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>에서 소식받기를 누르거나 '
+        '인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>를 팔로우해 주세요.</p></aside>')
 
 
 def read_articles():
@@ -65,7 +69,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-<p>HEONLOG · AI로 일하는 1인 회사 · 문의 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a></p>
+<p>HEONLOG · 개발 몰라도 깃허브 털기 · 문의·협찬 제안 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a></p>
 <p>글 속 법·제도 내용은 정리일 뿐 법률 자문이 아닙니다. 게시 전 공식 출처의 최신 내용을 확인하세요. · <a href="{up}about/index.html#privacy">개인정보·이용 안내</a></p>
 </div></footer>
 </body>
@@ -87,7 +91,7 @@ def main():
               "keywords": a["keyword"]}
         body = (f'<article><p class="meta"><span class="kicker">{html.escape(a["kicker"])}</span> · '
                 f'{a["date"].replace("-", ".")} · HEONLOG</p>\n<h1>{html.escape(a["title"])}</h1>\n'
-                + a["body"].replace("{{up}}", "../../") + "\n" + CTA + "</article>")
+                + a["body"].replace("{{up}}", "../../") + "\n" + (NEXT if a["slug"].startswith("github-") else CTA) + "</article>")
         os.makedirs(os.path.join(ROOT, path), exist_ok=True)
         open(os.path.join(ROOT, path, "index.html"), "w", encoding="utf-8").write(
             page(f'{a["title"]} | {SITE}', a["description"], path, body, 2,
@@ -108,7 +112,7 @@ def main():
 <ul class="list">
 {chr(10).join(li(a) for a in old)}
 </ul>
-{CTA}"""
+{NEXT}"""
     site_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": SITE, "url": BASE_URL + "/",
                "inLanguage": "ko", "publisher": org}
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(
@@ -120,7 +124,7 @@ def main():
     os.makedirs(os.path.join(ROOT, "about"), exist_ok=True)
     open(os.path.join(ROOT, "about", "index.html"), "w", encoding="utf-8").write(
         page(f"소개: 개발 몰라도 깃허브 털기, HEONLOG | {SITE}",
-             "HEONLOG는 AI로 제품 화보·모델컷·짧은 광고 영상을 만드는 1인 회사입니다. 이 사이트에는 직접 해 본 것과 공식 출처로 확인한 것만 씁니다.",
+             "HEONLOG는 개발을 모르는 사람이 깃허브 무료 도구를 AI로 직접 깔아 보고 기록하는 곳입니다. 직접 해 본 것과 공식 출처로 확인한 것만 씁니다.",
              "about/", about + CTA, 1, jsonld={"@context": "https://schema.org", "@type": "AboutPage", "name": "HEONLOG 소개", "publisher": org},
              current="about"))
 
