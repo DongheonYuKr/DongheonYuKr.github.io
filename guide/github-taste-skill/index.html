@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta name="naver-site-verification" content="532f68a567a7bab22e3a75b82164f1a44f273f91">
+<meta name="naver-site-verification" content="8a65c8d4b155d54f1e5790ab92ae384083104cec">
+<meta name="google-site-verification" content="vj1r-xyzpSqau7A590A6hj5wXop7oyVEvwiRU8IKaeU">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>깃허브 털기 #04 · taste-skill, AI 티 나는 웹페이지를 피하는 스킬 | HEONLOG 가이드</title>
+<meta name="description" content="깃허브 무료 도구 taste-skill을 직접 깔아 본 기록입니다. 설치 명령 한 줄, 컴퓨터 전체가 아니라 작업 폴더 하나에만 깔리는 함정, 비슷한 스킬 중 하나만 골라 깐 방법까지 정리했습니다.">
+<link rel="canonical" href="https://heonlog.com/guide/github-taste-skill/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HEONLOG 가이드">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="깃허브 털기 #04 · taste-skill, AI 티 나는 웹페이지를 피하는 스킬 | HEONLOG 가이드">
+<meta property="og:description" content="깃허브 무료 도구 taste-skill을 직접 깔아 본 기록입니다. 설치 명령 한 줄, 컴퓨터 전체가 아니라 작업 폴더 하나에만 깔리는 함정, 비슷한 스킬 중 하나만 골라 깐 방법까지 정리했습니다.">
+<meta property="og:url" content="https://heonlog.com/guide/github-taste-skill/">
+<meta property="og:image" content="https://heonlog.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../img/favicon.png">
+<link rel="apple-touch-icon" href="../../img/icon-180.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "깃허브 털기 #04 · taste-skill, AI 티 나는 웹페이지를 피하는 스킬", "description": "깃허브 무료 도구 taste-skill을 직접 깔아 본 기록입니다. 설치 명령 한 줄, 컴퓨터 전체가 아니라 작업 폴더 하나에만 깔리는 함정, 비슷한 스킬 중 하나만 골라 깐 방법까지 정리했습니다.", "datePublished": "2026-11-01", "dateModified": "2026-11-01", "inLanguage": "ko", "image": ["https://heonlog.com/img/og.jpg"], "author": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "publisher": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "mainEntityOfPage": "https://heonlog.com/guide/github-taste-skill/", "keywords": "taste-skill 사용법"}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="site"><div class="wrap">
+<a class="logo" href="../../index.html" aria-label="HEONLOG 가이드 첫 화면"><img src="../../img/logo.svg" alt="HEONLOG" width="104" height="26"></a>
+<nav class="top" aria-label="주 메뉴"><a href="../../index.html">가이드</a><a href="../../free/index.html">무료 대체표</a><a href="../../about/index.html">소개</a></nav>
+</div></header>
+<main id="main"><div class="wrap">
+<article><p class="meta"><span class="kicker">깃허브 털기 #04</span> · 2026.11.01 · HEONLOG</p>
+<h1>깃허브 털기 #04 · taste-skill, AI 티 나는 웹페이지를 피하는 스킬</h1>
+<p class="lead">AI한테 웹페이지를 시켰더니 어디서 본 듯한 모양이 나온다면, 이 스킬을 보세요. taste-skill은 AI 비서가 웹페이지를 만들 때 보라색 그라데이션, 똑같은 카드 3칸 같은 흔한 AI 디자인을 피하게 해 주는 깃허브 무료 도구입니다. 개발은 모르지만 직접 깔아 본 그대로 적었습니다.</p>
+
+<p class="notice">깃허브: <a href="https://github.com/Leonxlnx/taste-skill" rel="noopener">Leonxlnx/taste-skill</a> · 라이선스 MIT(상업적으로 써도 됨) · 별 약 10.7만 개(2026-11-01 기준) · 깐 날 2026-11-01</p>
+
+<h2>무엇을 하는 도구인가</h2>
+<p>혼자 화면을 만들어 주는 프로그램이 아닙니다. AI 비서(클로드 코드 등)가 웹페이지를 만들 때 따르는 디자인 기준을 바꿔 주는 「스킬」입니다. 흔히 보이는 AI 디자인을 피하라는 기준이 들어 있습니다.</p>
+
+<h2>설치 난이도 ⭐⭐⭐ (터미널 필요)</h2>
+<ul>
+<li>설치 명령 한 줄로 끝났습니다. 터미널(검은 명령 창)에 넣는 명령입니다.</li>
+</ul>
+
+<h2>깔면서 막힌 곳</h2>
+<ul>
+<li>저장소 안에 비슷한 스킬이 여러 개 들어 있습니다. 전부 깔지 않고, 이름(design-taste-frontend)을 콕 집어서 하나만 깔았습니다.</li>
+<li>깔고 보니 컴퓨터 전체가 아니라 그때 열어 둔 작업 폴더 하나에만 들어가 있었습니다. 아래 함정에 자세히 적었습니다.</li>
+</ul>
+
+<h2>써 본 결과</h2>
+<ul>
+<li>작업 폴더에 스킬이 하나 깔린 것을 확인했습니다.</li>
+<li>이 스킬로 만든 페이지를 전후로 비교해 보지는 않았습니다(써 보지 않았음).</li>
+</ul>
+
+<h2>근데 함정이 있어요</h2>
+<p>설치 위치입니다. 이 스킬은 컴퓨터 전체가 아니라 설치할 때 열어 둔 작업 폴더 하나에만 들어갑니다. 다른 폴더에서 일할 때 쓰려면 그 폴더에 다시 깔아야 하는 구조입니다. 깔았는데 AI가 안 쓰는 것 같다면, 지금 열어 둔 폴더가 깐 폴더와 같은지부터 확인해 보세요.</p>
+<p>그리고 비슷한 일을 하는 디자인 스킬을 이미 깔아 두었다면 겹칠 수 있습니다. 깔기 전에 지금 있는 스킬로 안 되는 일인지부터 확인하는 것을 권합니다.</p>
+
+<h2>이런 분께</h2>
+<ul>
+<li>AI 비서로 웹페이지·소개 페이지를 만들고 있는 분</li>
+<li>결과물이 「AI가 만든 티」가 난다는 말을 들어 본 분</li>
+<li>한 작업 폴더에서만 쓸 스킬을 찾는 분</li>
+</ul>
+
+<aside class="cta" aria-label="다음 회"><p><strong>다음 깃허브 털기도 보고 싶다면</strong> · <a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>에서 소식받기를 누르거나 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>를 팔로우해 주세요.</p></aside></article>
+</div></main>
+<footer class="site"><div class="wrap">
+<p>HEONLOG · 개발 몰라도 깃허브 털기 · 문의·협찬 제안 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a></p>
+<p>글 속 법·제도 내용은 정리일 뿐 법률 자문이 아닙니다. 게시 전 공식 출처의 최신 내용을 확인하세요. · <a href="../../about/index.html#privacy">개인정보·이용 안내</a></p>
+</div></footer>
+</body>
+</html>
