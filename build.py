@@ -94,28 +94,32 @@ def main():
                  og_image=a.get("image", "img/og.jpg"), og_type="article", jsonld=ld))
         urls.append((path, a["date"]))
 
-    items = "\n".join(
-        f'<li><a href="guide/{a["slug"]}/index.html">{html.escape(a["title"])}</a><p>{html.escape(a["description"])}</p></li>'
-        for a in arts)
-    home = f"""<p class="meta"><span class="kicker">작은 뷰티 브랜드용</span></p>
-<h1>광고 소재를 직접 만드는 브랜드를 위한 <span class="mark">실무 가이드</span></h1>
-<p class="lead">제품 사진, AI 모델컷, 상세페이지 문구, 광고 표시 규정. HEONLOG가 직접 만들어 보고 공식 자료로 확인한 것만 정리합니다. 확인하지 못한 내용은 「미확인」으로 적습니다.</p>
-<h2>가이드</h2>
+    li = lambda a: f'<li><a href="guide/{a["slug"]}/index.html">{html.escape(a["title"])}</a><p>{html.escape(a["description"])}</p></li>'
+    gh = sorted([a for a in arts if a["slug"].startswith("github-")], key=lambda a: (a.get("date", ""), a["slug"]), reverse=True)
+    old = [a for a in arts if not a["slug"].startswith("github-")]
+    home = f"""<p class="meta"><span class="kicker">개발 몰라도 깃허브 털기</span></p>
+<h1>유료 대신 무료 도구, <span class="mark">직접 깔아 보고</span> 알려 드려요</h1>
+<p class="lead">깃허브에 있는 무료 도구를 개발 모르는 사람이 AI한테 시켜 직접 깔아 보고, 설치 난이도(⭐ 클릭만 · ⭐⭐ 따라 하면 됨 · ⭐⭐⭐ 터미널 필요 · 💀 포기)와 막힌 곳까지 그대로 적습니다. 깔아 보지 않은 것은 쓰지 않습니다.</p>
+<h2>깃허브 털기</h2>
 <ul class="list">
-{items}
+{chr(10).join(li(a) for a in gh)}
+</ul>
+<h2>예전 글 · 작은 뷰티 브랜드 광고 소재</h2>
+<ul class="list">
+{chr(10).join(li(a) for a in old)}
 </ul>
 {CTA}"""
     site_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": SITE, "url": BASE_URL + "/",
                "inLanguage": "ko", "publisher": org}
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(
-        page(f"{SITE} · 작은 뷰티 브랜드의 광고 소재·AI 모델컷 실무",
-             "작은 뷰티 브랜드가 광고 소재를 직접 만들 때 필요한 것: AI 모델컷 만드는 법, 제품 사진 AI 프롬프트, 화장품 광고 금지 표현, 가상인물 표시, 상세페이지 자문. 직접 해 본 것과 공식 출처만.",
+        page(f"{SITE} · 개발 몰라도 깃허브 털기",
+             "유료 대신 쓸 수 있는 깃허브 무료 도구를 개발 모르는 사람이 직접 깔아 보고 설치 난이도·막힌 곳·함정까지 정리합니다. 직접 깔아 본 것만 씁니다.",
              "", home, 0, jsonld=site_ld, current="home"))
 
     about = open(os.path.join(ROOT, "content", "_about.part"), encoding="utf-8").read()
     os.makedirs(os.path.join(ROOT, "about"), exist_ok=True)
     open(os.path.join(ROOT, "about", "index.html"), "w", encoding="utf-8").write(
-        page(f"소개: AI로 일하는 1인 회사 HEONLOG | {SITE}",
+        page(f"소개: 개발 몰라도 깃허브 털기, HEONLOG | {SITE}",
              "HEONLOG는 AI로 제품 화보·모델컷·짧은 광고 영상을 만드는 1인 회사입니다. 이 사이트에는 직접 해 본 것과 공식 출처로 확인한 것만 씁니다.",
              "about/", about + CTA, 1, jsonld={"@context": "https://schema.org", "@type": "AboutPage", "name": "HEONLOG 소개", "publisher": org},
              current="about"))

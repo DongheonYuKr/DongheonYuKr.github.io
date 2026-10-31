@@ -1,12 +1,12 @@
 <p class="meta"><span class="kicker">소개</span></p>
-<h1>AI로 일하는 1인 회사 HEONLOG</h1>
-<p class="lead">HEONLOG는 AI로 작은 뷰티 브랜드의 광고 소재를 만드는 1인 회사입니다. 제품 화보, 모델컷, 짧은 광고 영상을 만들고, 그 과정에서 확인한 것을 이 사이트에 정리합니다.</p>
+<h1>개발 몰라도 깃허브 털기, HEONLOG</h1>
+<p class="lead">HEONLOG는 개발을 모르는 사람이 AI로 일을 줄이는 방법을 직접 해 보고 기록하는 곳입니다. 첫 연재는 「깃허브 털기」입니다. 유료 프로그램 대신 쓸 수 있는 깃허브 무료 도구를 AI한테 시켜 직접 깔아 보고, 쉬웠는지·막혔는지를 그대로 적습니다.</p>
 
 <h2>하는 일</h2>
 <ul>
-<li>제품 사진 한 장으로 AI 모델컷·사용 장면 사진 만들기</li>
-<li>사진을 짧은 광고 영상(릴스)으로 움직이기</li>
-<li>광고 소재를 매달 꾸준히 준비하는 흐름 만들기</li>
+<li>깃허브 무료 도구를 직접 깔아 보고 설치 난이도와 막힌 곳 정리하기</li>
+<li>쓸 만한 도구는 실제 일에 써 보고 결과 남기기</li>
+<li>예전에는 작은 뷰티 브랜드의 광고 소재를 만들었고, 그때 정리한 글도 남겨 둡니다</li>
 </ul>
 
 <h2>이 사이트의 글 원칙</h2>
@@ -19,7 +19,7 @@
 </ul>
 
 <h2>문의</h2>
-<p>인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> DM으로 받습니다.</p>
+<p>인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> DM이나 <a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>의 「비즈니스 제안」으로 받습니다.</p>
 
 <h2 id="privacy">개인정보·이용 안내</h2>
 <p>이 사이트에는 회원가입, 입력 양식, 댓글, 방문 분석 도구, 광고가 없고 쿠키를 쓰지 않습니다. 다만 사이트를 올려 두는 호스팅 업체와 글꼴을 내려받는 CDN(jsDelivr)이 접속 기록(IP 주소 등)을 남길 수 있으며, 이는 각 업체의 방침을 따릅니다. 글과 사진은 HEONLOG가 만든 것이며, 인용할 때는 출처를 밝혀 주세요.</p>
