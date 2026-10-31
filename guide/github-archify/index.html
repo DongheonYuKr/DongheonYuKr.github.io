@@ -6,7 +6,7 @@
 <meta name="google-site-verification" content="vj1r-xyzpSqau7A590A6hj5wXop7oyVEvwiRU8IKaeU">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>깃허브 털기 #01 · archify, 설명하기 어려운 일을 그림 한 장으로 | HEONLOG 가이드</title>
+<title>archify 사용법: 설명하기 어려운 일을 그림 한 장으로 · 깃허브 털기 #01 | HEONLOG 가이드</title>
 <meta name="description" content="깃허브 무료 도구 archify를 AI에게 시켜 직접 깔아 본 기록입니다. 무엇을 하는 도구인지, 설치 난이도 ⭐⭐⭐인 이유, 깔면서 막힌 곳, 쓰기 전에 알아야 할 함정까지 정리했습니다.">
 <link rel="canonical" href="https://heonlog.com/guide/github-archify/">
 <link rel="alternate" hreflang="ko" href="https://heonlog.com/guide/github-archify/">
@@ -15,39 +15,50 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="HEONLOG 가이드">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="깃허브 털기 #01 · archify, 설명하기 어려운 일을 그림 한 장으로 | HEONLOG 가이드">
+<meta property="og:title" content="archify 사용법: 설명하기 어려운 일을 그림 한 장으로 · 깃허브 털기 #01 | HEONLOG 가이드">
 <meta property="og:description" content="깃허브 무료 도구 archify를 AI에게 시켜 직접 깔아 본 기록입니다. 무엇을 하는 도구인지, 설치 난이도 ⭐⭐⭐인 이유, 깔면서 막힌 곳, 쓰기 전에 알아야 할 함정까지 정리했습니다.">
 <meta property="og:url" content="https://heonlog.com/guide/github-archify/">
-<meta property="og:image" content="https://heonlog.com/img/og.jpg">
+<meta property="og:image" content="https://heonlog.com/img/og/github-archify.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-31">
+
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="../../img/favicon.png">
 <link rel="apple-touch-icon" href="../../img/icon-180.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="../../style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "깃허브 털기 #01 · archify, 설명하기 어려운 일을 그림 한 장으로", "description": "깃허브 무료 도구 archify를 AI에게 시켜 직접 깔아 본 기록입니다. 무엇을 하는 도구인지, 설치 난이도 ⭐⭐⭐인 이유, 깔면서 막힌 곳, 쓰기 전에 알아야 할 함정까지 정리했습니다.", "datePublished": "2026-10-31", "dateModified": "2026-10-31", "inLanguage": "ko", "image": ["https://heonlog.com/img/og.jpg"], "author": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "publisher": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "mainEntityOfPage": "https://heonlog.com/guide/github-archify/", "keywords": "archify 사용법"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "archify 사용법: 설명하기 어려운 일을 그림 한 장으로 · 깃허브 털기 #01", "description": "깃허브 무료 도구 archify를 AI에게 시켜 직접 깔아 본 기록입니다. 무엇을 하는 도구인지, 설치 난이도 ⭐⭐⭐인 이유, 깔면서 막힌 곳, 쓰기 전에 알아야 할 함정까지 정리했습니다.", "datePublished": "2026-10-31", "dateModified": "2026-11-01", "inLanguage": "ko", "image": ["https://heonlog.com/img/og/github-archify.jpg"], "author": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "publisher": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "mainEntityOfPage": "https://heonlog.com/guide/github-archify/", "keywords": "archify 사용법"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "가이드", "item": "https://heonlog.com/"}, {"@type": "ListItem", "position": 2, "name": "깃허브 털기 #01", "item": "https://heonlog.com/guide/github-archify/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "무료인가요? 상업적으로 써도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "무료입니다. 라이선스가 Apache-2.0이라 상업적으로 써도 됩니다. 따로 가입·결제·API 키도 필요 없었습니다."}}, {"@type": "Question", "name": "클로드 코드 없이도 쓸 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 혼자 켜지는 프로그램이 아니라 클로드 코드·코덱스 안에서 불러 써야 움직이는 「스킬」 묶음입니다."}}, {"@type": "Question", "name": "깔면 밖으로 연결이 나가나요?", "acceptedAnswer": {"@type": "Answer", "text": "제가 확인한 밖으로 나가는 연결은 하루 한 번 깃허브에 새 버전이 있는지 확인하는 기능 하나였고, 껐습니다."}}]}]}</script>
 <!-- Cloudflare Web Analytics (쿠키 없는 방문 수 · 11-01) --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9f4bf7e4514c4afc99a713798af12a04"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
 <a class="skip" href="#main">본문 바로가기</a>
 <header class="site"><div class="wrap">
-<a class="logo" href="../../index.html" aria-label="HEONLOG 가이드 첫 화면"><img src="../../img/logo.svg" alt="HEONLOG" width="104" height="26"></a>
-<nav class="top" aria-label="주 메뉴"><a href="../../index.html">가이드</a><a href="../../free/index.html">무료 맛보기</a><a href="../../work/index.html">맡기기</a><a href="../../about/index.html">소개</a><a class="lang" href="../../en/guide/archify/index.html" lang="en" hreflang="en" aria-label="English">EN</a></nav>
+<a class="logo" href="../../" aria-label="HEONLOG 가이드 첫 화면"><img src="../../img/logo.svg" alt="HEONLOG" width="104" height="26"></a>
+<nav class="top" aria-label="주 메뉴"><a href="../../">가이드</a><a href="../../free/">무료 맛보기</a><a href="../../work/">맡기기</a><a href="../../about/">소개</a><a class="lang" href="../../en/guide/archify/" lang="en" hreflang="en" aria-label="English">EN</a></nav>
 </div></header>
 <main id="main"><div class="wrap">
-<article><p class="meta"><span class="kicker">깃허브 털기 #01</span> · 2026.10.31 · HEONLOG</p>
-<h1>깃허브 털기 #01 · archify, 설명하기 어려운 일을 그림 한 장으로</h1>
+<article><p class="meta"><span class="kicker">깃허브 털기 #01</span> · <time datetime="2026-10-31">2026.10.31</time> · 고친 날 2026.11.01 · HEONLOG</p>
+<h1>archify 사용법: 설명하기 어려운 일을 그림 한 장으로 · 깃허브 털기 #01</h1>
 <p class="lead">일 흐름을 아직 글로 길게 설명하고 있다면, 이 도구부터 보세요. archify는 아이디어·계획·업무 흐름을 말로 시키면 눌러 볼 수 있는 그림 한 장(웹페이지)으로 만들어 주는 깃허브 무료 도구입니다. 개발은 모르지만 AI한테 시켜서 직접 깔아 보고 쓴 그대로 적었습니다.</p>
 
 <p class="notice">깃허브: <a href="https://github.com/tt-a1i/archify" rel="noopener">tt-a1i/archify</a> · 라이선스 Apache-2.0(상업적으로 써도 됨) · 별 약 9.2만 개(2026-10-31 기준) · 깐 날 2026-10-30</p>
 
+<table class="glance"><caption>한눈에</caption>
+<tbody>
+<tr><th scope="row">무엇</th><td>말로 시킨 업무 흐름·계획을 눌러 볼 수 있는 그림 한 장(웹페이지)으로 만들어 줍니다.</td></tr>
+<tr><th scope="row">준비물</th><td>클로드 코드(또는 코덱스), Node 18 이상 · 가입·결제·API 키는 필요 없음</td></tr>
+<tr><th scope="row">난이도</th><td>⭐⭐⭐ 터미널 필요</td></tr>
+</tbody></table>
+
 <h2>무엇을 하는 도구인가</h2>
-<p>「이 흐름을 그림으로 그려 줘」처럼 말하면 단계·갈래·순서를 그림으로 바꾼 웹페이지를 만들어 줍니다. 밝은 화면·어두운 화면 둘 다 되고, 그림 파일로도 내보낼 수 있습니다. 혼자 켜지는 앱이 아니라 클로드 코드·코덱스 같은 AI 비서가 읽어서 쓰는 「스킬」 묶음입니다.</p>
+<p>「이 흐름을 그림으로 그려 줘」처럼 말하면 단계·갈래·순서를 그림으로 바꾼 웹페이지를 만들어 줍니다. 밝은 화면·어두운 화면 둘 다 되고, 그림 파일로도 내보낼 수 있습니다. 혼자 켜지는 앱이 아니라 클로드 코드·코덱스가 읽어서 쓰는 「스킬」 묶음입니다.</p>
 
 <h2>설치 난이도 ⭐⭐⭐ (터미널 필요)</h2>
 <ul>
-<li>받은 폴더를 AI 비서의 스킬 폴더(숨김 폴더)에 넣어야 해서 터미널(검은 명령 창)을 씁니다.</li>
-<li>클로드 코드 같은 AI 비서와 Node 18 이상이 먼저 있어야 합니다.</li>
+<li>받은 폴더를 클로드의 스킬 폴더(숨김 폴더)에 넣어야 해서 터미널(검은 명령 창)을 씁니다.</li>
+<li>클로드 코드(또는 코덱스)와 Node 18 이상이 먼저 있어야 합니다.</li>
 <li>쉬운 점: 따로 가입·결제·API 키가 필요 없습니다.</li>
 <li>저는 AI한테 깔기 전에 안에 무엇이 있는지 먼저 확인하게 하고, 그다음 깔게 했습니다. 사람이 혼자 터미널로 깔면 더 어려울 수 있습니다.</li>
 </ul>
@@ -66,7 +77,17 @@
 </ul>
 
 <h2>근데 함정이 있어요</h2>
-<p>혼자 켜지는 프로그램이 아닙니다. AI 비서(클로드 코드·코덱스 등) 안에서 불러 써야 움직입니다. AI 비서를 아직 안 쓰고 있다면, 그것부터 갖춰야 이 도구를 쓸 수 있습니다.</p>
+<p>혼자 켜지는 프로그램이 아닙니다. 클로드 코드·코덱스 안에서 불러 써야 움직입니다. 클로드 코드를 아직 안 쓰고 있다면, 그것부터 갖춰야 이 도구를 쓸 수 있습니다.</p>
+
+<section class="faq">
+<h2>자주 묻는 질문</h2>
+<h3>무료인가요? 상업적으로 써도 되나요?</h3>
+<p>무료입니다. 라이선스가 Apache-2.0이라 상업적으로 써도 됩니다. 따로 가입·결제·API 키도 필요 없었습니다.</p>
+<h3>클로드 코드 없이도 쓸 수 있나요?</h3>
+<p>아니요. 혼자 켜지는 프로그램이 아니라 클로드 코드·코덱스 안에서 불러 써야 움직이는 「스킬」 묶음입니다.</p>
+<h3>깔면 밖으로 연결이 나가나요?</h3>
+<p>제가 확인한 밖으로 나가는 연결은 하루 한 번 깃허브에 새 버전이 있는지 확인하는 기능 하나였고, 껐습니다.</p>
+</section>
 
 <h2>이런 분께</h2>
 <ul>
@@ -74,6 +95,11 @@
 <li>이미 클로드 코드나 코덱스를 쓰고 있는 분</li>
 </ul>
 
+<nav class="related" aria-label="같이 보면 좋은 글"><h2>같이 보면 좋은 글</h2>
+<ul>
+<li><span>다음 회</span> <a href="../github-agent-reach/">Agent-Reach 사용법: AI가 유튜브 자막·웹페이지를 읽어 오게 · 깃허브 털기 #02</a></li>
+<li><span>모아 보기</span> <a href="../../free/">유료 대신 무료 맛보기: 직접 깔아 본 깃허브 무료 대안</a></li>
+</ul></nav>
 <aside class="cta tiers" aria-label="더 해 보고 싶다면"><p><strong>이 회차를 내 컴퓨터에서 똑같이 해 보고 싶다면</strong></p>
 <ul>
 <li><b>이 글 · 무료</b> — 무엇을 하는 도구인지, 해 보니 어땠는지, 어디가 함정인지까지 적었습니다.</li>
@@ -83,8 +109,8 @@
 <p>다음 회차는 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>에 먼저 올라옵니다.</p></aside></article>
 </div></main>
 <footer class="site"><div class="wrap">
-<p>HEONLOG · 개발 몰라도 깃허브 털기 · 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> · 문의·협찬 제안은 <a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>의 「비즈니스 제안」 · <a href="../../en/guide/archify/index.html" lang="en" hreflang="en">English</a></p>
-<p>글 속 법·제도 내용은 정리일 뿐 법률 자문이 아닙니다. 게시 전 공식 출처의 최신 내용을 확인하세요. · <a href="../../about/index.html#privacy">개인정보·이용 안내</a></p>
+<p>HEONLOG · 개발 몰라도 깃허브 털기 · 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> · 문의·협찬 제안은 <a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>의 「비즈니스 제안」 · <a href="../../en/guide/archify/" lang="en" hreflang="en">English</a></p>
+<p>글 속 법·제도 내용은 정리일 뿐 법률 자문이 아닙니다. 게시 전 공식 출처의 최신 내용을 확인하세요. · <a href="../../about/#privacy">개인정보·이용 안내</a></p>
 </div></footer>
 </body>
 </html>
