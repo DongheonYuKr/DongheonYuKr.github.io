@@ -126,6 +126,16 @@ def main():
             '<meta name="description"', '<meta name="robots" content="noindex">\n<meta name="description"'))
 
     sm = "\n".join(f"  <url><loc>{BASE_URL}/{p}</loc><lastmod>{d}</lastmod></url>" for p, d in urls)
+    # /new/ = 가장 최근 「깃허브 털기」 글로 바로 보냄 (인포크 버튼 하나를 고정해 두고 글만 바뀌게 · 10-31)
+    gh = [a for a in arts if a["slug"].startswith("github-")]
+    if gh:
+        latest = sorted(gh, key=lambda a: (a.get("date", ""), a["slug"]))[-1]
+        url = f"{BASE_URL}/guide/{latest['slug']}/"
+        os.makedirs(os.path.join(ROOT, "new"), exist_ok=True)
+        open(os.path.join(ROOT, "new", "index.html"), "w", encoding="utf-8").write(
+            f'<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><link rel="canonical" href="{url}">'
+            f'<meta http-equiv="refresh" content="0; url={url}"><title>{html.escape(latest["title"])}</title>'
+            f'<p><a href="{url}">{html.escape(latest["title"])}</a></p>')
     open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{sm}\n</urlset>\n')
     open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8").write(
