@@ -8,10 +8,19 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_URL = "https://heonlog.com"  # 주소가 정해지면 여기만 바꾼다 (끝에 / 없이)
 SITE = "HEONLOG 가이드"
 CTA = ''  # 대표님 10-30: 「~보내 주시면 드립니다」 같은 주는 약속 문구 넣지 않음
-# 10-31: 주는 약속 없이 「다음 회 받아 보기」 길 안내만 (인포크 소식받기·링크 페이지)
+# 10-31: 주는 약속 없이 길 안내만 · 11-01: 「소식받기」(인포크 기능과 헷갈림) 빼고 인스타 한 줄로 — 첫 화면·/free/ 끝
 NEXT = ('<aside class="cta" aria-label="다음 회"><p><strong>다음 깃허브 털기도 보고 싶다면</strong> · '
-        '<a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>에서 소식받기를 누르거나 '
-        '인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>를 팔로우해 주세요.</p></aside>')
+        '다음 회차는 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>에 먼저 올라옵니다.</p></aside>')
+# 11-01 무료·유료 경계 보고서 4절 A(정리본 판매 전 판): 가이드 끝 3층 안내 — 아직 없는 링크·결제 버튼·신청서는 만들지 않음.
+# 정리본 판매 시작(11-08 예정) 때 셋째 줄에 링크, 신청서 연 날(11-15~) 둘째 줄에 신청 링크를 붙인다.
+GUIDE_NEXT = ('<aside class="cta tiers" aria-label="더 해 보고 싶다면"><p><strong>이 회차를 내 컴퓨터에서 똑같이 해 보고 싶다면</strong></p>\n<ul>\n'
+              '<li><b>이 글 · 무료</b> — 무엇을 하는 도구인지, 해 보니 어땠는지, 어디가 함정인지까지 적었습니다.</li>\n'
+              '<li><b>깔기 전 시작 키트 · 무료 이메일 신청</b> — 어느 깃허브 도구든 깔기 전에 확인할 체크리스트와 AI에게 먼저 묻는 문장 1개. 신청서는 준비 중입니다.</li>\n'
+              '<li><b>깃허브 털기 정리본 · 3,900원</b> — AI에게 실제로 붙여 넣은 문장과 막혔을 때 물은 문장을 회차별로 묶고 있습니다. 2026년 11월 8일 판매 시작 예정이며, 시작하면 이 자리에 링크를 붙입니다.</li>\n'
+              '</ul>\n<p>다음 회차는 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>에 먼저 올라옵니다.</p></aside>')
+# 예전 뷰티 글: 지우거나 숨기지 않고(주소·사이트맵 그대로) 글 맨 위에 「예전 글」 표시만 · 11-01
+OLD_NOTE = ('<p class="notice oldnote"><strong>예전 글</strong> · 2026년 10월, 작은 뷰티 브랜드 광고 소재를 만들 때 정리한 글입니다. '
+            '법·제도 내용은 쓴 날짜 기준이니 최신 원문으로 다시 확인하세요. 지금 HEONLOG는 <a href="../../index.html">「깃허브 털기」</a>를 연재합니다.</p>\n')
 
 
 # 맡기기 문의 = 인포크 「비즈니스 제안」 하나로 (이메일 주소는 페이지에 쓰지 않음 · 11-01)
@@ -89,7 +98,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-<p>HEONLOG · 개발 몰라도 깃허브 털기 · 문의·협찬 제안 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a></p>
+<p>HEONLOG · 개발 몰라도 깃허브 털기 · 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> · 문의·협찬 제안은 <a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>의 「비즈니스 제안」</p>
 <p>글 속 법·제도 내용은 정리일 뿐 법률 자문이 아닙니다. 게시 전 공식 출처의 최신 내용을 확인하세요. · <a href="{up}about/index.html#privacy">개인정보·이용 안내</a></p>
 </div></footer>
 </body>
@@ -111,7 +120,8 @@ def main():
               "keywords": a["keyword"]}
         body = (f'<article><p class="meta"><span class="kicker">{html.escape(a["kicker"])}</span> · '
                 f'{a["date"].replace("-", ".")} · HEONLOG</p>\n<h1>{html.escape(a["title"])}</h1>\n'
-                + a["body"].replace("{{up}}", "../../") + "\n" + (NEXT if a["slug"].startswith("github-") else CTA) + "</article>")
+                + ("" if a["slug"].startswith("github-") else OLD_NOTE)
+                + a["body"].replace("{{up}}", "../../") + "\n" + (GUIDE_NEXT if a["slug"].startswith("github-") else CTA) + "</article>")
         os.makedirs(os.path.join(ROOT, path), exist_ok=True)
         open(os.path.join(ROOT, path, "index.html"), "w", encoding="utf-8").write(
             page(f'{a["title"]} | {SITE}', a["description"], path, body, 2,
@@ -129,11 +139,12 @@ def main():
 <ul class="list">
 {chr(10).join(li(a) for a in gh)}
 </ul>
-<h2>예전 글 · 작은 뷰티 브랜드 광고 소재</h2>
+{NEXT}
+<details class="oldposts"><summary>예전 글 {len(old)}편 · 작은 뷰티 브랜드 광고 소재</summary>
 <ul class="list">
 {chr(10).join(li(a) for a in old)}
 </ul>
-{NEXT}"""
+</details>"""
     site_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": SITE, "url": BASE_URL + "/",
                "inLanguage": "ko", "publisher": org}
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(

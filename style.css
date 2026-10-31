@@ -150,3 +150,10 @@ table.srct a{overflow-wrap:anywhere}
   table.srct tr{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:0 0 8px}
   table.srct td{border:0;padding:2px 0}
 }
+/* 11-01 가이드 끝 3층 안내 · 홈 예전 글 접기 */
+.cta.tiers ul{margin:10px 0 12px;padding-left:18px}
+.cta.tiers li{margin:6px 0;line-height:1.6}
+.cta.tiers b{color:var(--bg)}
+.oldposts{margin:40px 0 0;border-top:1px solid var(--line);padding-top:14px}
+.oldposts summary{cursor:pointer;color:var(--muted);font-size:15px;font-weight:600}
+.oldposts .list{margin-top:10px}
