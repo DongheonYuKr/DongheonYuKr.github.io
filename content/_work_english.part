@@ -1,4 +1,4 @@
-<p class="meta"><span class="kicker">맡기기 · 영어</span> <a href="../index.html">← 맡길 수 있는 일 전체</a></p>
+<p class="meta"><span class="kicker">맡기기 · 영어</span> <a href="../">← 맡길 수 있는 일 전체</a></p>
 <h1>한국 상품·영상을 <span class="mark">영어로</span></h1>
 <p class="lead">한국어로 만든 영상과 상품 설명을 해외 사람이 읽는 영어로 옮깁니다. AI한테 시켜 초벌을 만들고, 마지막 문장 확인은 제가 직접 합니다. 아래 견본은 제 한국어 가이드 한 편을 직접 영어로 옮긴 것입니다.</p>
 
@@ -16,7 +16,7 @@
 </div>
 
 <h2>견본 — 영어판 1쪽</h2>
-<p>원문: <a href="../../guide/github-archify/index.html">깃허브 털기 #01 · archify</a> (한국어 가이드). 직역하지 않고 영어 독자가 읽는 순서·말투로 옮겼습니다.</p>
+<p>원문: <a href="../../guide/github-archify/">깃허브 털기 #01 · archify</a> (한국어 가이드). 직역하지 않고 영어 독자가 읽는 순서·말투로 옮겼습니다.</p>
 <div class="sample" lang="en"><span class="stamp">SAMPLE</span>
 <p class="meta">GitHub Teardown #01 · HEONLOG</p>
 <h3>archify: turn a hard-to-explain workflow into one picture</h3>

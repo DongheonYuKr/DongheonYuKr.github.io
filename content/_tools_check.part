@@ -87,7 +87,7 @@
       '<p><b>준비물</b></p>' + ul(t.need) +
       '<p><b>깔면서 막힌 곳 · 함정</b></p>' + ul(t.trap) +
       '<p><b>지금 쓰나</b> ' + esc(t.use) + '</p>' +
-      (t.g ? '<p><a href="../../guide/' + t.g + '/index.html">자세한 기록 읽기 →</a></p>' : '<p class="src">자세한 글은 아직 없습니다.</p>') +
+      (t.g ? '<p><a href="../../guide/' + t.g + '/">자세한 기록 읽기 →</a></p>' : '<p class="src">자세한 글은 아직 없습니다.</p>') +
       '</div>';
   }
   function unknown(k){
