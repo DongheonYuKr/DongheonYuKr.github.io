@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="naver-site-verification" content="532f68a567a7bab22e3a75b82164f1a44f273f91">
+<meta name="naver-site-verification" content="8a65c8d4b155d54f1e5790ab92ae384083104cec">
+<meta name="google-site-verification" content="vj1r-xyzpSqau7A590A6hj5wXop7oyVEvwiRU8IKaeU">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GitHub Teardown #01 · archify: turn a hard-to-explain workflow into one picture | HEONLOG</title>
+<meta name="description" content="I had AI install the free GitHub tool archify. What it does, why the install difficulty is ⭐⭐⭐, where I got stuck, and the catch before you use it.">
+<link rel="canonical" href="https://heonlog.com/en/guide/archify/">
+<link rel="alternate" hreflang="ko" href="https://heonlog.com/guide/github-archify/">
+<link rel="alternate" hreflang="en" href="https://heonlog.com/en/guide/archify/">
+<link rel="alternate" hreflang="x-default" href="https://heonlog.com/guide/github-archify/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HEONLOG">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="GitHub Teardown #01 · archify: turn a hard-to-explain workflow into one picture | HEONLOG">
+<meta property="og:description" content="I had AI install the free GitHub tool archify. What it does, why the install difficulty is ⭐⭐⭐, where I got stuck, and the catch before you use it.">
+<meta property="og:url" content="https://heonlog.com/en/guide/archify/">
+<meta property="og:image" content="https://heonlog.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../../img/favicon.png">
+<link rel="apple-touch-icon" href="../../../img/icon-180.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "inLanguage": "en", "publisher": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "headline": "GitHub Teardown #01 · archify: turn a hard-to-explain workflow into one picture", "description": "I had AI install the free GitHub tool archify. What it does, why the install difficulty is ⭐⭐⭐, where I got stuck, and the catch before you use it.", "datePublished": "2026-10-31", "dateModified": "2026-11-01", "author": {"@type": "Organization", "name": "HEONLOG", "url": "https://heonlog.com/", "sameAs": ["https://www.instagram.com/heonlog.studio/"]}, "mainEntityOfPage": "https://heonlog.com/en/guide/archify/", "image": ["https://heonlog.com/img/og.jpg"]}</script>
+<!-- Cloudflare Web Analytics (쿠키 없는 방문 수 · 11-01) --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9f4bf7e4514c4afc99a713798af12a04"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap">
+<a class="logo" href="../../../en/index.html" aria-label="HEONLOG home (English)"><img src="../../../img/logo.svg" alt="HEONLOG" width="104" height="26"></a>
+<nav class="top" aria-label="Main menu"><a href="../../../en/index.html">Guides</a><a href="../../../en/free/index.html">Free list</a><a href="../../../en/work/english-product-copy/index.html">Hire</a><a class="lang" href="../../../guide/github-archify/index.html" lang="ko" hreflang="ko">한국어</a></nav>
+</div></header>
+<main id="main"><div class="wrap">
+<article><p class="meta"><span class="kicker">GitHub Teardown #01</span> · Oct 31, 2026 · HEONLOG</p>
+<h1>archify: turn a hard-to-explain workflow into one picture</h1>
+<p class="lead">If you're still explaining your workflow in long paragraphs, look at this tool first. archify is a free GitHub tool: describe an idea, a plan or a work process in plain words, and it turns it into one clickable diagram (a single web page). I'm not a developer. I had AI install it on my computer, used it, and wrote down exactly what happened.</p>
+
+<p class="notice">GitHub: <a href="https://github.com/tt-a1i/archify" rel="noopener">tt-a1i/archify</a> · License: Apache-2.0 (commercial use allowed) · about 92k stars (as of Oct 31, 2026) · Installed Oct 30, 2026</p>
+
+<h2>What it does</h2>
+<p>Say something like &ldquo;draw this process as a diagram,&rdquo; and it builds a web page that shows the steps, branches and order as a picture. Both light and dark themes work, and you can export it as an image file. It isn't an app that runs on its own. It's a &ldquo;skill&rdquo; pack that an AI assistant such as Claude Code or Codex reads and uses.</p>
+
+<h2>Install difficulty: ⭐⭐⭐ (needs the terminal)</h2>
+<ul>
+<li>The downloaded folder has to go into your AI assistant's skills folder (a hidden folder), so you use the terminal (the black command window).</li>
+<li>You need an AI assistant like Claude Code and Node 18 or later first.</li>
+<li>The easy part: no sign-up, no payment, no API key.</li>
+<li>I had the AI check what was inside before installing, and only then let it install. Doing it alone in the terminal could be harder.</li>
+</ul>
+
+<h2>Where I got stuck</h2>
+<ul>
+<li>A feature that checks GitHub once a day for a new version was turned on. It was the only outgoing connection, so I turned it off.</li>
+<li>It suggests turning on a &ldquo;one-page explainer&rdquo; mode. That feature writes a line into the AI settings file for your whole computer, so I left it off.</li>
+<li>The first diagram had to be scrolled sideways on a phone. On a computer screen nothing overlapped or got cut off.</li>
+</ul>
+
+<h2>What I made with it</h2>
+<ul>
+<li>I turned my 8-step process for making social media posts (from collecting material to a human check at the end) into one diagram.</li>
+<li>Since then I keep using it for things that take too long to explain in words, like business plans and weekly plans.</li>
+</ul>
+
+<h2>The catch</h2>
+<p>It's not a program that runs by itself. It only works when you call it from inside an AI assistant (Claude Code, Codex and so on). If you don't use an AI assistant yet, you need to set that up first before you can use this tool.</p>
+
+<h2>Good for</h2>
+<ul>
+<li>People who explain workflows and plans to their team in long text</li>
+<li>People who already use Claude Code or Codex</li>
+</ul>
+
+<aside class="cta" aria-label="More"><p><strong>More teardowns</strong> · This is the first one in English. Teardowns #02&ndash;#05 are in Korean for now. You can see all 20 tools side by side in the <a href="../../free/index.html">free alternatives list</a>.</p></aside>
+</article>
+
+</div></main>
+<footer class="site"><div class="wrap">
+<p>HEONLOG · GitHub tools, installed by a non-developer · Instagram <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> (in Korean) · Business inquiries: the &ldquo;Business proposal&rdquo; button on my <a href="https://link.inpock.co.kr/heonlog" rel="noopener">link page</a></p>
+<p>Nothing here is legal advice. Check the official sources before you rely on it. · <a href="../../../about/index.html#privacy" lang="ko" hreflang="ko">Privacy &amp; terms (Korean)</a> · <a href="../../../guide/github-archify/index.html" lang="ko" hreflang="ko">한국어</a></p>
+</div></footer>
+</body>
+</html>
