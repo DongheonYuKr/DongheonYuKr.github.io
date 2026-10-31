@@ -66,3 +66,29 @@ footer.site a{color:var(--muted)}
   .logo img{height:22px}
 }
 td:first-child,th:first-child{white-space:nowrap}
+/* 첫 화면 → 무료 대체표 링크 · /free/ 표 (11-01) */
+.golink{margin:-4px 0 8px;font-weight:700}
+.golink a{text-decoration-color:var(--lime);text-decoration-thickness:3px}
+.legend{font-size:15px;color:var(--muted)}
+table.free td:first-child{white-space:normal}
+table.free td{font-size:14.5px;line-height:1.6}
+table.free a{font-weight:700}
+table.free .repo{display:block;font-size:12.5px;color:var(--muted);overflow-wrap:anywhere}
+table.free .lv{white-space:nowrap}
+table.free .lv.no{color:var(--muted);font-size:13px}
+table.free tr.tried td:nth-child(4){background:#FBFFE6}
+@media (min-width:721px){
+  .tablewrap:has(table.free){margin:0 calc((min(100vw - 40px, 1080px) - 680px) / -2)}
+  table.free th:nth-child(1){width:20%} table.free th:nth-child(2){width:21%}
+  table.free th:nth-child(3){width:13%} table.free th:nth-child(4){width:12%}
+}
+@media (max-width:720px){
+  table.free,table.free tbody,table.free tr,table.free td{display:block;width:100%}
+  table.free thead{position:absolute;left:-9999px}
+  table.free{background:none;border:0}
+  table.free tr{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 12px}
+  table.free td{border:0;padding:4px 0;display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px}
+  table.free td::before{content:attr(data-label);font-size:12.5px;color:var(--muted);font-weight:600;padding-top:2px}
+  table.free tr.tried td:nth-child(4){background:none}
+  table.free td:nth-child(2) a{font-size:17px}
+}
