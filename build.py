@@ -77,6 +77,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="{up}style.css">
 {ld}
+<!-- Cloudflare Web Analytics (쿠키 없는 방문 수 · 11-01) --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "9f4bf7e4514c4afc99a713798af12a04"}}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
 <a class="skip" href="#main">본문 바로가기</a>

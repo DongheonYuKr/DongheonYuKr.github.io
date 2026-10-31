@@ -25,4 +25,4 @@
 <p>인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a> DM이나 <a href="https://link.inpock.co.kr/heonlog" rel="noopener">링크 페이지</a>의 「비즈니스 제안」으로 받습니다.</p>
 
 <h2 id="privacy">개인정보·이용 안내</h2>
-<p>이 사이트에는 회원가입, 입력 양식, 댓글, 방문 분석 도구, 광고가 없고 쿠키를 쓰지 않습니다. 다만 사이트를 올려 두는 호스팅 업체와 글꼴을 내려받는 CDN(jsDelivr)이 접속 기록(IP 주소 등)을 남길 수 있으며, 이는 각 업체의 방침을 따릅니다. 글과 사진은 HEONLOG가 만든 것이며, 인용할 때는 출처를 밝혀 주세요.</p>
+<p>이 사이트에는 회원가입, 입력 양식, 댓글, 광고가 없고 쿠키를 쓰지 않습니다. 몇 명이 어떤 글을 봤는지 세려고 Cloudflare Web Analytics를 씁니다. 이 도구는 쿠키를 쓰지 않고 방문자 개인을 알아보지 않는 방식으로 방문 수·페이지·유입 경로만 셉니다. 사이트를 올려 두는 호스팅 업체, 글꼴을 내려받는 CDN(jsDelivr), Cloudflare가 접속 기록(IP 주소 등)을 남길 수 있으며, 이는 각 업체의 방침을 따릅니다. 글과 사진은 HEONLOG가 만든 것이며, 인용할 때는 출처를 밝혀 주세요.</p>
