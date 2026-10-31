@@ -48,8 +48,8 @@ EN_PAGES = [
     ("en/guide/archify/", "_en_guide_archify.part", "GitHub Teardown #01 · archify: turn a hard-to-explain workflow into one picture",
      "I had AI install the free GitHub tool archify. What it does, why the install difficulty is ⭐⭐⭐, where I got stuck, and the catch before you use it.",
      "", "guide/github-archify/", "Article"),
-    ("en/free/", "_en_free.part", "20 free GitHub alternatives to monthly-subscription tools",
-     "20 monthly-subscription tools next to free GitHub alternatives, with license, install difficulty and what to watch out for. Difficulty is rated only for tools I installed.",
+    ("en/free/", "_en_free.part", "Free GitHub alternatives to monthly-subscription tools: a preview",
+     "A preview of free GitHub tools that do a similar job to paid subscription tools: 3 tools I actually installed, with the kind of paid tool each replaces and install difficulty.",
      "free", "free/", "WebPage"),
     ("en/work/english-product-copy/", "_en_work_product_copy.part", "Korean beauty & lifestyle product copy, written for US shoppers",
      "English product listing copy for sellers of Korean beauty and lifestyle products: title, bullets, description, how to use. Three fictional samples and a pilot price in USD.",
@@ -89,7 +89,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
     if lang == "en":
         top = (f'<a class="skip" href="#main">Skip to content</a>\n<header class="site"><div class="wrap">\n'
                f'<a class="logo" href="{up}en/index.html" aria-label="HEONLOG home (English)"><img src="{up}img/logo.svg" alt="HEONLOG" width="104" height="26"></a>\n'
-               f'<nav class="top" aria-label="Main menu">{nav("en/index.html", "Guides", "home")}{nav("en/free/index.html", "Free list", "free")}'
+               f'<nav class="top" aria-label="Main menu">{nav("en/index.html", "Guides", "home")}{nav("en/free/index.html", "Free preview", "free")}'
                f'{nav("en/work/english-product-copy/index.html", "Hire", "work")}'
                f'<a class="lang" href="{other}" lang="ko" hreflang="ko">한국어</a></nav>\n</div></header>')
         foot = (f'<footer class="site"><div class="wrap">\n<p>HEONLOG · GitHub tools, installed by a non-developer · Instagram '
@@ -101,7 +101,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
     else:
         top = (f'<a class="skip" href="#main">본문 바로가기</a>\n<header class="site"><div class="wrap">\n'
                f'<a class="logo" href="{up}index.html" aria-label="HEONLOG 가이드 첫 화면"><img src="{up}img/logo.svg" alt="HEONLOG" width="104" height="26"></a>\n'
-               f'<nav class="top" aria-label="주 메뉴">{nav("index.html", "가이드", "home")}{nav("free/index.html", "무료 대체표", "free")}'
+               f'<nav class="top" aria-label="주 메뉴">{nav("index.html", "가이드", "home")}{nav("free/index.html", "무료 맛보기", "free")}'
                f'{nav("work/index.html", "맡기기", "work")}{nav("about/index.html", "소개", "about")}'
                f'<a class="lang" href="{other}" lang="en" hreflang="en" aria-label="English">EN</a></nav>\n</div></header>')
         foot = (f'<footer class="site"><div class="wrap">\n<p>HEONLOG · 개발 몰라도 깃허브 털기 · 인스타그램 '
@@ -177,7 +177,7 @@ def main():
     home = f"""<p class="meta"><span class="kicker">개발 몰라도 깃허브 털기</span></p>
 <h1>유료 대신 무료 도구, <span class="mark">직접 깔아 보고</span> 알려 드려요</h1>
 <p class="lead">깃허브에 있는 무료 도구를 개발 모르는 사람이 AI한테 시켜 직접 깔아 보고, 설치 난이도(⭐ 클릭만 · ⭐⭐ 따라 하면 됨 · ⭐⭐⭐ 터미널 필요 · 💀 포기)와 막힌 곳까지 그대로 적습니다. 깔아 보지 않은 것은 쓰지 않습니다.</p>
-<p class="golink"><a href="free/index.html">월 구독 도구 대신 쓸 수 있는 깃허브 무료 대안 20개 표 보기 →</a></p>
+<p class="golink"><a href="free/index.html">월 구독 도구 대신 쓸 수 있는 깃허브 무료 대안 맛보기 →</a></p>
 <h2>깃허브 털기</h2>
 <ul class="list">
 {chr(10).join(li(a) for a in gh)}
@@ -203,14 +203,16 @@ def main():
              "about/", about + CTA, 1, jsonld={"@context": "https://schema.org", "@type": "AboutPage", "name": "HEONLOG 소개", "publisher": org},
              current="about"))
 
+    # 11-01 대표님 「무료 대체표 알려 주면 콘텐츠 뺏기는 것」 → /free/·/en/free/는 깔아 본 것 3줄 맛보기만.
+    # 원본 20줄은 content/_free_full20.part · _en_free_full20.part(.gitignore — 공개 저장소에도 안 올라감). 정리본 판매(11-08 예정) 전엔 링크·결제 버튼 없음.
     free = open(os.path.join(ROOT, "content", "_free.part"), encoding="utf-8").read().replace(
         "{{guides}}", "\n".join(f'<li><a href="../guide/{a["slug"]}/index.html">{html.escape(a["title"])}</a></li>'
                                  for a in sorted(gh, key=lambda a: (a.get("date", ""), a["slug"]))))
     os.makedirs(os.path.join(ROOT, "free"), exist_ok=True)
     open(os.path.join(ROOT, "free", "index.html"), "w", encoding="utf-8").write(
-        page(f"유료 대신 무료: 월 구독 도구의 깃허브 무료 대안 20개 | {SITE}",
-             "월 구독 도구 20개와 깃허브 무료 대안을 라이선스·설치 난이도·주의할 점으로 나란히 정리했습니다. 설치 난이도는 직접 깔아 본 것만 매깁니다.",
-             "free/", free + NEXT, 1, jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": "유료 대신 무료 대체표",
+        page(f"유료 대신 무료 맛보기: 월 구독 도구의 깃허브 무료 대안 | {SITE}",
+             "월 구독 도구 대신 쓸 수 있는 깃허브 무료 도구 맛보기. 직접 깔아 본 3개를 대신하는 유료 도구 종류·설치 난이도와 함께 보여 드립니다.",
+             "free/", free + NEXT, 1, jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": "유료 대신 무료 맛보기",
                                               "inLanguage": "ko", "publisher": org}, current="free", alt="en/free/"))
 
     # 맡기기(/work/) 소개 페이지 + 무료 계산기(/tools/cost/) · 11-01. 본문은 content/_work*.part · _tools_cost.part

@@ -162,3 +162,12 @@ nav.top a.lang{border:1px solid var(--line);border-radius:4px;padding:1px 6px;fo
 @media (max-width:480px){nav.top a.lang{margin-left:10px;padding:0 5px;font-size:12.5px}}
 nav.top{white-space:nowrap}
 @media (max-width:420px){nav.top a{margin-left:9px;font-size:13.5px} nav.top a.lang{margin-left:8px;font-size:12px;padding:0 4px} header.site .wrap{gap:8px}}
+/* /free/ 맛보기 3줄 + 「전체 표는 정리본」 한 칸 (11-01) */
+table.free.taste th:nth-child(n){width:auto}
+table.free tr.more td{background:#FBFFE6;font-size:15px}
+@media (max-width:720px){
+  table.free tr.more{background:#FBFFE6}
+  table.free tr.more td{display:block}
+  table.free tr.more td::before{content:none}
+}
+@media (min-width:721px){.tablewrap:has(table.free.taste){margin:0}}
