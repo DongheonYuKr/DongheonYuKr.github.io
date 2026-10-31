@@ -14,6 +14,24 @@ NEXT = ('<aside class="cta" aria-label="다음 회"><p><strong>다음 깃허브 
         '인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>를 팔로우해 주세요.</p></aside>')
 
 
+# 맡기기 문의 = 인포크 「비즈니스 제안」 하나로 (이메일 주소는 페이지에 쓰지 않음 · 11-01)
+INPOCK_BTN = ('<p class="ask"><a class="btn" href="https://link.inpock.co.kr/heonlog" rel="noopener">인포크 「비즈니스 제안」으로 문의하기</a>'
+              '<span>링크 페이지의 「비즈니스 제안」 버튼에서 남길 수 있습니다. 결제는 이 사이트에서 받지 않습니다.</span></p>')
+# (주소, 본문 파일, 제목, 설명, 메뉴 칸)
+WORK_PAGES = [
+    ("work/", "_work.part", "맡기기: HEONLOG에 맡길 수 있는 작은 일",
+     "AI 구독비 진단, 영상 1편을 글 7조각으로, 한국 상품·영상을 영어로. 직접 해 본 방식 그대로 맡아 하는 작은 일과 시범 가격입니다.", "work"),
+    ("work/subscription/", "_work_subscription.part", "AI 구독비 다이어트 30분 진단",
+     "지금 쓰는 유료 AI·디자인 구독 목록을 계속 쓸 것·싼 요금제·무료 대안·안 써도 되는 것으로 나눈 1쪽 표와 30분 화상 설명. 시범 가격 19,000원.", "work"),
+    ("work/repurpose/", "_work_repurpose.part", "영상 1편을 글 7조각으로: 월 정액",
+     "유튜브 영상 한 편을 스레드·링크드인·블로그 글 등 7조각 초안으로 바꿉니다. 실제로 영상 한 편에서 나온 7조각 견본과 시범 가격 월 99,000원.", "work"),
+    ("work/english/", "_work_english.part", "한국 상품·영상을 영어로",
+     "한국 소형 유튜버 영상의 영어 자막·제목·설명, 해외 K-뷰티 셀러용 영어 상품 설명. 직접 번역한 영어 견본 1쪽과 시범 가격.", "work"),
+    ("tools/cost/", "_tools_cost.part", "AI 구독료 계산기",
+     "쓰는 AI 구독에 체크하면 한 달·1년 합계가 나옵니다. 요금은 공식 요금 페이지에서 확인한 것만, 확인 날짜와 함께 넣었습니다. 저장·쿠키 없음.", ""),
+]
+
+
 def read_articles():
     out = []
     for name in sorted(os.listdir(os.path.join(ROOT, "content"))):
@@ -64,7 +82,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 <a class="skip" href="#main">본문 바로가기</a>
 <header class="site"><div class="wrap">
 <a class="logo" href="{up}index.html" aria-label="HEONLOG 가이드 첫 화면"><img src="{up}img/logo.svg" alt="HEONLOG" width="104" height="26"></a>
-<nav class="top" aria-label="주 메뉴">{nav("index.html", "가이드", "home")}{nav("free/index.html", "무료 대체표", "free")}{nav("about/index.html", "소개", "about")}</nav>
+<nav class="top" aria-label="주 메뉴">{nav("index.html", "가이드", "home")}{nav("free/index.html", "무료 대체표", "free")}{nav("work/index.html", "맡기기", "work")}{nav("about/index.html", "소개", "about")}</nav>
 </div></header>
 <main id="main"><div class="wrap">
 {body}
@@ -139,6 +157,16 @@ def main():
              "월 구독 도구 20개와 깃허브 무료 대안을 라이선스·설치 난이도·주의할 점으로 나란히 정리했습니다. 설치 난이도는 직접 깔아 본 것만 매깁니다.",
              "free/", free + NEXT, 1, jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": "유료 대신 무료 대체표",
                                               "inLanguage": "ko", "publisher": org}, current="free"))
+
+    # 맡기기(/work/) 소개 페이지 + 무료 계산기(/tools/cost/) · 11-01. 본문은 content/_work*.part · _tools_cost.part
+    for path, part, title, desc, key in WORK_PAGES:
+        body = open(os.path.join(ROOT, "content", part), encoding="utf-8").read().replace("{{inpock}}", INPOCK_BTN)
+        os.makedirs(os.path.join(ROOT, path), exist_ok=True)
+        open(os.path.join(ROOT, path, "index.html"), "w", encoding="utf-8").write(
+            page(f"{title} | {SITE}", desc, path, body, path.count("/"),
+                 jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": title,
+                         "inLanguage": "ko", "publisher": org}, current=key))
+        urls.append((path, "2026-11-01"))
 
     nf = '<h1>페이지를 찾을 수 없습니다</h1><p>주소가 바뀌었거나 없는 글입니다. <a href="/">가이드 첫 화면</a>으로 가 주세요.</p>'
     open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8").write(

@@ -1,0 +1,128 @@
+<p class="meta"><span class="kicker">무료 도구</span></p>
+<h1>AI 구독료 계산기 — <span class="mark">매달 얼마 나가나</span></h1>
+<p class="lead">쓰고 있는 구독을 고르면 한 달·1년 합계가 바로 나옵니다. 요금은 공식 요금 페이지에서 직접 확인한 것만 넣었고, 목록에 없는 구독은 아래 「직접 추가」에 넣으면 됩니다.</p>
+<p class="notice">요금 확인 날짜 2026-11-01 · 개인 요금제, 할인·첫 달 행사 가격 제외 · 세금(부가세)·해외 결제 수수료는 빠져 있습니다 · 입력한 내용은 이 화면에서만 계산하고 어디에도 저장·전송하지 않습니다(쿠키 없음).</p>
+
+<noscript><p class="notice">이 계산기는 자바스크립트가 켜져 있어야 움직입니다. 아래 「요금 출처」 표에서 요금을 직접 보실 수 있습니다.</p></noscript>
+
+<form class="calc" id="calc" onsubmit="return false" aria-describedby="calc-help">
+<p id="calc-help" class="meta">쓰지 않는 서비스는 「안 씀」 그대로 두세요.</p>
+<div id="svc"></div>
+
+<fieldset>
+<legend>직접 추가</legend>
+<div id="custom"></div>
+<button type="button" id="add">+ 구독 하나 더 넣기</button>
+</fieldset>
+
+<fieldset>
+<legend>달러 → 원 환율</legend>
+<div class="row"><label for="fx">1달러 =</label><input id="fx" type="number" inputmode="decimal" min="1" step="1" value="1400" style="width:120px"><span>원</span></div>
+<p class="src">기본값 1,400원은 계산용 예시입니다. 카드사가 실제로 적용하는 환율과 다르니 직접 고쳐 쓰세요.</p>
+</fieldset>
+</form>
+
+<div class="result" id="result" aria-live="polite">
+<p>한 달 합계</p>
+<p class="big" id="month">0원</p>
+<p id="year">1년이면 0원</p>
+<ul id="lines"></ul>
+</div>
+
+<h2>다음으로</h2>
+<div class="next">
+<a href="../../free/index.html">무료 대안 찾아보기<span>월 구독 도구 20개와 깃허브 무료 대안을 나란히 놓은 「유료 대신 무료」 대체표</span></a>
+<a href="../../work/subscription/index.html">내 목록으로 1쪽 표 받기<span>AI 구독비 다이어트 30분 진단 · 시범 가격</span></a>
+</div>
+
+<h2>요금 출처</h2>
+<div class="tablewrap"><table class="srct">
+<thead><tr><th scope="col">서비스</th><th scope="col">요금</th><th scope="col">공식 페이지 · 확인 날짜</th></tr></thead>
+<tbody id="srcs"></tbody>
+</table></div>
+<p class="src">ChatGPT·Midjourney·Perplexity·Notion·Suno 등은 이번에 공식 요금 페이지에서 금액이나 결제 주기를 확실히 확인하지 못해 넣지 않았습니다. 쓰고 계시면 「직접 추가」에 영수증 금액을 넣어 주세요. 요금은 자주 바뀌니 결제 전에는 공식 페이지를 다시 확인하세요.</p>
+
+<script>
+(function(){
+  var D = "2026-11-01";
+  // 요금: 공식 요금 페이지에서 2026-11-01 확인한 값만. cur: USD | KRW, per: 1(월) | 12(연 결제 금액을 12로 나눔)
+  var S = [
+    {n:"Claude (Anthropic)", u:"https://claude.com/pricing", p:[
+      ["Pro · 월 결제", 20, "USD", 1], ["Pro · 연 결제 ($200 선결제)", 200, "USD", 12], ["Max", 100, "USD", 1], ["Ultra", 200, "USD", 1]]},
+    {n:"Google AI (Gemini)", u:"https://one.google.com/about/plans", p:[
+      ["Google AI Pro", 29000, "KRW", 1], ["Google AI Ultra (가장 낮은 단계)", 119000, "KRW", 1, "https://gemini.google/subscriptions/"]]},
+    {n:"GitHub Copilot", u:"https://github.com/features/copilot/plans", p:[
+      ["Pro", 10, "USD", 1], ["Pro+", 39, "USD", 1], ["Max", 100, "USD", 1]]},
+    {n:"ElevenLabs (목소리 AI)", u:"https://elevenlabs.io/pricing", p:[
+      ["Starter · 월 결제", 6, "USD", 1], ["Creator · 월 결제", 22, "USD", 1], ["Pro · 월 결제", 99, "USD", 1]]},
+    {n:"Runway (영상 AI)", u:"https://runwayml.com/pricing", p:[
+      ["Standard · 월 결제", 15, "USD", 1], ["Standard · 연 결제 (월 $12)", 144, "USD", 12],
+      ["Pro · 월 결제", 35, "USD", 1], ["Pro · 연 결제 (월 $28)", 336, "USD", 12],
+      ["Max · 월 결제", 95, "USD", 1], ["Max · 연 결제 (월 $76)", 912, "USD", 12]]},
+    {n:"CapCut (영상 편집)", u:"https://www.capcut.com/pricing", note:"한국에서 연 화면 기준", p:[
+      ["Pro · 월 결제", 25000, "KRW", 1], ["Pro · 연 결제", 198000, "KRW", 12],
+      ["Ultra · 월 결제", 112000, "KRW", 1], ["Ultra · 연 결제", 1280000, "KRW", 12]]}
+  ];
+  var $ = function(id){ return document.getElementById(id); };
+  var won = function(x){ return Math.round(x).toLocaleString("ko-KR") + "원"; };
+  var money = function(v, c){ return c === "USD" ? "$" + v.toLocaleString("en-US") : v.toLocaleString("ko-KR") + "원"; };
+  var esc = function(t){ var d = document.createElement("div"); d.textContent = t; return d.innerHTML; };
+
+  var box = $("svc"), rows = "";
+  S.forEach(function(s, i){
+    var opts = '<option value="">안 씀</option>' + s.p.map(function(p, j){
+      return '<option value="' + j + '">' + esc(p[0]) + " — " + money(p[1], p[2]) + (p[3] === 12 ? " / 년" : " / 월") + "</option>";
+    }).join("");
+    box.insertAdjacentHTML("beforeend", '<fieldset><legend>' + esc(s.n) + '</legend><div class="row"><label class="skip-l" for="s' + i +
+      '" style="position:absolute;left:-9999px">' + esc(s.n) + ' 요금제</label><select id="s' + i + '" data-i="' + i + '">' + opts + "</select></div></fieldset>");
+    s.p.forEach(function(p){
+      rows += "<tr><td>" + esc(s.n) + " " + esc(p[0]) + "</td><td>" + money(p[1], p[2]) + (p[3] === 12 ? " / 년" : " / 월") +
+        "</td><td><a href=\"" + (p[4] || s.u) + "\" rel=\"noopener\">" + (p[4] || s.u).replace("https://", "") + "</a> · " + D + (s.note ? " · " + esc(s.note) : "") + "</td></tr>";
+    });
+  });
+  $("srcs").innerHTML = rows;
+
+  var cid = 0;
+  function addCustom(){
+    cid++;
+    var c = document.createElement("div");
+    c.className = "custom";
+    c.innerHTML = '<input type="text" maxlength="40" placeholder="서비스 이름 (예: 쓰는 구독)" aria-label="서비스 이름">' +
+      '<input type="number" inputmode="decimal" min="0" step="any" placeholder="금액" aria-label="금액">' +
+      '<select aria-label="통화와 주기"><option value="KRW1">원 / 월</option><option value="USD1">달러 / 월</option><option value="KRW12">원 / 년</option><option value="USD12">달러 / 년</option></select>' +
+      '<button type="button" class="del" aria-label="이 줄 지우기">지우기</button>';
+    c.querySelector(".del").addEventListener("click", function(){ c.remove(); calc(); });
+    $("custom").appendChild(c);
+  }
+  $("add").addEventListener("click", function(){ addCustom(); });
+  addCustom();
+
+  function calc(){
+    var fx = parseFloat($("fx").value); if (!(fx > 0)) fx = 0;
+    var total = 0, lines = [], usdMissing = false;
+    S.forEach(function(s, i){
+      var v = $("s" + i).value; if (v === "") return;
+      var p = s.p[+v], m = p[1] / p[3], w = p[2] === "USD" ? m * fx : m;
+      if (p[2] === "USD" && !fx) usdMissing = true;
+      total += w;
+      lines.push([s.n + " " + p[0], w, p[2] === "USD" ? " ($" + (Math.round(m * 100) / 100) + ")" : ""]);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#custom .custom"), function(c){
+      var f = c.querySelectorAll("input"), sel = c.querySelector("select").value;
+      var a = parseFloat(f[1].value); if (!(a > 0)) return;
+      var cur = sel.slice(0, 3), per = +sel.slice(3), m = a / per, w = cur === "USD" ? m * fx : m;
+      if (cur === "USD" && !fx) usdMissing = true;
+      total += w;
+      lines.push([(f[0].value.trim() || "직접 넣은 구독"), w, cur === "USD" ? " ($" + (Math.round(m * 100) / 100) + ")" : ""]);
+    });
+    $("month").textContent = won(total);
+    $("year").textContent = "1년이면 " + won(total * 12) + (lines.length ? " · 구독 " + lines.length + "개" : "");
+    lines.sort(function(a, b){ return b[1] - a[1]; });
+    $("lines").innerHTML = lines.map(function(l){ return "<li>" + esc(l[0]) + " — 월 " + won(l[1]) + esc(l[2]) + "</li>"; }).join("") +
+      (usdMissing ? "<li>환율을 넣어야 달러 요금이 합계에 들어갑니다.</li>" : "");
+  }
+  $("calc").addEventListener("input", calc);
+  $("calc").addEventListener("change", calc);
+  calc();
+})();
+</script>
