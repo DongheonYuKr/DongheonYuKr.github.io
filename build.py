@@ -33,7 +33,7 @@ INSTALL = {
     "github-hyperframes": ("클로드 코드용 명령 2줄 · 한 줄씩 따로 · 제가 깔 때는 npx 명령이었는데 지금 README는 이 2줄이에요", "claude plugin marketplace add heygen-com/hyperframes\nclaude plugin install hyperframes@hyperframes"),
     "github-taste-skill": ("쓸 작업 폴더에서 클로드 코드를 열고 한 줄", 'npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"'),
 }
-GUIDE_TOP = ('<p class="warnbox"><b>⚠ 채팅 창이 아니라 클로드 코드 입력창입니다</b>터미널에서 claude를 친 뒤 나오는 입력창에 붙여 넣어야 깔립니다. 클로드 구독이 필요합니다.</p>\n')
+GUIDE_TOP = ('<p class="warnbox"><b>⚠ 채팅 창이 아니라 클로드 코드 입력창입니다</b>클로드 데스크톱 앱의 「Code」 탭이나 터미널에서 claude를 친 뒤 나오는 입력창에 붙여 넣어야 깔립니다. 클로드 유료 구독(Pro 이상)이 필요합니다.</p>\n')
 WORK_LINE = '<a class="workline" href="../../work/"><span>직접 깔기 벅차면, 사업자용 페이지·광고 제작은 맡길 수도 있어요</span><b>맡기기 →</b></a>\n'
 COPY_JS = ("<script>document.querySelectorAll('.cmdbox button').forEach(function(b){b.addEventListener('click',function(){"
            "var t=b.closest('.cmdbox').querySelector('code').textContent;navigator.clipboard.writeText(t).then(function(){b.textContent='복사됨'},"
@@ -85,8 +85,14 @@ EN_PAGES = [
 EN_ALT = {ko: en for en, _, _, _, _, ko, _ in EN_PAGES if ko and ko not in ("", "free/")}
 
 
+def practice(slug):
+    """11-01 대표님 「무료 자료 양질로」: content/_practice_<slug>.part 가 있으면 회차 글 맨 위에 실전 따라 하기를 붙인다(설치 명령 칸은 그 안에)."""
+    f = os.path.join(ROOT, "content", f"_practice_{slug}.part")
+    return open(f, encoding="utf-8").read() if os.path.exists(f) else ""
+
+
 def install_box(slug):
-    if slug not in INSTALL:
+    if slug not in INSTALL or practice(slug):
         return ""
     note, cmd = INSTALL[slug]
     return (f'<h2>깃허브에 적힌 설치 명령</h2><p class="meta">{html.escape(note)} · 2026-11-01 기준, 바뀔 수 있어요 · 붙여 넣기 전에 <a href="../../kit/">시작 키트</a>의 확인 문장부터</p>'
@@ -238,7 +244,7 @@ def main():
         upd = f' · 고친 날 {updated.replace("-", ".")}' if updated != a["date"] else ""
         body = (f'<article><p class="meta"><span class="kicker">{html.escape(a["kicker"])}</span> · '
                 f'<time datetime="{a["date"]}">{a["date"].replace("-", ".")}</time>{upd} · HEONLOG</p>\n<h1>{html.escape(a["title"])}</h1>\n'
-                + ((WORK_LINE + GUIDE_TOP) if a["slug"].startswith("github-") else OLD_NOTE)
+                + ((WORK_LINE + GUIDE_TOP + practice(a["slug"]) + (COPY_JS if practice(a["slug"]) else "")) if a["slug"].startswith("github-") else OLD_NOTE)
                 + a["body"].replace("{{up}}", "../../") + "\n" + install_box(a["slug"])
                 + (QA if a["slug"].startswith("github-") else "") + related + (GUIDE_NEXT if a["slug"].startswith("github-") else CTA) + "</article>")
         os.makedirs(os.path.join(ROOT, path), exist_ok=True)
