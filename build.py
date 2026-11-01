@@ -336,13 +336,22 @@ def main():
             [("기본 패키지", "6장 · 문장은 주신 대로"), ("작업 기간", "2일"), ("수정", "크몽 상품 페이지에")]),
            ("04 · 영문 상품 설명", "해외 판매용 영문 상품 설명", "svc-listing.jpg", "영문 상품 설명 작업 예시 (SAMPLE)",
             "한국 상품을 아마존·쇼피파이 등에 올리는 셀러 — 한국어 원문을 영어 리스팅으로", 59000, 39000,
-            [("기본 패키지", "크몽 상품 페이지에"), ("작업 기간", "1일"), ("수정", "크몽 상품 페이지에")])]
+            [("기본 패키지", "크몽 상품 페이지에"), ("작업 기간", "1일"), ("수정", "크몽 상품 페이지에")]),
+           # 11-01 밤 새 상품 2개 (크몽 #852900 · #852910 승인 대기) · 할인 표시 없음
+           ("05 · 광고 소재 묶음", "광고 소재 10개 + 반응 비교 보고", "svc-ad10.jpg", "광고 소재 묶음 작업 예시 (SAMPLE · 가상 브랜드)",
+            "메타·인스타·네이버 광고를 직접 돌리는데 같은 소재만 몇 달째 쓰는 쇼핑몰 — 광고를 돌린 뒤 숫자를 보내면 어떤 소재가 이겼는지 1쪽으로", 59000, 59000,
+            [("기본 패키지", "이미지 4 + 숏폼 1 + 문구"), ("표준", "소재 10개 + 반응 비교 1회 · 119,000원"), ("작업 기간", "4일 (표준 6일)")]),
+           ("06 · 세트", "상세페이지 첫 화면 + 숏폼 광고 세트", "svc-set.jpg", "첫 화면과 숏폼 세트 작업 예시 (SAMPLE · 가상 브랜드)",
+            "광고를 보고 들어온 손님이 처음 보는 화면과 광고 영상을 같은 이야기로 맞추고 싶은 셀러 — 따로 맡기는 것보다 저렴", 59000, 59000,
+            [("기본 패키지", "첫 화면 2안 + 10초 영상 1개"), ("작업 기간", "4일"), ("수정", "1회 (표준 2회)")])]
     rows = ""
     for no, name, img, alt, who, lp, op, facts in svc:
         fl = "".join(f'<li><span>{k}</span><b>{v}</b></li>' for k, v in facts)
+        pr = (f'<p class="pr"><s>{lp:,}원</s> <em>{(lp - op) * 100 // lp}%</em> <strong>{op:,}원</strong> <small>기본 · 오픈 가격 첫 5건</small></p>' if lp > op
+              else f'<p class="pr"><strong>{op:,}원</strong> <small>기본 가격부터</small></p>')
         rows += (f'<article class="svcrow"><img src="../img/home/{img}" alt="{alt}" width="720" height="540" loading="lazy">'
                  f'<div class="body"><span class="no">{no}</span><h2>{name}</h2><p class="who">{who}</p>'
-                 f'<p class="pr"><s>{lp:,}원</s> <em>{(lp - op) * 100 // lp}%</em> <strong>{op:,}원</strong> <small>기본 · 오픈 가격 첫 5건</small></p>'
+                 f'{pr}'
                  f'<ul class="facts">{fl}</ul><span class="order">크몽에서 주문 · 승인 대기</span></div></article>\n')
     work = f"""<p class="meta"><span class="kicker">맡기기</span> · 사업자 · 브랜드 · 셀러</p>
 <h1>작업 예시를 보고, <span class="mark">크몽에서 맡기세요</span></h1>
