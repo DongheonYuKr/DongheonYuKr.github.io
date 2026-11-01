@@ -274,7 +274,7 @@ def main():
              + f'<a class="card dk" href="{POSTYPE}" rel="noopener noreferrer"><span class="k">EBOOK · 정리본</span><span><b>깃허브 털기 정리본 v2 (#01~#05)</b><span class="d">붙여 넣을 문장까지 · 3,900원 · 포스타입</span></span></a>'
              + lockc + "".join(ghc)
              + card("free", "free/", "FREE · 무료 자료", "유료 대신 무료 맛보기", "월 구독 도구의 깃허브 무료 대안")
-             + card("work", "work/", "WORK · 맡기기", "사업자용 견본 4가지", "광고 영상 · 상세페이지 · 카드뉴스 · 영문 상품 설명")
+             + card("work", "work/", "WORK · 맡기기", "사업자용 작업 예시 4가지", "광고 영상 · 상세페이지 · 카드뉴스 · 영문 상품 설명")
              + "".join(card("old", f'guide/{x["slug"]}/', "예전 글", x["title"], x.get("keyword", "")) for x in old))
     home = f"""<section class="hero"><img src="img/profile.jpg" alt="HEONLOG 프로필 그림" width="112" height="112">
 <div><p class="mono">HEONLOG · 개발 몰라도 깃허브 털기</p><h1>유료 AI 대신, 무료 깃허브 도구를<br>직접 깔아 보고 알려 드려요</h1></div></section>
@@ -286,7 +286,7 @@ def main():
 {cards}
 </div>
 </div>
-<div class="workstrip"><span><b>사업자라면 · 맡기기</b><span class="s">세로 광고 영상 · 상세페이지 시안 · 카드뉴스 · 영문 상품 설명 — 주문은 크몽에서</span></span><a href="work/">견본과 가격 보기 →</a></div>"""
+<div class="workstrip"><span><b>사업자라면 · 맡기기</b><span class="s">세로 광고 영상 · 상세페이지 시안 · 카드뉴스 · 영문 상품 설명 — 주문은 크몽에서</span></span><a href="work/">작업 예시와 가격 보기 →</a></div>"""
     site_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": SITE, "url": BASE_URL + "/",
                "inLanguage": "ko", "publisher": org}
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(
@@ -325,16 +325,16 @@ def main():
         urls.append((path, "2026-11-01"))
 
     # 맡기기(/work/) · 11-01 새 화면(시안 승인): 크몽 기본 패키지 기준 사실만 · 모르는 칸은 「크몽 상품 페이지」로
-    svc = [("01 · 광고 영상", "제품 사진으로 세로 광고 영상", "svc-ad.jpg", "세로 광고 영상 견본 (SAMPLE)",
+    svc = [("01 · 광고 영상", "제품 사진으로 세로 광고 영상", "svc-ad.jpg", "세로 광고 영상 작업 예시 (SAMPLE)",
             "촬영 일정 없이 광고 소재가 급한 작은 브랜드, 메타·틱톡 광고를 여러 버전 시험하는 마케터", 49000, 39000,
             [("기본 패키지", "10초 · 장면 2개 · 자막"), ("작업 기간", "3일"), ("수정", "1회 (표준·고급 2회)")]),
-           ("02 · 상세페이지", "상세페이지 첫 화면 시안", "svc-detail.jpg", "상세페이지 첫 화면 시안 견본 (SAMPLE)",
+           ("02 · 상세페이지", "상세페이지 첫 화면 시안", "svc-detail.jpg", "상세페이지 첫 화면 시안 작업 예시 (SAMPLE)",
             "스마트스토어·쿠팡 상세페이지의 첫 화면(제일 먼저 보이는 한 장)을 바꾸고 싶은 셀러", 39000, 29000,
             [("기본 패키지", "첫 화면 2안"), ("작업 기간", "2일"), ("수정", "고른 1안 기준 1회")]),
-           ("03 · 카드뉴스", "정보형 카드뉴스 · 인스타 캐러셀", "svc-carousel.jpg", "카드뉴스 견본 (SAMPLE)",
+           ("03 · 카드뉴스", "정보형 카드뉴스 · 인스타 캐러셀", "svc-carousel.jpg", "카드뉴스 작업 예시 (SAMPLE)",
             "글·영상·자료는 있는데 저장되는 카드뉴스로 바꿀 시간이 없는 브랜드 계정", 49000, 29000,
             [("기본 패키지", "6장 · 문장은 주신 대로"), ("작업 기간", "2일"), ("수정", "크몽 상품 페이지에")]),
-           ("04 · 영문 상품 설명", "해외 판매용 영문 상품 설명", "svc-listing.jpg", "영문 상품 설명 견본 (SAMPLE)",
+           ("04 · 영문 상품 설명", "해외 판매용 영문 상품 설명", "svc-listing.jpg", "영문 상품 설명 작업 예시 (SAMPLE)",
             "한국 상품을 아마존·쇼피파이 등에 올리는 셀러 — 한국어 원문을 영어 리스팅으로", 59000, 39000,
             [("기본 패키지", "크몽 상품 페이지에"), ("작업 기간", "1일"), ("수정", "크몽 상품 페이지에")])]
     rows = ""
@@ -345,22 +345,22 @@ def main():
                  f'<p class="pr"><s>{lp:,}원</s> <em>{(lp - op) * 100 // lp}%</em> <strong>{op:,}원</strong> <small>기본 · 오픈 가격 첫 5건</small></p>'
                  f'<ul class="facts">{fl}</ul><span class="order">크몽에서 주문 · 승인 대기</span></div></article>\n')
     work = f"""<p class="meta"><span class="kicker">맡기기</span> · 사업자 · 브랜드 · 셀러</p>
-<h1>견본을 보고, <span class="mark">크몽에서 맡기세요</span></h1>
+<h1>작업 예시를 보고, <span class="mark">크몽에서 맡기세요</span></h1>
 <p class="lead">AI로 빠르게 만들고, 납품 전 모든 줄과 그림은 사람이 직접 확인합니다. 결제와 정산은 크몽이 맡습니다.</p>
 <p class="banner"><b>오픈 특가 · 서비스마다 첫 5건</b><span>그다음부터 줄 그은 정가로 받고, 가격은 앞으로도 계속 올릴 예정입니다.</span></p>
-{rows}<p class="meta">모든 견본은 가상 제품이며 SAMPLE 표시가 있습니다. 표준·고급 패키지와 정확한 수정 횟수는 크몽 상품 페이지에 있습니다.</p>
+{rows}<p class="meta">모든 작업 예시는 가상 제품이며 SAMPLE 표시가 있습니다. 표준·고급 패키지와 정확한 수정 횟수는 크몽 상품 페이지에 있습니다.</p>
 <h2>더 맡길 수 있는 일</h2>
 <div class="next"><a href="repurpose/">영상 1편으로 한 달 SNS 채우기<span>쇼츠 3 · 카드뉴스 · 블로그 · SNS 글 4 · 129,000원부터 · 월 정액도</span></a><a href="english/">제품 영상, 해외 판매용 영어판으로<span>영어 자막 · 화면 글자 · 제목·설명 · 49,000원부터</span></a>
 <a href="subscription/">AI 구독료, 한 달에 얼마 새는지 진단<span>계속 쓸 것·바꿀 것·끊을 것 1쪽 표 · 9,900원부터</span></a><a href="../tools/cost/">AI 구독료 계산기<span>체크만 하면 한 달·1년 합계 · 무료</span></a></div>
 <h2>진행 순서</h2>
-<ol class="steps4"><li><b>1 · 견본 보고 주문</b><br>크몽에서. 제품 사진·이름·강조점 1~2개</li><li><b>2 · AI로 빠르게 초안</b><br>쓴 도구는 납품 때 적어 드림</li><li><b>3 · 사람이 한 줄씩 확인</b><br>성분 이름·제품 글자 대조</li><li><b>4 · 납품 · 수정</b><br>수정 횟수는 패키지대로</li></ol>
+<ol class="steps4"><li><b>1 · 작업 예시 보고 주문</b><br>크몽에서. 제품 사진·이름·강조점 1~2개</li><li><b>2 · AI로 빠르게 초안</b><br>쓴 도구는 납품 때 적어 드림</li><li><b>3 · 사람이 한 줄씩 확인</b><br>성분 이름·제품 글자 대조</li><li><b>4 · 납품 · 수정</b><br>수정 횟수는 패키지대로</li></ol>
 <div class="twobox"><div class="dark"><b>하지 않는 일</b><br>효능·1위·최초 같은 근거 없는 말 · 매출·성과 약속 · 다른 브랜드 페이지 따라 하기 · 의료기기·의약품·건강기능식품</div>
 <div class="light"><b>문의</b><br>어떤 일인지, 대략 언제까지인지 두 가지만 적어 주세요. 비밀번호·로그인 정보는 어떤 경우에도 받지 않습니다.</div></div>
 {INPOCK_BTN}"""
     os.makedirs(os.path.join(ROOT, "work"), exist_ok=True)
     open(os.path.join(ROOT, "work", "index.html"), "w", encoding="utf-8").write(
-        page(f"맡기기: 견본과 가격 | {SITE}", "세로 광고 영상·상세페이지 첫 화면 시안·카드뉴스·영문 상품 설명. 견본과 오픈 가격(첫 5건)을 보고 크몽에서 맡기세요.",
-             "work/", work, 1, jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": "맡기기: 견본과 가격", "inLanguage": "ko", "publisher": org},
+        page(f"맡기기: 작업 예시와 가격 | {SITE}", "세로 광고 영상·상세페이지 첫 화면 시안·카드뉴스·영문 상품 설명. 작업 예시와 오픈 가격(첫 5건)을 보고 크몽에서 맡기세요.",
+             "work/", work, 1, jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": "맡기기: 작업 예시와 가격", "inLanguage": "ko", "publisher": org},
              current="work", wide=True))
     urls.append(("work/", "2026-11-01"))
 

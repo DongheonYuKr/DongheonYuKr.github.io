@@ -16,10 +16,10 @@
 <li><strong>30분 화상 설명</strong> — 표를 같이 보며 왜 그렇게 나눴는지 설명합니다. 해지·요금제 변경은 본인이 직접 합니다.</li>
 </ul>
 
-<h2>견본</h2>
-<div class="sample"><span class="stamp">견본</span>
-<h3>1쪽 표 견본 — 가상의 구독 목록</h3>
-<p class="meta">실제 손님의 목록이 아니라 견본용으로 만든 가상 목록입니다. 요금은 2026-11-01에 각 공식 요금 페이지에서 확인한 값이고, 세금·해외 결제 수수료는 빠져 있습니다.</p>
+<h2>작업 예시</h2>
+<div class="sample"><span class="stamp">예시</span>
+<h3>1쪽 표 예시 — 가상의 구독 목록</h3>
+<p class="meta">실제 손님의 목록이 아니라 예시용으로 만든 가상 목록입니다. 요금은 2026-11-01에 각 공식 요금 페이지에서 확인한 값이고, 세금·해외 결제 수수료는 빠져 있습니다.</p>
 <div class="tablewrap"><table class="srct">
 <thead><tr><th scope="col">지금 쓰는 것</th><th scope="col">나눈 칸</th><th scope="col">이유</th></tr></thead>
 <tbody>

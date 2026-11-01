@@ -19,8 +19,11 @@
 </div></div>
 <p class="meta">1분이 넘는 영상은 문의 때 먼저 말씀드립니다. 전성분·효능처럼 근거가 필요한 문구는 제품 표기 그대로 옮기고, 새로 지어내지 않습니다.</p>
 
-<h2>견본</h2>
-<p class="notice">영상 견본(저희 릴스 한 편의 한국어판 → 영어판 전후)은 11월 3일까지 이 자리에 올립니다.</p>
+<h2>작업 예시 — 같은 영상, 한국어판 → 영어판</h2>
+<p>저희 릴스 「깃허브 털기 #02 · Agent-Reach」(36초)를 영어판으로 바꾼 것입니다. 왼쪽이 원래 한국어판, 오른쪽이 영어판입니다. 큰 화면 글자·도장·끝 장면 문구까지 영어로 바꾸고, 한국어 목소리에 맞춰 영어 자막을 넣었습니다.</p>
+<figure><video src="../../img/work/en/ko-en.mp4" poster="../../img/work/en/ko-en.jpg" controls playsinline preload="none" width="1080" height="960" style="width:100%;height:auto;border-radius:8px;background:#000"></video><figcaption>왼쪽 한국어판 · 오른쪽 영어판 (소리를 켜면 원래 목소리가 나옵니다) · 2026-11-01 제작</figcaption></figure>
+<div class="cmdbox" style="background:#F3F1EA;color:var(--ink)"><div class="bar" style="color:var(--muted)"><span>함께 드리는 영어 제목·설명 (예시)</span></div><code>Title: I asked Claude to install a GitHub tool. A safety guard stopped it.
+Description: Agent-Reach lets Claude read YouTube captions, web pages and GitHub. 13 of 17 features worked on my Mac; Reddit search did not. Install difficulty: 3/3 (needs the terminal).</code></div>
 <p>상품 설명 글만 필요하면 <a href="../">맡기기</a>의 「해외 판매용 영문 상품 설명」(39,000원부터)을 보세요.</p>
 
 <div class="twobox"><div class="dark"><b>하지 않는 일</b><br>효능·1위·최초 같은 근거 없는 말 · 의료기기·의약품·건강기능식품 · 매출 보장</div>
