@@ -16,7 +16,7 @@ NEXT = ('<aside class="cta" aria-label="다음 회"><p><strong>다음 깃허브 
 GUIDE_NEXT = ('<aside class="cta tiers" aria-label="더 해 보고 싶다면"><p><strong>이 회차를 내 컴퓨터에서 똑같이 해 보고 싶다면</strong></p>\n<ul>\n'
               '<li><b>이 글 · 무료</b> — 무엇을 하는 도구인지, 해 보니 어땠는지, 어디가 함정인지까지 적었습니다.</li>\n'
               '<li><b>깔기 전 시작 키트 · 무료 이메일 신청</b> — 어느 깃허브 도구든 깔기 전에 확인할 체크리스트와 AI에게 먼저 묻는 문장 1개. 신청서는 준비 중입니다.</li>\n'
-              '<li><b>깃허브 털기 정리본 · 3,900원</b> — AI에게 실제로 붙여 넣은 문장과 막혔을 때 물은 문장을 회차별로 묶고 있습니다. 2026년 11월 8일 판매 시작 예정이며, 시작하면 이 자리에 링크를 붙입니다.</li>\n'
+              '<li><b>깃허브 털기 정리본 · 3,900원</b> — AI에게 실제로 붙여 넣은 문장과 막혔을 때 물은 문장을 회차별로 묶었습니다(PDF 13쪽). <a href="https://www.postype.com/@heonlog/post/23525235" rel="noopener">포스타입에서 보기 →</a></li>\n'
               '</ul>\n<p>다음 회차는 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>에 먼저 올라옵니다.</p></aside>')
 # 예전 뷰티 글: 지우거나 숨기지 않고(주소·사이트맵 그대로) 글 맨 위에 「예전 글」 표시만 · 11-01
 OLD_NOTE = ('<p class="notice oldnote"><strong>예전 글</strong> · 2026년 10월, 작은 뷰티 브랜드 광고 소재를 만들 때 정리한 글입니다. '
