@@ -344,3 +344,20 @@ pre.realout .lbl{position:absolute;left:14px;top:9px;font-family:inherit;font-si
 
 .pr-steps{padding-left:22px}.pr-steps li{margin:6px 0;font-size:16.5px}
 .pr-glance.g4 ol{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+/* 11-01 회차 글 끝 「다음 단계」 (디립다식 큰 띠) */
+.nextstep{border-top:3px solid var(--ink);margin:46px 0 0;padding-top:20px}
+.nextstep .ns-h{font-size:21px;font-weight:900;margin:0 0 12px}
+.ns-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.ns{display:flex;flex-direction:column;gap:6px;padding:18px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);min-width:0}
+.ns:hover{border-color:var(--ink)}
+.ns .k{font-size:12.5px;font-weight:800;color:#D93A26;letter-spacing:.04em}
+.ns b{font-size:18px;line-height:1.35}
+.ns span{font-size:14px;color:var(--muted)}
+.ns .go{margin-top:auto;padding-top:6px;font-weight:800;color:var(--ink)}
+.ns.y{background:var(--lime);border-color:var(--lime)}.ns.y .k,.ns.y span{color:var(--ink)}
+.ns.dk{background:var(--ink);border-color:var(--ink);color:var(--bg)}.ns.dk .k{color:var(--lime)}.ns.dk span{color:#cfccc4}.ns.dk .go{color:var(--lime)}
+.ns-foot{font-size:14px;color:var(--muted);margin-top:14px}
+.pricefirst{border:2px solid var(--ink);background:var(--card);padding:18px 22px;margin:18px 0 26px}
+.pf-k{margin:0;font-size:13px;font-weight:800;color:#D93A26;letter-spacing:.04em}.pf-big{margin:4px 0;font-size:24px;font-weight:700}.pf-big b{font-size:30px;font-weight:900}.pf-s{margin:0;font-size:14px;color:var(--muted)}
+.steps3{list-style:none;margin:0 0 10px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.steps3 li{margin:0;background:var(--ink);color:var(--bg);padding:16px 18px;display:flex;flex-direction:column;gap:6px}.steps3 b{color:var(--lime);font-size:16px}.steps3 span{font-size:14.5px;line-height:1.6;color:#e8e6df}
