@@ -341,3 +341,6 @@ pre.realout .lbl{position:absolute;left:14px;top:9px;font-family:inherit;font-si
 .pr-list{padding-left:20px}
 .pr-story{border-top:2px dashed #B9B4A8;margin:40px 0 10px;padding-top:10px}
 .pr-story span{font-size:14px;color:var(--muted);font-weight:700}
+
+.pr-steps{padding-left:22px}.pr-steps li{margin:6px 0;font-size:16.5px}
+.pr-glance.g4 ol{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
