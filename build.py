@@ -207,10 +207,10 @@ def main():
     gh = sorted([a for a in arts if a["slug"].startswith("github-")], key=lambda a: (a.get("date", ""), a["slug"]), reverse=True)
     old = [a for a in arts if not a["slug"].startswith("github-")]
     C = "https://contra.com/s/"
-    svc = [("svc-photo.jpg", "AI 제품 화보 견본", "AI 제품 화보·모델컷", "해외 $95", [("Contra", C + "6mcL2RcL-ai-product-photos-and-ai-model-shots-from-one-product-photo")]),
-           ("svc-ad.jpg", "15초 세로 광고 견본", "제품 사진으로 15초 세로 광고", "39,000원부터 · 해외 $75", [("크몽 승인 대기", None), ("Contra", C + "EbrROUlR-15-second-vertical-product-video-ad-from-your-product-photos")]),
-           ("svc-carousel.jpg", "카드뉴스 견본", "정보형 카드뉴스 8장", "19,000원부터 · 해외 $40", [("크몽 승인 대기", None), ("Contra", C + "MXcNYb7R-educational-instagram-carousel-design-from-your-text-or-video")]),
-           ("svc-listing.jpg", "영문 상품 설명 견본", "해외 판매용 영문 상품 설명", "25,000원부터 · 해외 $59", [("크몽 승인 대기", None), ("Contra", C + "EkbEOZZM-amazon-and-shopify-product-descriptions-for-korean-beauty-products")])]
+    svc = [("svc-ad.jpg", "15초 세로 광고 견본", "제품 사진으로 15초 세로 광고", "39,000원부터", [("크몽 승인 대기", None)]),
+           ("svc-detail.jpg", "상세페이지 첫 화면 시안 견본", "상세페이지 첫 화면 시안 3안", "29,000원부터", [("크몽 승인 대기", None)]),
+           ("svc-carousel.jpg", "카드뉴스 견본", "정보형 카드뉴스 8장", "19,000원부터", [("크몽 승인 대기", None)]),
+           ("svc-listing.jpg", "영문 상품 설명 견본", "해외 판매용 영문 상품 설명", "25,000원부터", [("크몽 승인 대기", None)])]
     def where(w):
         return "".join(f'<a href="{u}" rel="noopener">{t}</a>' if u else f'<i>{t}</i>' for t, u in w)
     cards = "\n".join(f'<div class="svc"><img src="img/home/{img}" alt="{alt}" width="720" height="540" loading="lazy"><div><b>{name}</b><span class="price">{price}</span><span class="where">{where(w)}</span></div></div>' for img, alt, name, price, w in svc)
@@ -220,17 +220,17 @@ def main():
 <h1>AI 도구를 직접 써 보는 사람이, 당신의 <span class="mark">상세페이지·광고·SNS</span>를 만듭니다</h1>
 <p class="lead">화보·숏폼 광고·카드뉴스·영문 상품 설명을 AI로 빠르게 만들고, 납품 전 모든 줄과 그림은 사람이 직접 확인합니다.</p>
 <div class="doors">
-<div class="door"><span class="k">사업자 · 브랜드 · 셀러</span><h2>맡기기</h2><p>견본을 보고 바로 주문하세요. 국내는 크몽, 해외 손님은 Contra(달러)로 받습니다.</p><a class="btn" href="#svc">서비스 보기 →</a></div>
+<div class="door"><span class="k">사업자 · 브랜드 · 셀러</span><h2>맡기기</h2><p>견본을 보고 크몽에서 주문하세요. 결제와 정산은 크몽이 맡습니다.</p><a class="btn" href="#svc">서비스 보기 →</a></div>
 <div class="door"><span class="k">AI 써 보고 싶은 개인</span><h2>깃허브 털기</h2><p>깃허브 무료 도구를 직접 깔아 보고 설치 난이도와 막힌 곳까지 적습니다. 깔아 보지 않은 것은 쓰지 않습니다.</p><a class="btn ghost" href="#gh">기록 보기 →</a></div>
 </div>
 <h2 id="svc">맡길 수 있는 일</h2>
-<p class="meta">모든 견본은 가상 제품이며 SAMPLE 표시가 있습니다.</p>
+<p class="meta">가격은 크몽 기본가입니다. 모든 견본은 가상 제품이며 SAMPLE 표시가 있습니다.</p>
 <div class="svcgrid">
 {cards}
 </div>
-<div class="more"><div>상세페이지 첫 화면 시안 3안 · 29,000원부터</div><div>영상 1편 → 블로그·SNS 글 7개 · 19,000원부터</div><div>AI 업무 자동화 진단 · 50,000원부터</div><div>AI 구독료 정리 진단 · 9,900원부터</div><div>영어 영상 → 한국어 자막 · 해외 $59</div><div>유튜브 영어 자막 · 15,000원부터</div></div>
-<div class="how"><div><b>1 · 견본 보고 주문</b><span>크몽 또는 Contra에서</span></div><div><b>2 · AI로 빠르게 초안</b><span>쓴 도구는 납품 때 적어 드림</span></div><div><b>3 · 사람이 한 줄씩 확인</b><span>성분 이름·제품 글자 대조</span></div><div><b>4 · 납품·수정 2번</b><span>효능·성과 약속은 하지 않음</span></div></div>
-<p class="golink"><a href="work/">맡기기 자세히 · 시범 가격 →</a> · <a href="https://contra.com/4l98ilg9" rel="noopener">Contra 프로필(영어) →</a></p>
+<div class="more"><div>영상 1편 → 블로그·SNS 글 7개 · 19,000원부터</div><div>AI 업무 자동화 진단 · 50,000원부터</div><div>AI 구독료 정리 진단 · 9,900원부터</div><div>유튜브 영어 자막 · 15,000원부터</div></div>
+<div class="how"><div><b>1 · 견본 보고 주문</b><span>크몽에서</span></div><div><b>2 · AI로 빠르게 초안</b><span>쓴 도구는 납품 때 적어 드림</span></div><div><b>3 · 사람이 한 줄씩 확인</b><span>성분 이름·제품 글자 대조</span></div><div><b>4 · 납품·수정 2번</b><span>효능·성과 약속은 하지 않음</span></div></div>
+<p class="golink"><a href="work/">맡기기 자세히 · 시범 가격 →</a></p>
 <details class="oldposts"><summary>뷰티 광고 실무 글 {len(old)}편 · 금지 표현·AI 가상인물 표시·모델컷 만드는 법</summary>
 <ul class="list">
 {chr(10).join(li(a) for a in old)}
@@ -250,7 +250,7 @@ def main():
                "inLanguage": "ko", "publisher": org}
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(
         page(f"{SITE} · AI로 만드는 상세페이지·광고·SNS · 깃허브 털기",
-             "AI 제품 화보·15초 광고·카드뉴스·영문 상품 설명을 맡기는 곳(크몽·Contra). 깃허브 무료 도구를 직접 깔아 본 기록도 연재합니다.",
+             "15초 광고·상세페이지 시안·카드뉴스·영문 상품 설명을 크몽에서 맡기는 곳. 깃허브 무료 도구를 직접 깔아 본 기록도 연재합니다.",
              "", home, 0, jsonld=site_ld, current="home", alt="en/"))
 
     about = open(os.path.join(ROOT, "content", "_about.part"), encoding="utf-8").read()
