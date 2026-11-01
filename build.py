@@ -8,6 +8,7 @@ import html, json, os, re
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_URL = "https://heonlog.com"  # 주소가 정해지면 여기만 바꾼다 (끝에 / 없이)
 SITE = "HEONLOG 가이드"
+CSS_V = __import__("hashlib").sha256(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.css"), "rb").read()).hexdigest()[:8]
 POSTYPE = "https://www.postype.com/@heonlog/post/23525235"
 SOCIAL = ('<a href="https://www.instagram.com/heonlog.studio/" rel="noopener noreferrer">인스타그램</a>'
           '<a href="https://www.threads.com/@heonlog.studio" rel="noopener noreferrer">스레드</a>'
@@ -33,7 +34,7 @@ INSTALL = {
     "github-hyperframes": ("클로드 코드용 명령 2줄 · 한 줄씩 따로 · 제가 깔 때는 npx 명령이었는데 지금 README는 이 2줄이에요", "claude plugin marketplace add heygen-com/hyperframes\nclaude plugin install hyperframes@hyperframes"),
     "github-taste-skill": ("쓸 작업 폴더에서 클로드 코드를 열고 한 줄", 'npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"'),
 }
-GUIDE_TOP = ('<p class="warnbox"><b>⚠ 채팅 창이 아니라 클로드 코드 입력창입니다</b>클로드 데스크톱 앱의 「Code」 탭이나 터미널에서 claude를 친 뒤 나오는 입력창에 붙여 넣어야 깔립니다. 클로드 유료 구독(Pro 이상)이 필요합니다.</p>\n')
+GUIDE_TOP = ('<p class="warnbox"><b>⚠ 채팅 창이 아니라 클로드 코드 입력창입니다</b>클로드 데스크톱 앱의 「Code」 탭이나 터미널에서 claude를 친 뒤 나오는 입력창에 붙여 넣어야 깔립니다. 클로드 유료 구독(Pro · 월 20달러부터)이 필요합니다.</p>\n')
 WORK_LINE = '<a class="workline" href="../../work/"><span>직접 깔기 벅차면, 사업자용 페이지·광고 제작은 맡길 수도 있어요</span><b>맡기기 →</b></a>\n'
 COPY_JS = ("<script>document.querySelectorAll('.cmdbox button').forEach(function(b){b.addEventListener('click',function(){"
            "var t=b.closest('.cmdbox').querySelector('code').textContent;navigator.clipboard.writeText(t).then(function(){b.textContent='복사됨'},"
@@ -56,10 +57,10 @@ WORK_PAGES = [
      "깃허브 무료 도구 12개를 직접 깔아 보며 겪은 것 — 저장소 읽기·확인 4가지·멈춤 신호·묻는 문장·결과표. 10쪽 PDF, 이메일·가입 없이 무료.", "free"),
     ("work/subscription/", "_work_subscription.part", "AI 구독비 다이어트 30분 진단",
      "지금 쓰는 유료 AI·디자인 구독 목록을 계속 쓸 것·싼 요금제·무료 대안·안 써도 되는 것으로 나눈 1쪽 표와 30분 화상 설명. 시범 가격 19,000원.", "work"),
-    ("work/repurpose/", "_work_repurpose.part", "영상 1편을 글 7조각으로: 월 정액",
-     "유튜브 영상 한 편을 스레드·링크드인·블로그 글 등 7조각 초안으로 바꿉니다. 실제로 영상 한 편에서 나온 7조각 견본과 시범 가격 월 99,000원.", "work"),
-    ("work/english/", "_work_english.part", "한국 상품·영상을 영어로",
-     "한국 소형 유튜버 영상의 영어 자막·제목·설명, 해외 K-뷰티 셀러용 영어 상품 설명. 직접 번역한 영어 견본 1쪽과 시범 가격.", "work"),
+    ("work/repurpose/", "_work_repurpose.part", "영상 1편으로 한 달 SNS 채우기",
+     "찍어 둔 영상 한 편을 세로 쇼츠 3개·카드뉴스 6장·블로그 글·SNS 글 4개로. 단건 129,000원 · 월 4편 390,000원(오픈 가격 첫 5건).", "work"),
+    ("work/english/", "_work_english.part", "제품 영상, 해외 판매용 영어판으로",
+     "한국어 제품·광고 영상을 영어 자막·화면 글자·영어 제목·설명까지 맞춘 해외 판매용 영어판으로. 49,000원부터(오픈 가격 첫 5건).", "work"),
     ("tools/cost/", "_tools_cost.part", "AI 구독료 계산기",
      "쓰는 AI 구독에 체크하면 한 달·1년 합계가 나옵니다. 요금은 공식 요금 페이지에서 확인한 것만, 확인 날짜와 함께 넣었습니다. 저장·쿠키 없음.", ""),
     # 11-01 E1 시제품: 직접 깔아 본 기록에서만 판정(AI 호출·서버 없음), 없으면 「깔기 전 확인 3가지」
@@ -193,7 +194,7 @@ def page(title, desc, path, body, depth, og_image="img/og.jpg", og_type="website
 <link rel="apple-touch-icon" href="{up}img/icon-180.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="{up}style.css">
+<link rel="stylesheet" href="{up}style.css?v={CSS_V}">
 {ld}
 <!-- Cloudflare Web Analytics (쿠키 없는 방문 수 · 11-01) --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "9f4bf7e4514c4afc99a713798af12a04"}}'></script><!-- End Cloudflare Web Analytics -->
 </head>
@@ -349,8 +350,8 @@ def main():
 <p class="banner"><b>오픈 특가 · 서비스마다 첫 5건</b><span>그다음부터 줄 그은 정가로 받고, 가격은 앞으로도 계속 올릴 예정입니다.</span></p>
 {rows}<p class="meta">모든 견본은 가상 제품이며 SAMPLE 표시가 있습니다. 표준·고급 패키지와 정확한 수정 횟수는 크몽 상품 페이지에 있습니다.</p>
 <h2>더 맡길 수 있는 일</h2>
-<div class="next"><a href="repurpose/">영상 1편 → 글 7조각<span>19,000원부터 · 월 정액도</span></a><a href="english/">유튜브 영어 자막<span>15,000원부터</span></a>
-<a href="subscription/">AI 구독료 정리 진단<span>9,900원부터</span></a><a href="../tools/cost/">AI 구독료 계산기<span>무료 · 저장·쿠키 없음</span></a></div>
+<div class="next"><a href="repurpose/">영상 1편으로 한 달 SNS 채우기<span>쇼츠 3 · 카드뉴스 · 블로그 · SNS 글 4 · 129,000원부터 · 월 정액도</span></a><a href="english/">제품 영상, 해외 판매용 영어판으로<span>영어 자막 · 화면 글자 · 제목·설명 · 49,000원부터</span></a>
+<a href="subscription/">AI 구독료, 한 달에 얼마 새는지 진단<span>계속 쓸 것·바꿀 것·끊을 것 1쪽 표 · 9,900원부터</span></a><a href="../tools/cost/">AI 구독료 계산기<span>체크만 하면 한 달·1년 합계 · 무료</span></a></div>
 <h2>진행 순서</h2>
 <ol class="steps4"><li><b>1 · 견본 보고 주문</b><br>크몽에서. 제품 사진·이름·강조점 1~2개</li><li><b>2 · AI로 빠르게 초안</b><br>쓴 도구는 납품 때 적어 드림</li><li><b>3 · 사람이 한 줄씩 확인</b><br>성분 이름·제품 글자 대조</li><li><b>4 · 납품 · 수정</b><br>수정 횟수는 패키지대로</li></ol>
 <div class="twobox"><div class="dark"><b>하지 않는 일</b><br>효능·1위·최초 같은 근거 없는 말 · 매출·성과 약속 · 다른 브랜드 페이지 따라 하기 · 의료기기·의약품·건강기능식품</div>
