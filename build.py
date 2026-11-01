@@ -21,11 +21,11 @@ NEXT = ('<aside class="cta" aria-label="다음 회"><p><strong>다음 깃허브 
         '다음 회차는 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>에 먼저 올라옵니다.</p></aside>')
 # 11-01 무료·유료 경계 보고서 4절 A(정리본 판매 전 판): 가이드 끝 3층 안내 — 아직 없는 링크·결제 버튼·신청서는 만들지 않음.
 # 정리본 판매 시작(11-08 예정) 때 셋째 줄에 링크, 신청서 연 날(11-15~) 둘째 줄에 신청 링크를 붙인다.
-GUIDE_NEXT = ('<aside class="cta tiers" aria-label="더 해 보고 싶다면"><p><strong>이 회차를 내 컴퓨터에서 똑같이 해 보고 싶다면</strong></p>\n<ul>\n'
-              '<li><b>이 글 · 무료</b> — 무엇을 하는 도구인지, 해 보니 어땠는지, 어디가 함정인지까지 적었습니다.</li>\n'
-              '<li><b>깔기 전 시작 키트 · 무료 10쪽</b> — 어느 깃허브 도구든 깔기 전에 볼 것 전부와 클로드에게 묻는 문장 2개. <a href="../../kit/">바로 받기 →</a></li>\n'
-              '<li><b>깃허브 털기 정리본 · 3,900원</b> — AI에게 실제로 붙여 넣은 문장과 막혔을 때 물은 문장을 회차별로 묶었습니다(PDF 13쪽). <a href="https://www.postype.com/@heonlog/post/23525235" rel="noopener">포스타입에서 보기 →</a></li>\n'
-              '</ul>\n<p>다음 회차는 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener">@heonlog.studio</a>에 먼저 올라옵니다.</p></aside>')
+GUIDE_NEXT = ('<aside class="nextstep" aria-label="다음 단계"><p class="ns-h">여기까지 따라 하셨다면, 다음은</p><div class="ns-grid">'
+              '<a class="ns y" href="../../kit/"><span class="k">무료</span><b>깔기 전 시작 키트 10쪽</b><span>어느 도구든 깔기 전에 볼 것 전부 · 직접 깔아 본 12개 결과표</span><span class="go">바로 받기 →</span></a>'
+              f'<a class="ns dk" href="{POSTYPE}" rel="noopener noreferrer"><span class="k">정리본 · 3,900원</span><b>깃허브 털기 #01~#05 한 파일로</b><span>회차마다 붙여 넣을 문장 · 막혔을 때 문장 · 한 쪽 요약</span><span class="go">미리 보기 →</span></a>'
+              '<a class="ns" href="../../work/repurpose/"><span class="k">사업자라면</span><b>영상 1편으로 한 달 SNS 채우기</b><span>찍어 둔 영상만 보내세요 · 쇼츠·카드뉴스·블로그·SNS 글</span><span class="go">작업 예시와 가격 →</span></a>'
+              '</div><p class="ns-foot">다음 회차는 인스타그램 <a href="https://www.instagram.com/heonlog.studio/" rel="noopener noreferrer">@heonlog.studio</a>에 먼저 올라옵니다.</p></aside>')
 # 11-01 회차 글 새 틀(디립다식): 위에 맡기기 줄 · 주의 상자, 끝에 깃허브 설치 명령(복사) · 묻고 답한 것
 # 명령은 각 README 2026-11-01 기준. README가 바뀌면 여기만 고친다.
 INSTALL = {
