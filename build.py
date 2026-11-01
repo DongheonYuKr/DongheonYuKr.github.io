@@ -28,6 +28,8 @@ INPOCK_BTN = ('<p class="ask"><a class="btn" href="https://link.inpock.co.kr/heo
               '<span>링크 페이지의 「비즈니스 제안」 버튼에서 남길 수 있습니다. 결제는 이 사이트에서 받지 않습니다.</span></p>')
 # (주소, 본문 파일, 제목, 설명, 메뉴 칸)
 WORK_PAGES = [
+    ("kit/", "_kit.part", "무료 체크리스트: 깃허브 도구 깔기 전 확인 4가지",
+     "깃허브 무료 도구를 직접 깔아 보며 걸렸던 지점을 질문 4개로. 2쪽 PDF, 이메일·가입 없이 무료.", "free"),
     ("work/", "_work.part", "맡기기: HEONLOG에 맡길 수 있는 작은 일",
      "AI 구독비 진단, 영상 1편을 글 7조각으로, 한국 상품·영상을 영어로. 직접 해 본 방식 그대로 맡아 하는 작은 일과 시범 가격입니다.", "work"),
     ("work/subscription/", "_work_subscription.part", "AI 구독비 다이어트 30분 진단",
