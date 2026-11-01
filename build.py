@@ -229,7 +229,7 @@ def main():
 <div class="door"><span class="k">AI 써 보고 싶은 개인</span><h2>깃허브 털기</h2><p>깃허브 무료 도구를 직접 깔아 보고 설치 난이도와 막힌 곳까지 적습니다. 깔아 보지 않은 것은 쓰지 않습니다.</p><a class="btn ghost" href="#gh">기록 보기 →</a></div>
 </div>
 <h2 id="svc">맡길 수 있는 일</h2>
-<p class="meta"><span class="mark"><b>오픈 특가</b></span> · 서비스마다 <b>첫 5건</b>은 할인된 오픈 가격으로 받고, 그다음부터 줄 그은 정가로 받습니다. 한국어↔영어가 오가는 일은 번역이 들어가 값이 더 높습니다. 모든 견본은 가상 제품이며 SAMPLE 표시가 있습니다.</p>
+<p class="meta"><span class="mark"><b>오픈 특가</b></span> · 서비스마다 <b>첫 5건</b>은 할인된 오픈 가격으로 받고, 그다음부터 줄 그은 정가로 받습니다. <b>가격은 앞으로도 계속 올릴 예정입니다.</b> 한국어↔영어가 오가는 일은 번역이 들어가 값이 더 높습니다. 모든 견본은 가상 제품이며 SAMPLE 표시가 있습니다.</p>
 <div class="svcgrid">
 {cards}
 </div>
