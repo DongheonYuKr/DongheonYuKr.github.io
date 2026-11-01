@@ -209,13 +209,16 @@ def main():
     gh = sorted([a for a in arts if a["slug"].startswith("github-")], key=lambda a: (a.get("date", ""), a["slug"]), reverse=True)
     old = [a for a in arts if not a["slug"].startswith("github-")]
     C = "https://contra.com/s/"
-    svc = [("svc-ad.jpg", "15초 세로 광고 견본", "제품 사진으로 15초 세로 광고", "오픈 가격 39,000원 · 이후 49,000원", [("크몽 승인 대기", None)]),
-           ("svc-detail.jpg", "상세페이지 첫 화면 시안 견본", "상세페이지 첫 화면 시안 3안", "오픈 가격 29,000원 · 이후 39,000원", [("크몽 승인 대기", None)]),
-           ("svc-carousel.jpg", "카드뉴스 견본", "정보형 카드뉴스 8장", "오픈 가격 19,000원 · 이후 25,000원", [("크몽 승인 대기", None)]),
-           ("svc-listing.jpg", "영문 상품 설명 견본", "해외 판매용 영문 상품 설명", "오픈 가격 25,000원 · 이후 59,000원", [("크몽 승인 대기", None)])]
+    svc = [("svc-ad.jpg", "15초 세로 광고 견본", "제품 사진으로 15초 세로 광고", (39000, 49000), [("크몽 승인 대기", None)]),
+           ("svc-detail.jpg", "상세페이지 첫 화면 시안 견본", "상세페이지 첫 화면 시안 3안", (29000, 39000), [("크몽 승인 대기", None)]),
+           ("svc-carousel.jpg", "카드뉴스 견본", "정보형 카드뉴스 8장", (19000, 25000), [("크몽 승인 대기", None)]),
+           ("svc-listing.jpg", "영문 상품 설명 견본", "해외 판매용 영문 상품 설명", (25000, 59000), [("크몽 승인 대기", None)])]
     def where(w):
         return "".join(f'<a href="{u}" rel="noopener">{t}</a>' if u else f'<i>{t}</i>' for t, u in w)
-    cards = "\n".join(f'<div class="svc"><img src="img/home/{img}" alt="{alt}" width="720" height="540" loading="lazy"><div><b>{name}</b><span class="price">{price}</span><span class="where">{where(w)}</span></div></div>' for img, alt, name, price, w in svc)
+    def price(p):
+        o, a = p
+        return f'<span class="price"><s>{a:,}원</s> <em>{(a - o) * 100 // a}%</em> <strong>{o:,}원</strong></span><span class="pnote">오픈 가격 · 첫 5건</span>'
+    cards = "\n".join(f'<div class="svc"><img src="img/home/{img}" alt="{alt}" width="720" height="540" loading="lazy"><div><b>{name}</b>{price(p)}<span class="where">{where(w)}</span></div></div>' for img, alt, name, p, w in svc)
     ghimg = {"github-agent-reach": ("gh-02.jpg", "#02 Agent-Reach · ⭐⭐⭐"), "github-voicestudio": ("gh-05.jpg", "#05 VoiceStudio · 💀"), "github-archify": ("gh-01.jpg", "#01 archify · ⭐⭐⭐")}
     ghcards = "\n".join(f'<a href="guide/{k}/"><img src="img/home/{v[0]}" alt="깃허브 털기 {v[1]} 표지" width="432" height="540" loading="lazy"><span>{v[1]}</span></a>' for k, v in ghimg.items())
     home = f"""<p class="meta"><span class="kicker">AI로 만드는 상세페이지·광고·SNS · 개발 몰라도 깃허브 털기</span></p>
@@ -226,7 +229,7 @@ def main():
 <div class="door"><span class="k">AI 써 보고 싶은 개인</span><h2>깃허브 털기</h2><p>깃허브 무료 도구를 직접 깔아 보고 설치 난이도와 막힌 곳까지 적습니다. 깔아 보지 않은 것은 쓰지 않습니다.</p><a class="btn ghost" href="#gh">기록 보기 →</a></div>
 </div>
 <h2 id="svc">맡길 수 있는 일</h2>
-<p class="meta"><span class="mark"><b>오픈 특가</b></span> · 서비스마다 <b>첫 5건</b>은 오픈 가격(크몽 기본가)으로, 그다음부터 「이후」 가격으로 올립니다. 한국어↔영어가 오가는 일은 번역이 들어가 값이 더 높습니다. 모든 견본은 가상 제품이며 SAMPLE 표시가 있습니다.</p>
+<p class="meta"><span class="mark"><b>오픈 특가</b></span> · 서비스마다 <b>첫 5건</b>은 할인된 오픈 가격으로 받고, 그다음부터 줄 그은 정가로 받습니다. 한국어↔영어가 오가는 일은 번역이 들어가 값이 더 높습니다. 모든 견본은 가상 제품이며 SAMPLE 표시가 있습니다.</p>
 <div class="svcgrid">
 {cards}
 </div>
