@@ -209,9 +209,9 @@ def main():
     gh = sorted([a for a in arts if a["slug"].startswith("github-")], key=lambda a: (a.get("date", ""), a["slug"]), reverse=True)
     old = [a for a in arts if not a["slug"].startswith("github-")]
     C = "https://contra.com/s/"
-    svc = [("svc-ad.jpg", "15초 세로 광고 견본", "제품 사진으로 15초 세로 광고", (39000, 49000), [("크몽 승인 대기", None)]),
-           ("svc-detail.jpg", "상세페이지 첫 화면 시안 견본", "상세페이지 첫 화면 시안 3안", (29000, 39000), [("크몽 승인 대기", None)]),
-           ("svc-carousel.jpg", "카드뉴스 견본", "정보형 카드뉴스 8장", (29000, 49000), [("크몽 승인 대기", None)]),
+    svc = [("svc-ad.jpg", "15초 세로 광고 견본", "제품 사진으로 세로 광고 영상 (10초부터)", (39000, 49000), [("크몽 승인 대기", None)]),
+           ("svc-detail.jpg", "상세페이지 첫 화면 시안 견본", "상세페이지 첫 화면 시안 (2안부터)", (29000, 39000), [("크몽 승인 대기", None)]),
+           ("svc-carousel.jpg", "카드뉴스 견본", "정보형 카드뉴스 (6장부터)", (29000, 49000), [("크몽 승인 대기", None)]),
            ("svc-listing.jpg", "영문 상품 설명 견본", "해외 판매용 영문 상품 설명", (39000, 59000), [("크몽 승인 대기", None)])]
     def where(w):
         return "".join(f'<a href="{u}" rel="noopener">{t}</a>' if u else f'<i>{t}</i>' for t, u in w)
