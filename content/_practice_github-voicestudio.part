@@ -1,0 +1,60 @@
+<section class="pr-hero">
+<p class="pr-sub">VoiceStudio는 목소리 복제·글 읽어 주기·받아쓰기를 내 컴퓨터 안에서 공짜로 해 주는 앱입니다. 목소리 파일이 밖으로 나가지 않는 게 장점입니다. 저는 릴스 나레이션을 제 목소리로 넣으려고 깔았다가, 결과가 어색해서 지웠습니다. 그래서 이 페이지는 「깔기 전에 알았으면 좋았을 것」 위주입니다.</p>
+<ul class="pr-chips"><li>목소리 복제</li><li>글 읽어 주기</li><li>받아쓰기</li><li>평가 💀 포기</li></ul>
+</section>
+
+<section class="pr-glance" aria-label="한눈에 보기">
+<h2>한눈에 보기 · 4단계</h2>
+<ol>
+<li><b>깔기 전 확인</b><span>내 맥이 맞는지 · 1분</span></li>
+<li><b>깔기</b><span>앱 파일(.dmg) 받아서 끌어다 놓기</span></li>
+<li><b>녹음 잘하기</b><span>제가 실패한 이유</span></li>
+<li><b>끝까지 들어 보기</b><span>쓰기 전 마지막 점검</span></li>
+</ol>
+</section>
+
+<section class="pr-step" id="ready">
+<h2><span class="n">1</span>깔기 전 확인</h2>
+<p>README 기준으로 맥은 <b>애플 실리콘(M1 이후)</b>에서 제대로 돌아갑니다. <b>인텔 맥</b>은 화면만 열리고 실제 처리는 다른 컴퓨터에 맡겨야 해서 「제한」으로 적혀 있습니다. 윈도·리눅스·안드로이드도 있습니다.</p>
+<div class="cmdbox"><div class="bar"><span>내 맥 확인 · 클로드에게</span><button type="button">복사</button></div><code>내 맥이 애플 실리콘(M1 이후)인지 인텔인지, 저장 공간이 얼마나 남았는지 알려 줘. VoiceStudio를 깔아도 되는지 판단하려고 해. 아무것도 설치하거나 바꾸지는 마.</code></div>
+<p class="pr-note">라이선스는 AGPL-3.0입니다. 만든 목소리를 쓰는 건 괜찮지만, 이 앱의 코드를 고쳐서 서비스로 내놓으면 코드를 공개해야 하는 조건이 있습니다.</p>
+</section>
+
+<section class="pr-step" id="install">
+<h2><span class="n">2</span>깔기</h2>
+<p>명령어 없이 일반 앱처럼 깝니다. 깃허브의 <b>Releases(최신 버전)</b>에서 맥용 <code>.dmg</code>를 받아 응용 프로그램 폴더로 끌어다 놓으면 됩니다.</p>
+<figure class="pr-shot"><img src="../../img/guide/voicestudio/repo.jpg" alt="VoiceStudio 깃허브 저장소 첫 화면" width="1400" height="840" loading="lazy"><figcaption>실제 화면 · github.com/debpalash/VoiceStudio · 별 98.4k · 2026-11-02</figcaption></figure>
+<div class="cmdbox"><div class="bar"><span>받을 곳 · 주소</span><button type="button">복사</button></div><code>https://github.com/debpalash/VoiceStudio/releases/latest</code></div>
+<p class="pr-note">앱을 처음 열면 쓸 목소리 엔진(모델)을 고르고 내려받습니다. 제 경우 고른 모델 중 일부는 「목소리 복제가 안 된다」고 나왔습니다. 복제를 하려면 복제를 지원하는 엔진을 골라야 합니다.</p>
+</section>
+
+<section class="pr-step" id="record">
+<h2><span class="n">3</span>녹음 잘하기 · 제가 실패한 이유</h2>
+<p>저는 18초짜리 제 목소리 녹음을 넣고 설정을 몇 번 바꿨습니다. 발음은 거의 맞게 나왔는데, 듣고 있으면 어색하고 몰입이 안 됐습니다. 돌아보면 <b>녹음을 너무 대충 한 게 컸습니다</b>. 도구 탓만은 아닙니다.</p>
+<ul class="pr-list">
+<li><b>조용한 방</b>에서, 휴대폰이 아니라 가능하면 이어폰 마이크라도</li>
+<li><b>평소 릴스 말투 그대로</b> 읽기 — 책 읽듯 하면 복제도 책 읽듯 나옵니다</li>
+<li>한 번에 길게보다 <b>짧게 여러 번</b> 녹음해서 제일 좋은 걸 고르기</li>
+</ul>
+<div class="cmdbox"><div class="bar"><span>녹음용 대본 만들기 · 클로드에게</span><button type="button">복사</button></div><code>목소리 복제용으로 30초 정도 소리 내어 읽을 대본을 써 줘. 내 평소 말투는 (예: 차분한 설명 / 밝은 반말)이야. 받침이 많은 단어, 숫자, 영어 단어가 골고루 들어가게 해 줘.</code></div>
+</section>
+
+<section class="pr-step" id="listen">
+<h2><span class="n">4</span>끝까지 들어 보기</h2>
+<p>몇 초만 들으면 괜찮아 보여도, 30초 넘게 들으면 어색함이 드러납니다. 쓰기 전에 꼭 끝까지 들어 보세요.</p>
+<div class="cmdbox"><div class="bar"><span>점검 기준 · 메모용</span><button type="button">복사</button></div><code>□ 30초 넘게 들어도 지루하지 않은가
+□ 문장 끝이 매번 같은 높이로 떨어지지 않는가
+□ 숫자·영어 단어를 제대로 읽는가
+□ 다른 사람이 들었을 때 「AI 목소리 같다」는 말이 바로 나오지 않는가</code></div>
+</section>
+
+<section class="pr-step" id="dont">
+<h2><span class="n">✕</span>결과와 하지 않은 것</h2>
+<ul class="pr-list">
+<li><b>결과:</b> 릴스에 쓸 수준이 아니라고 판단해 지웠습니다(휴지통). 지금은 다른 AI 목소리를 씁니다.</li>
+<li><b>다른 사람 목소리 복제</b> — 하지 않았습니다. 본인 동의 없는 목소리 복제는 하지 마세요.</li>
+<li><b>잘 녹음해서 다시 시험</b> — 아직 안 했습니다. 다시 하면 결과를 올리겠습니다.</li>
+</ul>
+</section>
+
+<div class="pr-story"><span>아래는 처음 깔았을 때의 기록입니다</span></div>
