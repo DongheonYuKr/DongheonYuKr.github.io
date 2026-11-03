@@ -297,8 +297,8 @@ def main():
     about = open(os.path.join(ROOT, "content", "_about.part"), encoding="utf-8").read()
     os.makedirs(os.path.join(ROOT, "about"), exist_ok=True)
     open(os.path.join(ROOT, "about", "index.html"), "w", encoding="utf-8").write(
-        page(f"소개: 개발 몰라도 깃허브 털기, HEONLOG | {SITE}",
-             "HEONLOG는 개발을 모르는 사람이 깃허브 무료 도구를 AI로 직접 깔아 보고 기록하는 곳입니다. 직접 해 본 것과 공식 출처로 확인한 것만 씁니다.",
+        page(f"소개: HEONLOG를 만드는 곳, Heonworks | {SITE}",
+             "HEONLOG는 Heonworks(헌웍스)가 운영하는 기록 채널입니다. 누가 하는지, 무료 글·무료 자료·사업자용 맡기기로 무엇을 하는지 소개합니다.",
              "about/", about + CTA, 1, jsonld={"@context": "https://schema.org", "@type": "AboutPage", "name": "HEONLOG 소개", "publisher": org},
              current="about"))
 
