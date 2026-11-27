@@ -3,233 +3,500 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>헌로그 | 인테리어 시공 사진을 인스타 영상으로</title>
-<meta name="description" content="인테리어·리모델링 업체의 시공 사진을 받아 인스타그램에 올릴 짧은 영상으로 만들어 드립니다. 한 달 영상 8편과 영상마다 같이 올릴 글. 처음 두 업체는 한 달 무료입니다.">
-<link rel="canonical" href="https://heonlog.com/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:site_name" content="헌로그">
-<meta property="og:title" content="시공 사진을 보내 주시면, 인스타에 올릴 영상으로 만들어 드립니다">
-<meta property="og:description" content="한 달 영상 8편과 영상마다 같이 올릴 글. 처음 두 업체는 한 달 무료입니다.">
-<meta property="og:url" content="https://heonlog.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="HEONLOG">
+<meta property="og:description" content="우리가 매일 쓰는 AI 직원들을, 이제 제품으로 만듭니다.">
 <meta property="og:image" content="https://heonlog.com/share.jpg">
-<meta name="theme-color" content="#ffffff">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<meta property="og:url" content="https://heonlog.com/">
+<title>HEONLOG</title>
+<meta name="description" content="할 일을 말하면 AI 직원들이 나눠서 하고, 파운더는 휴대폰으로 승인만 해요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--ink:#14213D;--ac:#2456D6;--sf:#EEF1F7;--mu:#4A5670;--line:#D9DFEA;--wrap:66rem}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 Pretendard,system-ui,-apple-system,sans-serif;word-break:keep-all;padding-bottom:6.5rem;-webkit-text-size-adjust:100%}
-h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.25}
-h1{font-size:clamp(1.9rem,6.4vw,3.25rem)}
-h2{font-size:clamp(1.6rem,4.6vw,2.4rem)}
-h3{font-size:1.25rem}
-p{max-width:34em}
-a{color:inherit}
-img,video{display:block;max-width:100%;height:auto}
-:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
-.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:1.25rem}
-.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem 1rem;z-index:20}
-.eg{display:inline-block;font-size:.875rem;font-weight:600;color:var(--mu);background:var(--sf);padding:.15rem .6rem;border-radius:.4rem}
-
-header{padding-block:1.1rem}
-header .wrap{display:flex;justify-content:space-between;align-items:center}
-.logo{display:inline-flex;align-items:center;gap:.5rem;font-size:1.5rem;font-weight:800;letter-spacing:-.04em;text-decoration:none}
-.logo svg{height:1.6rem;width:auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3.5rem;padding:.8rem 1.6rem;background:var(--ac);color:#fff;font-size:1.125rem;font-weight:700;text-decoration:none;border-radius:.8rem}
-.btn:hover{background:#1B46B4}
-.btn:active{transform:translateY(1px)}
-.btn-sm{min-height:2.75rem;font-size:1rem;padding:.5rem 1.1rem}
-.under{font-size:.95rem;color:var(--mu);margin-top:.6rem}
-header .btn{display:none}
-
-section{padding-block:3.5rem}
-section > .wrap > h2{margin-bottom:.8rem}
-.lead{font-size:1.125rem;color:var(--mu)}
-
-/* 1 첫 화면 */
-.hero{padding-block:1rem 3rem}
-.hero .free{font-size:1.2rem;font-weight:700;color:var(--ac);margin-top:1rem}
-.hero .cta{display:none}
-.phone{width:min(62vw,17rem);margin:1.75rem auto 0;border-radius:1.9rem;background:var(--ink);padding:.55rem;box-shadow:0 1.2rem 2.5rem rgba(20,33,61,.18)}
-.phone video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:1.4rem;background:var(--ink)}
-.hero .note{text-align:center;font-size:.95rem;color:var(--mu);margin:.9rem auto 0}
-
-/* 2 받는 것 */
-.get{background:var(--sf)}
-.cards{display:grid;gap:1.25rem;margin-top:2rem}
-.card{background:#fff;border-radius:1.1rem;padding:1.5rem;display:flex;flex-direction:column;gap:.5rem}
-.card .n{font-size:1rem;font-weight:700;color:var(--ac)}
-.card .vis{margin-top:auto;padding-top:1.25rem}
-.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
-.thumbs img{border-radius:.6rem;aspect-ratio:9/16;object-fit:cover;width:100%}
-.post{border:1px solid var(--line);border-radius:.8rem;padding:1rem;font-size:1rem;line-height:1.55}
-.post .tags{color:var(--ac);margin-top:.5rem}
-.mini{border:1px solid var(--line);border-radius:.8rem;padding:1rem;display:grid;gap:.5rem;font-size:.95rem}
-.mini b{font-size:1.05rem}
-.mini span{border:1px solid var(--line);border-radius:.45rem;padding:.5rem .7rem;color:var(--mu)}
-.mini i{font-style:normal;background:var(--ink);color:#fff;border-radius:.45rem;padding:.55rem;text-align:center;font-weight:700}
-
-/* 3 할 일 */
-.do{display:grid;gap:2rem;margin-top:2rem}
-.steps{list-style:none;padding:0;display:grid;gap:1.4rem;counter-reset:s}
-.steps li{counter-increment:s;display:grid;grid-template-columns:2.4rem 1fr;gap:.2rem .9rem}
-.steps li::before{content:counter(s);grid-row:span 2;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;display:grid;place-items:center}
-.steps strong{font-size:1.2rem}
-.steps span{color:var(--mu)}
-.chat{background:#B2C7DA;border-radius:1.1rem;padding:1.25rem 1rem;display:grid;gap:.6rem;font-size:1rem;line-height:1.45}
-.chat .eg{justify-self:center;background:rgba(255,255,255,.6)}
-.bub{max-width:80%;padding:.6rem .85rem;border-radius:.9rem;background:#fff;color:#1b1b1b}
-.bub.me{justify-self:end;background:#FEE500}
-.bub .pics{display:grid;grid-template-columns:repeat(3,2.6rem);gap:.25rem;margin-bottom:.4rem}
-.bub .pics b{aspect-ratio:1;border-radius:.3rem;background:#c9c2ad}
-.bub img{width:5.5rem;border-radius:.5rem;margin-bottom:.4rem}
-
-/* 4 무료 조건 */
-.terms{display:grid;gap:1.5rem;margin-top:2rem}
-.terms div{border-top:3px solid var(--ink);padding-top:1rem}
-.terms h3{margin-bottom:.35rem}
-.terms p{color:var(--mu)}
-
-/* 5 누가 */
-.who{background:var(--sf)}
-.who p{margin-top:.9rem;font-size:1.125rem}
-
-/* 6 신청 */
-.apply{text-align:center}
-.apply p{margin:.6rem auto 1.5rem}
-.apply .btn{width:100%;max-width:24rem}
-
-footer{padding-block:2rem;font-size:.95rem;color:var(--mu);border-top:1px solid var(--line)}
-footer p + p{margin-top:.3rem}
-
-/* 휴대폰: 버튼이 화면 아래에 늘 붙어 있어요 */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:10;background:rgba(255,255,255,.96);border-top:1px solid var(--line);padding:.7rem 1.25rem calc(.7rem + env(safe-area-inset-bottom));text-align:center}
-.bar .btn{width:100%}
-.bar .under{margin-top:.35rem;font-size:.875rem}
-
-@media (min-width:56rem){
-  body{font-size:1.125rem;padding-bottom:0}
-  .bar{display:none}
-  header .btn{display:inline-flex}
-  section{padding-block:5.5rem}
-  .hero{padding-block:2.5rem 5.5rem}
-  .hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:4rem;align-items:center}
-  .hero .cta{display:block;margin-top:2rem}
-  .phone{width:17.5rem;margin:0 auto}
-  .hero .free{font-size:1.4rem}
-  .cards{grid-template-columns:repeat(3,1fr)}
-  .do{grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-  .terms{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+/* layout: coceyo-like product page — light ground, one huge headline, one big character in the middle, then a large app window demo, the team standing in a row, approval on a phone, the night roster, FAQ, join. Single light look. */
+:root{
+  --bg:#f6f6f3; --paper:#ffffff; --ink:#15161a; --sub:#5b5d63; --line:#e4e4df; --soft:#eeeeea;
+  --clay:#b4582f; --clay-soft:#f6e7de; --ok:#2f7a4f; --ok-soft:#e3f1e8; --wait:#9a6a12; --wait-soft:#f7eed8;
+  --kr:"Noto Sans KR","Inter",-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --en:"Inter","Noto Sans KR",-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
-</head>
-<body>
-<a class="skip" href="#main">본문 바로가기</a>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--kr);word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:2px solid var(--clay);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font:600 15px/1 var(--kr);border:0;cursor:pointer;transition:transform .15s ease,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px)} .btn:active{transform:scale(.97)}
+.btn--ink{background:var(--ink);color:#fff;box-shadow:0 10px 24px -12px rgba(21,22,26,.6)}
+.btn--ink:hover{background:#2a2c33}
+.btn--line{background:var(--paper);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn svg{width:14px;height:14px}
 
-<header><div class="wrap">
-  <a class="logo" href="/" aria-label="헌로그 처음으로"><svg viewBox="0 0 54 76" aria-hidden="true"><rect x="3.5" y="3.5" width="47" height="69" rx="12" fill="none" stroke="currentColor" stroke-width="7"/><path d="M21 26v24l20-12z" fill="currentColor"/></svg>헌로그</a>
-  <a class="btn btn-sm" href="https://open.kakao.com/o/sLd6jyXi">카카오톡으로 무료 신청하기</a>
+/* marquee */
+.band{background:var(--ink);color:#fff;overflow:hidden;height:40px;display:flex;align-items:center}
+.band__track{display:flex;gap:56px;white-space:nowrap;animation:slide 28s linear infinite;font:700 12px/1 var(--kr);letter-spacing:.12em;padding-left:56px}
+.band__track span{display:inline-flex;align-items:center;gap:14px}
+.band__track i{width:20px;height:20px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;font-style:normal;font-size:11px}
+.band__track b{opacity:.45;font-weight:700}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(246,246,243,.86);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:10px;font:800 21px/1 var(--en);letter-spacing:-.03em}
+.logo i{width:26px;height:26px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font:800 14px/1 var(--en);font-style:normal}
+.nav ul{display:flex;gap:34px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--sub)}
+.nav ul a{position:relative;padding:6px 0} .nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--ink);transform:scaleX(0);transition:transform .25s}
+.nav ul a:hover{color:var(--ink)} .nav ul a:hover::after,.nav ul a.on::after{transform:scaleX(1)} .nav ul a.on{color:var(--ink);font-weight:600}
+.nav .btn{height:44px;padding:0 22px;font-size:14px}
+
+/* hero */
+.hero{text-align:center;padding-block:56px 40px}
+.kicker{font:700 clamp(17px,1.6vw,21px)/1.2 var(--kr);letter-spacing:-.01em}
+.hero h1{font:900 clamp(52px,9.2vw,128px)/1.02 var(--kr);letter-spacing:-.055em;margin:18px 0 0}
+.hero .lead{color:var(--sub);font-size:clamp(17px,1.6vw,21px);line-height:1.55;margin:22px 0 0}
+.hero__fig{position:relative;height:clamp(340px,44vw,520px);margin-top:22px;display:flex;justify-content:center;align-items:flex-end}
+.hero__fig img{height:100%;width:auto;filter:drop-shadow(0 30px 30px rgba(21,22,26,.16));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.hero__fig img:hover{transform:translateY(-6px) rotate(-1deg)}
+.hero__fig .side{position:absolute;bottom:0;height:72%;opacity:.95}
+.hero__fig .l{left:calc(50% - clamp(260px,28vw,380px))} .hero__fig .r{right:calc(50% - clamp(260px,28vw,380px))}
+.hero__fig::after{content:"";position:absolute;left:50%;bottom:-6px;width:min(560px,80%);height:28px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(21,22,26,.14),transparent 70%)}
+.hero .ctas{display:flex;gap:14px;justify-content:center;align-items:center;margin-top:34px;flex-wrap:wrap}
+.hero .tag{margin-top:18px;font-size:13px;color:var(--sub)}
+.enter{animation:up .9s cubic-bezier(.2,.8,.2,1) both} .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}.d4{animation-delay:.36s}
+@keyframes up{from{opacity:0;transform:translateY(18px)}}
+
+/* section heads */
+section{padding-block:clamp(80px,10vw,140px)}
+.eyebrow{font:700 12px/1 var(--en);letter-spacing:.16em;color:var(--sub);text-transform:uppercase}
+.h2{font:800 clamp(32px,4.4vw,60px)/1.15 var(--kr);letter-spacing:-.045em;margin:16px 0 0;text-wrap:balance}
+.h2 span{color:#a2a39f}
+.p{color:var(--sub);font-size:18px;margin:18px 0 0;max-width:34em}
+.center{text-align:center} .center .p{margin-inline:auto}
+
+/* app window */
+.app{margin-top:56px;background:var(--paper);border-radius:28px;box-shadow:0 0 0 1px var(--line),0 50px 100px -50px rgba(21,22,26,.35);overflow:hidden}
+.app__bar{display:flex;align-items:center;gap:12px;height:54px;padding:0 20px;border-bottom:1px solid var(--line);font-size:13px;color:var(--sub)}
+.app__bar .dots{display:flex;gap:7px}.app__bar .dots i{width:11px;height:11px;border-radius:50%;background:#e3e3de}
+.app__bar b{color:var(--ink);font-weight:700}
+.app__bar .pause{margin-left:auto;width:34px;height:34px;border-radius:10px;border:0;background:var(--soft);display:grid;place-items:center;cursor:pointer}
+.app__body{display:grid;grid-template-columns:220px minmax(0,1fr) minmax(0,1fr);min-height:600px}
+.side{border-right:1px solid var(--line);padding:16px 12px}
+.side h6{margin:6px 8px 10px;font:700 11px/1 var(--en);letter-spacing:.12em;color:#9a9b97}
+.ag{display:grid;grid-template-columns:38px 1fr;gap:1px 10px;align-items:center;padding:8px;border-radius:12px;transition:background .3s}
+.ag .av{grid-row:1/span 2;width:38px;height:38px;border-radius:50%;background:var(--soft);overflow:hidden;display:flex;justify-content:center}
+.ag .av img{height:220%;width:auto;margin-top:2px}
+.av.f img{height:100%;width:100%;margin:0;object-fit:cover}
+.ag b{font-size:14px;font-weight:700} .ag small{font-size:12px;color:var(--sub)}
+.ag.on{background:var(--soft)} .ag.on small{color:var(--ok);font-weight:600}
+.chat{padding:22px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;border-right:1px solid var(--line);min-width:0;overflow:hidden}
+.m{max-width:92%;animation:up .5s cubic-bezier(.2,.8,.2,1) both}
+.m.me{align-self:flex-end;background:var(--ink);color:#fff;padding:12px 16px;border-radius:18px 18px 6px 18px;font-weight:500}
+.m.ai{display:grid;grid-template-columns:30px 1fr;gap:10px}
+.m.ai .av{width:30px;height:30px;border-radius:50%;background:var(--soft);overflow:hidden;display:flex;justify-content:center}.m.ai .av img{height:220%;margin-top:2px}
+.m.ai .bub{background:var(--soft);padding:12px 15px;border-radius:6px 18px 18px 18px;font-size:15px}
+.m.ai .who{font-size:12px;color:var(--sub);margin-bottom:4px} .m.ai .who b{color:var(--ink)}
+.m .note{display:block;margin-top:8px;font-size:12px;color:var(--sub)}
+.result{padding:22px;background:#fbfbf9;display:flex;flex-direction:column;gap:12px;min-width:0}
+.result h6{margin:0 0 4px;font:700 11px/1 var(--en);letter-spacing:.12em;color:#9a9b97}
+.card{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:14px;border-radius:16px;background:var(--paper);box-shadow:0 0 0 1px var(--line);animation:up .5s cubic-bezier(.2,.8,.2,1) both}
+.card .av{width:40px;height:40px;border-radius:12px;background:var(--soft);overflow:hidden;display:flex;justify-content:center}.card .av img{height:220%;margin-top:3px}
+.card b{display:block;font-size:14px} .card span{font-size:13px;color:var(--sub)}
+.chip{font:600 12px/1 var(--kr);padding:7px 10px;border-radius:999px;white-space:nowrap}
+.chip.ok{background:var(--ok-soft);color:var(--ok)} .chip.wait{background:var(--wait-soft);color:var(--wait)} .chip.ink{background:var(--ink);color:#fff}
+.okbox{margin-top:auto;padding:16px;border-radius:18px;background:var(--ink);color:#fff;animation:up .5s cubic-bezier(.2,.8,.2,1) both}
+.okbox small{font:700 11px/1 var(--en);letter-spacing:.12em;opacity:.6}
+.okbox p{margin:8px 0 12px;font-weight:600}
+.okbox .row{display:flex;gap:8px}.okbox .row span{flex:1;text-align:center;padding:11px 0;border-radius:12px;background:rgba(255,255,255,.12);font-weight:600;font-size:14px;transition:transform .15s}
+.okbox .row span.go{background:#fff;color:var(--ink)} .okbox .row span.tap{transform:scale(.94)}
+.done{padding:16px;border-radius:18px;background:var(--ok-soft);color:var(--ok);font-weight:700;animation:up .5s both}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:64px;align-items:end}
+.mate{text-align:center}
+.mate .fig{height:clamp(220px,24vw,330px);display:flex;justify-content:center;align-items:flex-end;position:relative}
+.mate .fig::after{content:"";position:absolute;bottom:-4px;left:15%;right:15%;height:14px;background:radial-gradient(50% 50% at 50% 50%,rgba(21,22,26,.14),transparent 70%)}
+.mate img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.mate:hover img{transform:translateY(-8px)}
+.mate b{display:block;margin-top:18px;font:800 18px/1 var(--en)} .mate span{display:block;margin-top:6px;font-size:13px;color:var(--sub)}
+
+.chain{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:40px}
+.chain span{padding:10px 16px;border-radius:999px;background:var(--paper);box-shadow:0 0 0 1px var(--line);font-size:14px;font-weight:500}
+.chain i{font-style:normal;color:#b0b1ad;align-self:center}
+
+/* control */
+.ctrl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.phone{width:min(320px,100%);margin:0 auto;aspect-ratio:9/19;border-radius:48px;background:#17181c;padding:14px;box-shadow:0 50px 90px -40px rgba(21,22,26,.5)}
+.phone__in{height:100%;border-radius:36px;background:linear-gradient(170deg,#d9cdbf,#a99886);padding:60px 14px 14px;display:flex;flex-direction:column;align-items:center;color:#fff}
+.phone__in .time{font:600 68px/1 var(--en);letter-spacing:-.04em}
+.phone__in .date{font-size:14px;opacity:.85;margin-top:6px}
+.push{margin-top:auto;width:100%;background:rgba(255,255,255,.88);color:var(--ink);border-radius:22px;padding:14px;backdrop-filter:blur(8px)}
+.push .top{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sub)}.push .top i{width:20px;height:20px;border-radius:6px;background:var(--ink);color:#fff;font:800 11px/20px var(--en);text-align:center;font-style:normal}
+.push p{margin:8px 0 10px;font-size:14px;font-weight:600;line-height:1.45}
+.push .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.push .row span{text-align:center;padding:10px 0;border-radius:12px;background:#ecece8;font-size:14px;font-weight:600}.push .row span.go{background:var(--ink);color:#fff}
+.rules{display:grid;gap:14px;margin-top:36px}
+.rule{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:20px;border-radius:20px;background:var(--paper);box-shadow:0 0 0 1px var(--line);transition:transform .2s,box-shadow .2s}
+.rule:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--line),0 20px 40px -24px rgba(21,22,26,.25)}
+.rule .k{width:56px;height:56px;border-radius:16px;background:var(--clay-soft);color:var(--clay);display:grid;place-items:center;font:800 15px/1 var(--kr)}
+.rule b{font-size:17px} .rule p{margin:4px 0 0;color:var(--sub);font-size:15px}
+
+/* night roster */
+.night{background:var(--ink);color:#fff;border-radius:40px;margin-inline:max(12px,env(safe-area-inset-left,0px));padding-block:clamp(72px,9vw,120px)}
+.night .eyebrow{color:#8d8f94} .night .h2 span{color:#6f7177} .night .p{color:#b3b5ba}
+.shift{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:56px}
+.slot{border-radius:24px;background:#202228;padding:22px;position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;transition:transform .25s}
+.slot:hover{transform:translateY(-3px)}
+.slot time{font:500 44px/1 var(--mono);letter-spacing:-.04em}
+.slot b{margin-top:12px;font-size:16px} .slot span{color:#9fa1a6;font-size:14px}
+.slot img{position:absolute;right:-6px;bottom:-14px;height:72%;width:auto;opacity:.96;transition:transform .4s}
+.slot:hover img{transform:translateY(-6px)}
+.slot .lamp{position:absolute;top:22px;right:22px;width:9px;height:9px;border-radius:50%;background:#7ed4a1;box-shadow:0 0 0 6px rgba(126,212,161,.15)}
+
+/* faq */
+.faq{max-width:820px;margin:48px auto 0}
+details{border-bottom:1px solid var(--line);padding:22px 4px}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:18px;font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 26px/1 var(--en);color:var(--sub);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:12px 0 0;color:var(--sub);max-width:40em}
+
+/* join */
+.join{text-align:center}
+.join .figs{display:flex;justify-content:center;align-items:flex-end;gap:0;height:clamp(200px,22vw,280px);margin-bottom:36px}
+.join .figs img{height:100%;width:auto;margin:0 -10px}
+.join .figs img:nth-child(2){height:112%}
+.form{display:flex;gap:10px;max-width:520px;margin:34px auto 0;flex-wrap:wrap;justify-content:center}
+.form label{flex-basis:100%;font-size:14px;font-weight:600;text-align:left}
+.form input{flex:1 1 260px;min-width:0;height:56px;border-radius:999px;border:1px solid var(--line);background:var(--paper);padding:0 22px;font:inherit}
+.form small{flex-basis:100%;min-height:1.4em;color:var(--sub);font-size:13px}
+
+
+
+.h1-long{font-size:clamp(38px,6vw,84px)!important;line-height:1.1!important;letter-spacing:-.05em!important}
+.apps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:56px}
+.appcard{background:var(--paper);border-radius:28px;padding:28px;box-shadow:0 0 0 1px var(--line);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.appcard:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--line),0 30px 60px -36px rgba(21,22,26,.35)}
+.appcard__head{display:flex;justify-content:space-between;align-items:center}
+.tag2{font:800 22px/1 var(--en);letter-spacing:-.03em}
+.tag2.dark{background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-size:16px}
+.faces{display:flex}.faces img{width:40px;height:40px;border-radius:50%;background:var(--soft);object-fit:cover;object-position:50% 4%;margin-left:-8px;box-shadow:0 0 0 3px var(--paper)}
+.appcard h3{font:800 24px/1.3 var(--kr);letter-spacing:-.03em;margin:22px 0 6px}
+.appcard>p{color:var(--sub);margin:0 0 22px;font-size:15px}
+.ui{margin-top:auto;background:#f3f3ef;border-radius:20px;padding:18px;min-height:220px}
+.ui-studio{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center}
+.ui-studio .frame{aspect-ratio:9/16;border-radius:14px;background:linear-gradient(160deg,#2b2d33,#111214);display:grid;place-items:center}
+.ui-studio .play{width:0;height:0;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.ui-studio .steps{display:grid;gap:7px}
+.ui-studio .s{padding:9px 12px;border-radius:10px;background:var(--paper);font-size:13px;font-weight:600;display:flex;justify-content:space-between}
+.ui-studio .s.ok::after{content:"✓";color:var(--ok)}
+.ui-studio .s.go{background:var(--ink);color:#fff}
+.ui-radar .q{font-size:13px;color:var(--sub);margin-bottom:10px}.ui-radar .q b{color:var(--ink)}
+.ui-radar .row{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:10px;background:var(--paper);font-size:13px;margin-top:6px}
+.ui-radar .row b{color:var(--clay);font-family:var(--mono);font-weight:500;white-space:nowrap}.ui-radar .row.dim{opacity:.55}
+.ui-writer .post{background:var(--paper);border-radius:16px;padding:16px}
+.ui-writer .pf{display:flex;align-items:center;gap:10px}.ui-writer .pf img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:50% 4%;background:var(--soft)}
+.ui-writer .pf small{margin-left:auto;color:var(--sub)}
+.ui-writer p{margin:10px 0;font-size:14px;line-height:1.6}
+.ui-writer .meta{display:flex;gap:8px}.ui-writer .meta span{font-size:12px;padding:6px 10px;border-radius:999px;background:var(--soft);color:var(--sub)}
+.ui-control .row{display:grid;grid-template-columns:62px 1fr 10px;align-items:center;gap:10px;padding:11px 12px;border-radius:10px;background:var(--paper);font-size:13px;margin-top:6px}
+.ui-control .row:first-child{margin-top:0}
+.ui-control time{font-family:var(--mono)}
+.lamp{width:9px;height:9px;border-radius:50%;background:#45b06e;display:inline-block}.lamp.stop{background:#d9663b}
+.soon{display:flex;align-items:center;gap:18px;margin-top:16px;padding:20px 24px;border-radius:24px;border:1.5px dashed #cfcfc9}
+.soon p{margin:0;color:var(--sub)}.soon b{color:var(--ink)}
+.foot{border-top:1px solid var(--line);padding-block:72px 28px;margin-top:40px;overflow:hidden}
+.foot__top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px}
+.foot__news b{font:800 22px/1.2 var(--kr)}.foot__news p{color:var(--sub);margin:8px 0 18px}
+.foot__cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.foot__cols h6{margin:0 0 14px;font:700 12px/1 var(--en);letter-spacing:.14em;color:#9a9b97;text-transform:uppercase}
+.foot__cols a{display:block;padding:6px 0;font-size:15px;color:var(--ink);width:fit-content;background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .25s}
+.foot__cols a:hover{background-size:100% 1.5px}
+.foot__cols em{font-style:normal;font-size:12px;color:var(--clay);margin-left:6px}
+.foot__status{display:flex;align-items:center;gap:10px;margin-top:48px;padding:14px 18px;border-radius:999px;background:var(--paper);box-shadow:0 0 0 1px var(--line);font-size:14px;color:var(--sub);width:fit-content;max-width:100%}
+.foot__status b{color:var(--ink)}
+.foot__mark{font:900 clamp(72px,19vw,280px)/.8 var(--en);letter-spacing:-.07em;margin-top:56px;color:var(--ink);white-space:nowrap}
+.foot__legal{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:28px;font-size:13px;color:var(--sub)}
+@media (max-width:900px){.apps{grid-template-columns:minmax(0,1fr)}.foot__top{grid-template-columns:minmax(0,1fr)}.foot__cols{grid-template-columns:repeat(2,minmax(0,1fr))}.soon{flex-direction:column;align-items:flex-start}}
+
+
+.tgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:56px}
+.tm{background:var(--paper);border-radius:24px;padding:24px;box-shadow:0 0 0 1px var(--line);display:flex;flex-direction:column;gap:8px;transition:transform .25s,box-shadow .25s}
+.tm:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--line),0 24px 50px -32px rgba(21,22,26,.35)}
+.tm__h{display:flex;justify-content:space-between;align-items:center}
+.tm__h b{font:800 24px/1 var(--en);letter-spacing:-.035em}
+.tm p{margin:6px 0 0;font:700 17px/1.45 var(--kr);letter-spacing:-.02em}
+.tm small{margin-top:auto;padding-top:14px;color:var(--sub);font-size:13px;border-top:1px solid var(--line)}
+.tm.soon2{background:transparent;box-shadow:none;border:1.5px dashed #cfcfc9}
+.chip2{font:700 12px/1 var(--kr);padding:7px 10px;border-radius:999px;background:var(--ink);color:#fff}
+.want{flex-basis:100%;border:0;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.want legend{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-bottom:8px}
+.form .want label{flex-basis:auto;text-align:left;font-weight:600}
+.form .want input{flex:none;width:16px;height:16px;min-width:0;padding:0;border-radius:4px;box-shadow:none}
+.want label{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:var(--paper);box-shadow:0 0 0 1px var(--line);font:600 13px/1 var(--en);cursor:pointer}
+.want input{accent-color:var(--ink)}
+.fgrid{flex-basis:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:left}
+.fgrid label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;flex-basis:auto}
+.fgrid em,.agree em{font-style:normal;font-weight:500;color:var(--sub);font-size:12px}
+.form .fgrid input,.form .fgrid select{width:100%;flex:none;height:50px;border-radius:14px;border:1px solid var(--line);background:var(--paper);padding:0 16px;font:inherit;font-weight:400;color:var(--ink)}
+.agree{flex-basis:100%;text-align:left;font-size:13px}
+.form .agree label{flex-basis:auto;display:flex;align-items:center;gap:8px;font-weight:700}
+.form .agree input{flex:none;width:16px;height:16px;min-width:0;padding:0;accent-color:var(--ink)}
+.agree details{margin-top:6px}.agree summary{cursor:pointer;color:var(--sub)}.agree p{margin:6px 0 0;color:var(--sub);line-height:1.6}
+.form{max-width:640px!important}
+@media (max-width:640px){.fgrid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:1023px){.tgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.tgrid{grid-template-columns:minmax(0,1fr)}}
+
+@media (max-width:1023px){
+  .app__body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} .side{display:none}
+  .team{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}
+  .shift{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ctrl{grid-template-columns:minmax(0,1fr);gap:48px}
+  .nav ul{display:none}
+}
+@media (max-width:640px){
+  .app__body{grid-template-columns:minmax(0,1fr)} .chat{border-right:0;min-height:340px} .result{border-top:1px solid var(--line)}
+  .hero__fig .side{display:none}
+  .team{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .shift{grid-template-columns:minmax(0,1fr)}
+  .night{border-radius:28px}
+  .btn{width:100%;justify-content:center} .hero .ctas{flex-direction:column} .nav .btn{width:auto;height:38px;padding:0 14px;font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+<div class="band" aria-hidden="true"><div class="band__track">
+  <span>사용하기 사전 예약 받는 중 <i>→</i></span><b>·</b><span>Studio · Radar · Writer · Review · Design · Ads · Web · Research · Lab · Control <i>→</i></span><b>·</b>
+  <span>사용하기 사전 예약 받는 중 <i>→</i></span><b>·</b><span>Studio · Radar · Writer · Review · Design · Ads · Web · Research · Lab · Control <i>→</i></span><b>·</b>
+  <span>사용하기 사전 예약 받는 중 <i>→</i></span><b>·</b><span>Studio · Radar · Writer · Review · Design · Ads · Web · Research · Lab · Control <i>→</i></span><b>·</b>
+  <span>사용하기 사전 예약 받는 중 <i>→</i></span><b>·</b><span>Studio · Radar · Writer · Review · Design · Ads · Web · Research · Lab · Control <i>→</i></span><b>·</b>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top"><i>H</i>HEONLOG</a>
+  <ul><li><a href="#teams">팀</a></li><li><a href="#how">회사 화면</a></li><li><a href="#team">직원</a></li><li><a href="#faq">자주 묻는 질문</a></li></ul>
+  <a class="btn btn--ink" href="#join">사전 예약 <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></a>
 </div></header>
 
-<main id="main">
-  <section class="hero" aria-labelledby="h1"><div class="wrap">
+<main id="top">
+  <section class="hero"><div class="wrap">
+    <div class="kicker enter">HEONLOG</div>
+    <h1 class="enter d1 h1-long">우리가 매일 쓰는 AI 직원들을,<br>이제 제품으로 만듭니다.</h1>
+    <p class="lead enter d2">영상을 만들고, 잘되는 소재를 찾고, 글을 쓰고, 새벽에도 일을 돌리는 팀.<br>매일 우리 회사에서 먼저 써 본 것만 내놓아요.</p>
+    <div class="hero__fig enter d3">
+      <img class="side l" src="img/Luna.png" alt="영상 담당 AI 직원 Luna">
+      <img src="img/Leo.png" alt="본부 담당 AI 직원 Leo">
+      <img class="side r" src="img/Toby.png" alt="도구 담당 AI 직원 Toby">
+    </div>
+    <div class="ctas enter d4">
+      <a class="btn btn--ink" href="#join">사용하기 사전 예약 <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></a>
+      <a class="btn btn--line" href="#how">회사 화면 보기 <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2v8M2.5 6.5L6 10l3.5-3.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></a>
+    </div>
+    <p class="tag">Studio · Radar · Writer · Review · Design · Ads · Web · Research · Lab · Control</p>
+  </div></section>
+
+  <section id="teams"><div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Teams</div>
+      <h2 class="h2">팀은 계속 늘어나요.<br><span>지금은 열 개가 매일 돌아가요.</span></h2>
+    </div>
+    <div class="tgrid">
+      <article class="tm"><div class="tm__h"><b>Studio</b><span class="faces"><img src="img/Luna.png" alt=""><img src="img/Mia.png" alt=""></span></div><p>쇼츠와 긴 영상을 만들어요</p><small>11-26 하루 쇼츠 6편 공개</small></article>
+      <article class="tm"><div class="tm__h"><b>Radar</b><span class="faces"><img src="img/Toby.png" alt=""></span></div><p>지금 터지는 소재를 찾아요</p><small>「살림템」 41편 중 35편을 찾아냄</small></article>
+      <article class="tm"><div class="tm__h"><b>Writer</b><span class="faces"><img src="img/Mia.png" alt=""></span></div><p>스레드와 블로그 글을 매일 써요</p><small>스레드 32번째 글까지</small></article>
+      <article class="tm"><div class="tm__h"><b>Review</b><span class="faces"><img src="img/Toby.png" alt=""></span></div><p>올리기 전에 검사해요</p><small>첫 2초·사실 8점 넘어야 통과</small></article>
+      <article class="tm"><div class="tm__h"><b>Design</b><span class="faces"><img src="img/Rex.png" alt=""><img src="img/Toby.png" alt=""></span></div><p>카드뉴스와 움직이는 카드를 만들어요</p><small>먹색과 금색, 카드 색을 정함</small></article>
+      <article class="tm"><div class="tm__h"><b>Ads</b><span class="faces"><img src="img/Leo.png" alt=""><img src="img/Toby.png" alt=""></span></div><p>제품 사진 한 장으로 광고 영상을 만들어요</p><small>15초 광고 견본 완성</small></article>
+      <article class="tm"><div class="tm__h"><b>Web</b><span class="faces"><img src="img/Leo.png" alt=""></span></div><p>홈페이지와 소개 페이지를 만들어요</p><small>이 페이지가 여섯 번째 판</small></article>
+      <article class="tm"><div class="tm__h"><b>Research</b><span class="faces"><img src="img/Remi.png" alt=""><img src="img/Leo.png" alt=""></span></div><p>잘된 사례와 시장을 뜯어봐요</p><small>참고 자료 63개 정리</small></article>
+      <article class="tm"><div class="tm__h"><b>Lab</b><span class="faces"><img src="img/Toby.png" alt=""></span></div><p>새 도구를 시험하고 직원에게 대 줘요</p><small>검사기·소재 찾기 도구를 만듦</small></article>
+      <article class="tm"><div class="tm__h"><b>Control</b><span class="faces"><img src="img/Leo.png" alt=""></span></div><p>일을 나누고 파운더 승인을 받아요</p><small>휴대폰 알림으로 승인</small></article>
+      <article class="tm soon2"><div class="tm__h"><b>Remix</b><span class="chip2">만드는 중</span></div><p>소재 하나를 채널마다 맞는 결과물로</p><small>우리가 먼저 써 보고 열어요</small></article>
+      <article class="tm soon2"><div class="tm__h"><b>Next</b><span class="chip2">다음 팀</span></div><p>막히는 일이 생기면 팀을 하나 더 만들어요</p><small>지금도 늘어나는 중</small></article>
+    </div>
+  </div></section>
+
+  <section id="how"><div class="wrap">
+    <div class="center">
+      <div class="eyebrow">한 번의 대화</div>
+      <h2 class="h2">본부에 한 마디 하면,<br><span>팀 전체가 움직여요.</span></h2>
+      <p class="p">본부 직원 Leo가 일을 나눠 맡기고, 끝나면 결과를 모아 보고해요. 돈이 들거나 밖에 내보내는 일은 파운더 승인을 받아요.</p>
+    </div>
+    <div class="app" aria-label="HEONLOG 회사 화면 시연" role="img">
+      <div class="app__bar"><span class="dots"><i></i><i></i><i></i></span><span><b>HEONLOG</b> · 회사 화면</span>
+        <button class="pause" id="pause" type="button" aria-label="일시 정지"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path id="pi" d="M4 2.5v9M10 2.5v9" stroke="#15161a" stroke-width="2" stroke-linecap="round"/></svg></button></div>
+      <div class="app__body" aria-hidden="true">
+        <div class="side">
+          <h6>직원</h6>
+          <div class="ag" data-a="Leo"><span class="av"><img src="img/Leo.png" alt=""></span><b>Leo</b><small>본부</small></div>
+          <div class="ag" data-a="Luna"><span class="av"><img src="img/Luna.png" alt=""></span><b>Luna</b><small>영상</small></div>
+          <div class="ag" data-a="Rex"><span class="av"><img src="img/Rex.png" alt=""></span><b>Rex</b><small>영상</small></div>
+          <div class="ag" data-a="Remi"><span class="av"><img src="img/Remi.png" alt=""></span><b>Remi</b><small>영상</small></div>
+          <div class="ag" data-a="Mia"><span class="av"><img src="img/Mia.png" alt=""></span><b>Mia</b><small>글 · 영상</small></div>
+          <div class="ag" data-a="Toby"><span class="av"><img src="img/Toby.png" alt=""></span><b>Toby</b><small>도구</small></div>
+          <div class="ag" data-a="Nell"><span class="av f"><img src="img/Nell.jpg" alt=""></span><b>Nell</b><small>조사</small></div>
+          <div class="ag" data-a="Rhea"><span class="av f"><img src="img/Rhea.jpg" alt=""></span><b>Rhea</b><small>검토</small></div>
+          <div class="ag" data-a="Otto"><span class="av f"><img src="img/Otto.jpg" alt=""></span><b>Otto</b><small>확인</small></div>
+          <div class="ag" data-a="Vic"><span class="av f"><img src="img/Vic.jpg" alt=""></span><b>Vic</b><small>변환</small></div>
+        </div>
+        <div class="chat" id="chat"></div>
+        <div class="result" id="result"><h6>결과</h6></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="team"><div class="wrap">
+    <div class="center">
+      <div class="eyebrow">직원</div>
+      <h2 class="h2">본부 하나가 이끌고,<br><span>맡은 일이 다른 직원들이 해요.</span></h2>
+    </div>
+    <div class="team">
+      <div class="mate lead"><div class="fig"><img src="img/Leo.png" alt="Leo"></div><b>Leo</b><span>Control</span></div>
+      <div class="mate"><div class="fig"><img src="img/Luna.png" alt="Luna"></div><b>Luna</b><span>Studio</span></div>
+      <div class="mate"><div class="fig"><img src="img/Rex.png" alt="Rex"></div><b>Rex</b><span>Design</span></div>
+      <div class="mate"><div class="fig"><img src="img/Remi.png" alt="Remi"></div><b>Remi</b><span>Research</span></div>
+      <div class="mate"><div class="fig"><img src="img/Mia.png" alt="Mia"></div><b>Mia</b><span>Writer</span></div>
+      <div class="mate"><div class="fig"><img src="img/Toby.png" alt="Toby"></div><b>Toby</b><span>Lab</span></div>
+    </div>
+    <div class="chain"><span>파운더</span><i>→</i><span>본부 Leo</span><i>→</i><span>담당 직원</span><i>→</i><span>검사</span><i>→</i><span>파운더 승인</span></div>
+  </div></section>
+
+  <section id="control"><div class="wrap ctrl">
+    <div class="phone" role="img" aria-label="잠금 화면에 온 승인 요청 알림: 새벽 영상이 다 만들어졌어요, 올릴까요?"><div class="phone__in">
+      <div class="time">04:22</div><div class="date">11월 26일 목요일</div>
+      <div class="push"><div class="top"><i>H</i>HEONLOG · 본부 Leo<span style="margin-left:auto">지금</span></div>
+        <p>새벽 영상이 다 만들어졌어요. 검사 0건. 지금 올릴까요?</p>
+        <div class="row"><span>먼저 볼게</span><span class="go">올려</span></div></div>
+    </div></div>
     <div>
-      <h1 id="h1">시공 사진을 보내 주시면, 인스타에 올릴 영상으로 만들어 드립니다</h1>
-      <p class="free">처음 두 업체는 한 달 무료입니다.</p>
-      <div class="cta">
-        <a class="btn" href="https://open.kakao.com/o/sLd6jyXi">카카오톡으로 무료 신청하기</a>
-        <p class="under">업체 이름과 지역만 보내 주세요</p>
-      </div>
-    </div>
-    <div>
-      <div class="phone"><video id="eg" src="assets/example.mp4" poster="assets/example.jpg" autoplay muted loop playsinline aria-label="예시 영상: 공사 전 사진에서 공사 후 사진으로 바뀌는 15초 세로 영상"></video></div>
-      <p class="note">이런 영상을 받으십니다. 무료 사진으로 만든 예시이며, 실제 손님 작업이 아닙니다.</p>
-    </div>
-  </div></section>
-
-  <section class="get" aria-labelledby="get"><div class="wrap">
-    <h2 id="get">한 달 동안 받으시는 것</h2>
-    <p class="lead">세 가지입니다.</p>
-    <div class="cards">
-      <div class="card">
-        <span class="n">한 달 8편</span>
-        <h3>인스타에 올릴 짧은 영상</h3>
-        <p>보내 주신 현장 사진과 영상으로 만든 세로 영상입니다. 일주일에 2편씩 보내 드립니다.</p>
-        <div class="vis thumbs"><img src="assets/thumb-1.jpg" alt="예시 영상 장면: 공사 전" loading="lazy" width="270" height="480"><img src="assets/thumb-2.jpg" alt="예시 영상 장면: 공사 후 주방" loading="lazy" width="270" height="480"><img src="assets/thumb-3.jpg" alt="예시 영상 장면: 공사 후 수납" loading="lazy" width="270" height="480"></div>
-      </div>
-      <div class="card">
-        <span class="n">영상마다</span>
-        <h3>같이 올릴 글</h3>
-        <p>영상 아래에 붙일 설명 글을 써서 함께 보냅니다. 그대로 붙여 넣으시면 됩니다.</p>
-        <div class="vis"><div class="post"><span class="eg">예시</span><br>20년 된 주방을 이렇게 바꿨습니다. 상부장을 줄이고 창을 살려서 낮에도 불을 안 켜도 됩니다.<div class="tags">#주방리모델링 #아파트인테리어</div></div></div>
-      </div>
-      <div class="card">
-        <span class="n">한 달 뒤</span>
-        <h3>결과 정리 1장</h3>
-        <p>영상마다 조회수가 얼마나 나왔는지, 그동안 문의가 들어왔는지를 한 장으로 정리해 드립니다. 이걸 보고 계속할지 정하시면 됩니다.</p>
-        <div class="vis"><div class="mini" aria-hidden="true"><span class="eg" style="justify-self:start">예시 틀</span><b>○○인테리어 한 달 결과</b><span>영상 8편 · 편마다 조회수</span><span>가장 많이 본 영상</span><span>그동안 들어온 문의</span></div></div>
+      <div class="eyebrow">승인</div>
+      <h2 class="h2">파운더 승인 없이는<br><span>아무것도 안 나가요.</span></h2>
+      <div class="rules">
+        <div class="rule"><span class="k">돈</span><div><b>쓰기 전에 숫자부터 말해요</b><p>얼마를 쓸지 먼저 묻고, 쓴 뒤에는 남은 양을 장부에 적어요.</p></div></div>
+        <div class="rule"><span class="k">지우기</span><div><b>지우는 일은 묻고 해요</b><p>무엇이 사라지는지 말하고 파운더 대답을 기다려요.</p></div></div>
+        <div class="rule"><span class="k">막힘</span><div><b>막히면 멈추고 알려요</b><p>권한이 없으면 돌아가지 않고, 파운더 휴대폰으로 알림을 보내요.</p></div></div>
       </div>
     </div>
   </div></section>
 
-  <section aria-labelledby="do"><div class="wrap">
-    <h2 id="do">사장님이 하실 일</h2>
-    <p class="lead">전부 카카오톡으로 합니다. 일주일에 10분쯤 걸립니다.</p>
-    <div class="do">
-      <ol class="steps">
-        <li><strong>사진을 보냅니다</strong><span>휴대폰에 있는 지난 시공 사진을 한꺼번에 보내 주세요. 현장에서 10초씩 찍은 영상이 있으면 더 좋습니다.</span></li>
-        <li><strong>영상을 확인합니다</strong><span>만든 영상을 먼저 보여 드립니다. 고칠 곳을 말씀해 주시면 고칩니다.</span></li>
-        <li><strong>직접 올립니다</strong><span>영상과 글을 받아서 사장님 인스타 계정에 올리시면 됩니다. 계정 비밀번호는 받지 않습니다.</span></li>
-      </ol>
-      <div class="chat" aria-label="카카오톡 대화 예시">
-        <span class="eg">대화 예시</span>
-        <div class="bub me"><div class="pics" aria-hidden="true"><b></b><b></b><b></b></div>지난달 끝낸 주방 현장 사진입니다</div>
-        <div class="bub"><img src="assets/thumb-2.jpg" alt="" loading="lazy" width="270" height="480">영상 2편 만들었습니다. 확인 부탁드립니다.</div>
-        <div class="bub me">두 번째 거 자막만 좀 크게 해 주세요</div>
-        <div class="bub">고쳤습니다. 올릴 글도 같이 보냅니다.</div>
+  
+
+  <section id="faq"><div class="wrap">
+    <div class="center"><div class="eyebrow">자주 묻는 질문</div><h2 class="h2">궁금한 것들</h2></div>
+    <div class="faq">
+      <details open><summary>HEONLOG는 뭐예요?</summary><p>파운더 한 명과 AI 직원들로 굴러가는 회사예요. 직원마다 맡은 일과 순서표가 있고, 본부 직원이 일을 나눠 맡기고 결과를 모아 파운더에게 보고해요.</p></details>
+      <details><summary>AI가 승인 없이 움직이나요?</summary><p>아니요. 돈을 쓰거나, 지우거나, 처음 밖에 내보내는 일은 파운더 승인을 받아요. 막히면 멈추고 파운더 휴대폰으로 알려요.</p></details>
+      <details><summary>어떤 AI를 쓰나요?</summary><p>직원은 Claude로 일하고, 주제 후보는 Codex(GPT)에게, 영상 검사는 Gemini에게 맡겨요. 일마다 잘하는 AI를 써요.</p></details>
+      <details><summary>누구를 위한 거예요?</summary><p>혼자 일하면서 할 일이 너무 많은 파운더님이요. 직원을 뽑기엔 이르지만 일은 매일 쌓이는 분들이에요.</p></details>
+      <details><summary>언제 써 볼 수 있나요?</summary><p>아직은 우리 회사 안에서만 써요. 매일 먼저 써 보고 충분히 다듬은 것부터 하나씩 열 거예요. 사전 예약을 남겨 주시면 여는 날 메일로 먼저 알려 드려요.</p></details>
+    </div>
+  </div></section>
+
+  <section class="join" id="join"><div class="wrap">
+    <div class="figs"><img src="img/Mia.png" alt=""><img src="img/Leo.png" alt=""><img src="img/Luna.png" alt=""></div>
+    <h2 class="h2">우리가 먼저 써 보고, 열어요.<br><span>사전 예약을 받아요.</span></h2>
+    <p class="p" style="margin-inline:auto">지금은 회사 안에서 매일 돌리며 다듬는 중이에요. 열리는 날, 사전 예약하신 분께 먼저 메일로 알려 드려요.</p>
+    <form class="form" id="f" novalidate>
+      <div class="fgrid">
+        <label for="name">이름 <em>필수</em><input type="text" id="name" name="name" autocomplete="name" placeholder="부르실 이름" required></label>
+        <label for="email">이메일 <em>필수</em><input type="email" id="email" name="email" autocomplete="email" placeholder="name@example.com" required></label>
+        <label for="work">하는 일 <em>선택</em><select id="work" name="work"><option value="">고르기</option><option>혼자 하는 사업</option><option>크리에이터</option><option>작은 가게</option><option>회사 팀</option><option>기타</option></select></label>
+        <label for="want">가장 맡기고 싶은 일 <em>선택</em><input type="text" id="want" name="want" placeholder="예: 매일 쇼츠 올리기"></label>
       </div>
-    </div>
-  </div></section>
-
-  <section aria-labelledby="free" style="padding-top:0"><div class="wrap">
-    <h2 id="free">왜 무료인가요</h2>
-    <div class="terms">
-      <div><h3>아직 사례가 없어서입니다</h3><p>헌로그는 이제 막 시작했습니다. 보여 드릴 손님 작업이 없어서, 처음 두 업체는 한 달 동안 돈을 받지 않습니다.</p></div>
-      <div><h3>대신 부탁드리는 것</h3><p>한 달 동안 만든 영상과 조회수, 문의 수를 헌로그의 사례로 소개할 수 있게 허락해 주세요.</p></div>
-      <div><h3>한 달이 끝나면</h3><p>계속하지 않으셔도 됩니다. 만든 영상은 그대로 쓰시면 됩니다.</p></div>
-    </div>
-  </div></section>
-
-  <section class="who" aria-labelledby="who"><div class="wrap">
-    <h2 id="who">누가 하나요</h2>
-    <p>헌로그는 한 사람이 운영합니다. 카카오톡에 답하는 것부터 영상을 보내 드리는 것까지 직접 합니다.</p>
-    <p>영상은 AI 도구의 도움을 받아 만들고, 보내기 전에 한 편씩 직접 확인합니다. 문의가 몇 건 늘어난다는 약속은 하지 않습니다. 약속하는 것은 한 달 영상 8편과 영상마다 같이 올릴 글입니다.</p>
-  </div></section>
-
-  <section class="apply" aria-labelledby="apply"><div class="wrap">
-    <h2 id="apply">카카오톡으로 신청하세요</h2>
-    <p>업체 이름과 지역만 보내 주시면 됩니다. 양식이나 서류는 없습니다.</p>
-    <a class="btn" href="https://open.kakao.com/o/sLd6jyXi">카카오톡으로 무료 신청하기</a>
-    <p class="under" style="margin:.6rem auto 0">처음 두 업체까지 한 달 무료</p>
+      <fieldset class="want"><legend>먼저 써 보고 싶은 팀 (골라도 되고 안 골라도 돼요)</legend>
+        <label><input type="checkbox" name="team" value="Studio"> Studio</label>
+        <label><input type="checkbox" name="team" value="Radar"> Radar</label>
+        <label><input type="checkbox" name="team" value="Writer"> Writer</label>
+        <label><input type="checkbox" name="team" value="Ads"> Ads</label>
+        <label><input type="checkbox" name="team" value="Remix"> Remix</label>
+      </fieldset>
+      <div class="agree">
+        <label for="ok"><input type="checkbox" id="ok" name="ok" required> 개인정보 수집·이용에 동의해요 <em>필수</em></label>
+        <details><summary>무엇을 왜 받나요</summary><p>받는 것: 이름·이메일(필수), 하는 일·맡기고 싶은 일·고른 팀(선택) · 쓰는 곳: 서비스를 여는 날 알림 메일과, 무엇부터 열지 정하는 데에만 · 보관: 여는 날 알림을 보낸 뒤 또는 지워 달라고 하시면 바로 지움 · 동의하지 않으셔도 되지만, 그러면 알림을 보내 드릴 수 없어요. 자세한 내용은 <a href="https://heonlog.com/privacy.html">개인정보처리방침</a>.</p></details>
+      </div>
+      <button class="btn btn--ink" type="submit">사용하기 사전 예약</button>
+      <small id="msg" aria-live="polite"></small>
+    </form>
   </div></section>
 </main>
 
-<footer><div class="wrap">
-  <p>© 2026 헌로그 · 대표 유동헌</p>
-  <p>예시 영상에 쓴 사진: Unsplash (Emmanuel M, Olek Buzunov, Collov Home Design, Jason Briscoe)</p>
+<footer class="foot"><div class="wrap">
+  <div class="foot__top">
+    <div class="foot__news"><b>HEONLOG</b><p>우리가 매일 쓰는 AI 직원들을, 이제 제품으로 만듭니다.</p></div>
+    <div class="foot__cols">
+      <div><h6>Teams</h6><a href="#teams">Studio</a><a href="#teams">Radar</a><a href="#teams">Writer</a><a href="#teams">Review</a><a href="#teams">Design</a><a href="#teams">Ads</a><a href="#teams">Web · Research · Lab · Control</a></div>
+      <div><h6>회사</h6><a href="#how">회사 화면</a><a href="#team">직원</a><a href="#faq">자주 묻는 질문</a></div>
+      <div><h6>안내</h6><a href="https://heonlog.com/privacy.html">개인정보처리방침</a><a href="#faq">자주 묻는 질문</a></div>
+    </div>
+  </div>
+  <div class="foot__status"><i class="lamp"></i><span>지금 <b>직원 10명 · 팀 10개</b>가 일하는 중 · Remix 만드는 중</span></div>
+  <div class="foot__mark" aria-hidden="true">HEONLOG</div>
+  <div class="foot__legal"><span>© 2026 HEONLOG · 문의 contact@heonlog.com</span><span>캐릭터 그림: HEONLOG</span></div>
 </div></footer>
 
-<div class="bar">
-  <a class="btn" href="https://open.kakao.com/o/sLd6jyXi">카카오톡으로 무료 신청하기</a>
-  <p class="under">업체 이름과 지역만 보내 주세요</p>
-</div>
-
 <script>
-// 움직임을 줄이도록 설정한 사람에게는 영상을 자동으로 틀지 않아요
-if (matchMedia('(prefers-reduced-motion: reduce)').matches) { const v = document.getElementById('eg'); v.removeAttribute('autoplay'); v.pause(); v.controls = true; }
+(() => {
+  const $ = id => document.getElementById(id);
+  const chat = $('chat'), res = $('result');
+  const F = ['Nell','Rhea','Otto','Vic'];
+  const av = n => F.includes(n) ? `<span class="av f"><img src="img/${n}.jpg" alt=""></span>` : `<span class="av"><img src="img/${n}.png" alt=""></span>`;
+  const on = (...names) => document.querySelectorAll('.ag').forEach(a => a.classList.toggle('on', names.includes(a.dataset.a)));
+  const me = t => { chat.insertAdjacentHTML('beforeend', `<div class="m me">${t}</div>`); trim(); };
+  const ai = (n, t, note = '') => { chat.insertAdjacentHTML('beforeend', `<div class="m ai">${av(n)}<div><div class="who"><b>${n}</b></div><div class="bub">${t}${note ? `<span class="note">${note}</span>` : ''}</div></div></div>`); trim(); };
+  const trim = () => { while (chat.children.length > 7) chat.firstElementChild.remove(); };
+  const card = (n, title, sub, chip, cls) => res.insertAdjacentHTML('beforeend', `<div class="card">${av(n)}<div><b>${title}</b><span>${sub}</span></div><span class="chip ${cls}">${chip}</span></div>`);
+  const steps = [
+    [1600, () => { chat.innerHTML = ''; res.innerHTML = '<h6>결과</h6>'; on(); me('이번 주 콘텐츠 준비해 줘.'); }],
+    [1800, () => { on('Leo'); ai('Leo', '네 팀에 나눌게요. Radar가 소재를 찾고, Studio가 영상, Writer가 글, 마지막에 Review가 검사해요.', '할 일 4개로 나눔'); }],
+    [1300, () => { on('Leo', 'Toby', 'Nell'); card('Toby', 'Radar · 소재 찾기', 'Toby · Nell, 쇼츠 40편 훑는 중', '하는 중', 'wait'); }],
+    [1300, () => { on('Leo', 'Toby', 'Nell', 'Luna', 'Rex', 'Remi'); card('Luna', 'Studio · 쇼츠 3편', 'Luna · Rex · Remi', '대기', 'wait'); }],
+    [1300, () => { on('Leo', 'Toby', 'Nell', 'Luna', 'Rex', 'Remi', 'Mia', 'Vic'); card('Mia', 'Writer · 글 2편', '스레드 · 블로그', '대기', 'wait'); }],
+    [1700, () => { const c = res.querySelectorAll('.chip'); c[0].className = 'chip ok'; c[0].textContent = '3개 찾음'; ai('Toby', '평소보다 3배 넘게 터진 소재 3개 찾았어요. Studio로 넘겨요.'); }],
+    [1700, () => { const c = res.querySelectorAll('.chip'); c[1].textContent = '하는 중'; ai('Rex', '물건 이야기 한 편은 제가 맡을게요.'); }],
+    [1700, () => { const c = res.querySelectorAll('.chip'); c[2].textContent = '하는 중'; ai('Mia', '같은 소재로 스레드 글 먼저 써 둘게요.'); }],
+    [1700, () => { on('Leo', 'Luna', 'Rex', 'Remi', 'Mia', 'Vic'); ai('Vic', '영상 대본을 채널마다 맞는 모양으로 바꿔 둘게요.'); }],
+    [1800, () => { const c = res.querySelectorAll('.chip'); c[1].className = 'chip ok'; c[1].textContent = '3편 완성'; c[2].className = 'chip ok'; c[2].textContent = '2편 완성'; ai('Luna', '영상 3편 다 됐어요. 검사 넘길게요.'); on('Leo', 'Rhea', 'Otto'); card('Rhea', 'Review · 검사', 'Rhea · Otto, 첫 2초 · 사실 8점 넘어야 통과', '0건', 'ok'); }],
+    [1700, () => { ai('Otto', '자막·소리·사실까지 다시 확인했어요. 고칠 곳 없어요.'); }],
+    [2200, () => { on('Leo'); res.insertAdjacentHTML('beforeend', '<div class="okbox"><small>승인 필요</small><p>쇼츠 3편 · 글 2편 · 이번 주 공개 예약</p><div class="row"><span>먼저 볼게</span><span class="go" id="go">승인</span></div></div>'); }],
+    [1200, () => { const g = $('go'); if (g) { g.classList.add('tap'); setTimeout(() => g.classList.remove('tap'), 180); } }],
+    [3400, () => { res.querySelector('.okbox')?.remove(); res.insertAdjacentHTML('beforeend', '<div class="done">승인됨 · 5편 예약 완료</div>'); ai('Leo', '다 걸어 뒀어요. 공개되면 숫자 모아서 알려 드릴게요.'); on(); }],
+  ];
+  let i = 0, t = null, paused = false;
+  const run = () => { steps[i][1](); const w = steps[i][0]; i = (i + 1) % steps.length; if (!paused) t = setTimeout(run, w); };
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { steps.forEach(s => s[1]()); paused = true; }
+  else { const io = new IntersectionObserver(es => { if (es[0].isIntersecting && !t && !paused) { run(); io.disconnect(); } }); io.observe($('chat')); steps[0][1](); i = 1; }
+  $('pause').addEventListener('click', () => {
+    paused = !paused; clearTimeout(t); t = null;
+    $('pause').setAttribute('aria-label', paused ? '다시 재생' : '일시 정지');
+    $('pi').setAttribute('d', paused ? 'M4 2.5l7 4.5-7 4.5z' : 'M4 2.5v9M10 2.5v9');
+    if (!paused) run();
+  });
+
+  const f = document.getElementById('f');
+  // 사전 예약 → 구글 설문지 「HEONLOG 사전 예약」(대표님 계정, 11-27). 응답은 설문지 응답 탭·시트에 쌓임.
+  const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSdFGwNQv8fhy1EIn43UizsQeENmhLto-IhiOcw6vOlAOY_6tQ/formResponse';
+  const E = { name: 'entry.620648113', email: 'entry.1463388436', work: 'entry.1924461979', want: 'entry.114368126', team: 'entry.1531215691', ok: 'entry.1524552495' };
+  if (f) f.addEventListener('submit', async e => {
+    e.preventDefault();
+    const v = id => (document.getElementById(id).value || '').trim(), m = document.getElementById('msg');
+    if (!v('name')) { m.textContent = '이름을 적어 주세요.'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))) { m.textContent = '이메일 주소를 다시 확인해 주세요.'; return; }
+    if (!document.getElementById('ok').checked) { m.textContent = '개인정보 수집·이용에 동의해 주셔야 알림을 보낼 수 있어요.'; return; }
+    const teams = [...f.querySelectorAll('input[name="team"]:checked')].map(x => x.value).join(', ');
+    const body = new URLSearchParams({ [E.name]: v('name'), [E.email]: v('email'), [E.work]: v('work'), [E.want]: v('want'), [E.team]: teams, [E.ok]: '동의함 ' + new Date().toISOString() });
+    const btn = f.querySelector('button[type="submit"]'); btn.disabled = true; m.textContent = '보내는 중…';
+    try {
+      await fetch(FORM, { method: 'POST', mode: 'no-cors', body });  // 구글 설문지는 응답 내용을 안 돌려줌(no-cors) — 보내기가 끝나면 접수로 봄
+      f.reset(); m.textContent = '사전 예약이 접수됐어요. 열리는 날 메일로 먼저 알려 드릴게요.';
+    } catch (err) {
+      m.textContent = '지금은 보내지 못했어요. 잠시 뒤 다시 눌러 주세요.';
+    } finally { btn.disabled = false; }
+  });
+})();
 </script>
-</body>
-</html>
